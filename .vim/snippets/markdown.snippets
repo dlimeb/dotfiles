@@ -1,0 +1,16 @@
+snippet meta
+	---
+
+	title: ${1}
+	date: `strftime("%Y/%m/%d %H:%M:%S")`
+	categories: ${2}
+	description: ${3}
+	format: markdown
+
+	---
+	${4}
+
+snippet blcode
+	$$code(lang=${1})
+	${2}
+	$$/code

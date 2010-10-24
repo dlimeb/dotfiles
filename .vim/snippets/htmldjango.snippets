@@ -1,0 +1,71 @@
+# Django templates
+snippet trans
+	{% trans "${1}" %}
+snippet blocktrans
+	{% blocktrans %}
+		${1}
+	{% endblocktrans %}
+snippet ext
+	{% extends "${1:template_name}" %}
+snippet incl
+	{% include "${1:template_name}" %}
+snippet com
+	{% comment %}
+	{% endcomment %}
+snippet scom
+	{# ${1} #}
+snippet load
+	{% load ${1} %}
+	${2}
+snippet block
+	{% block ${1:blockname} %}
+		${2}
+	{% endblock $1 %}
+snippet if if
+	{% if ${1:variable} %}
+		${2}
+	{% endif %}
+snippet if if not
+	{% if not ${1:variable} %}
+		${2}
+	{% endif %}
+snippet if if/else
+	{% if ${1:variable} %}
+		${2}
+	{% else %}
+		${3}
+	{% endif %}
+snippet if if not/else
+	{% if not ${1:variable} %}
+		${2}
+	{% else %}
+		${3}
+	{% endif %}
+snippet if ifequal
+	{% ifequal ${1:var1} ${2:var2} %}
+		${3}
+	{% endifequal %}
+snippet if ifequal/else
+	{% ifequal ${1:var1} ${2:var2} %}
+		${3}
+	{% else %}
+		${4}
+	{% endifequal %}
+snippet if ifnotequal
+	{% ifnotequal ${1:var1} ${2:var2} %}
+		${3}
+	{% endifnotequal %}
+snippet if ifnotequal/else
+	{% ifnotequal ${1:var1} ${2:var2} %}
+		${3}
+	{% else %}
+		${4}
+	{% endifnotequal %}
+snippet for
+	{% for ${1:var1} in ${2:var2} %}
+		${3}
+	{% endfor %}
+snippet cycle
+	{% cycle ${1:var1} ${2:var2} %}
+snippet url
+	{% url ${1:var1} %}
