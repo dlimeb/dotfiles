@@ -1,0 +1,57 @@
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = http://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/fuzzyfinder"]
+	path = .vim/bundle/fuzzyfinder
+	url = http://github.com/vim-bundles/fuzzyfinder.git
+[submodule ".vim/bundle/vim-matchit"]
+	path = .vim/bundle/vim-matchit
+	url = http://github.com/tsaleh/vim-matchit.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = http://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = http://github.com/tpope/vim-repeat.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/gist-vim"]
+	path = .vim/bundle/gist-vim
+	url = http://github.com/mattn/gist-vim.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/html5-syntax.vim"]
+	path = .vim/bundle/html5-syntax.vim
+	url = http://github.com/othree/html5-syntax.vim.git
+[submodule ".vim/bundle/vim-indexedsearch"]
+	path = .vim/bundle/vim-indexedsearch
+	url = http://github.com/bronson/vim-indexedsearch.git
+[submodule ".vim/bundle/vimwiki"]
+	path = .vim/bundle/vimwiki
+	url = http://github.com/vim-scripts/vimwiki.git
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = http://github.com/markabe/bufexplorer.git
+[submodule ".vim/bundle/SyntaxAttr.vim"]
+	path = .vim/bundle/SyntaxAttr.vim
+	url = http://github.com/vim-scripts/SyntaxAttr.vim.git
+[submodule ".vim/bundle/vim-jquery"]
+	path = .vim/bundle/vim-jquery
+	url = http://github.com/bronson/vim-jquery.git
+[submodule ".vim/bundle/xml.vim"]
+	path = .vim/bundle/xml.vim
+	url = http://github.com/vim-scripts/xml.vim.git
+[submodule ".vim/bundle/xmledit"]
+	path = .vim/bundle/xmledit
+	url = http://github.com/sukima/xmledit.git
