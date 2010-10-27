@@ -31,9 +31,6 @@
 [submodule ".vim/bundle/html5-syntax.vim"]
 	path = .vim/bundle/html5-syntax.vim
 	url = http://github.com/othree/html5-syntax.vim.git
-[submodule ".vim/bundle/vim-indexedsearch"]
-	path = .vim/bundle/vim-indexedsearch
-	url = http://github.com/bronson/vim-indexedsearch.git
 [submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = http://github.com/vim-scripts/vimwiki.git
