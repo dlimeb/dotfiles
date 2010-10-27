@@ -43,9 +43,6 @@
 [submodule ".vim/bundle/SyntaxAttr.vim"]
 	path = .vim/bundle/SyntaxAttr.vim
 	url = http://github.com/vim-scripts/SyntaxAttr.vim.git
-[submodule ".vim/bundle/vim-jquery"]
-	path = .vim/bundle/vim-jquery
-	url = http://github.com/bronson/vim-jquery.git
 [submodule ".vim/bundle/xml.vim"]
 	path = .vim/bundle/xml.vim
 	url = http://github.com/vim-scripts/xml.vim.git
