@@ -177,6 +177,9 @@ let g:vimwiki_table_auto_fmt = 0 " frees up tab key for snipmate use
 " See also settings: g:fuzzy_roots, g:fuzzy_ceiling, g:fuzzy_ignore, g:fuzzy_matching_limit
 map <leader>f :FufBuffer<CR>
 
+" snipMate
+let g:snippets_dir = '~/.vim/snippets'
+
 " Ack
 map <leader>a :Ack<CR>
 
