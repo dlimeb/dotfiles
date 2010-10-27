@@ -12,11 +12,11 @@
 umask 022 # -rw-r--r--
 
 export EDITOR='/usr/bin/vim'
-export PAGER='/usr/bin/less'
+export PAGER='/usr/bin/most'
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:la:ll:cd:pwd:clear:su:df
 export SSHPROXY_USER="dlimeback"
-export PATH=/home/dlimeb/bin:$PATH # personal bin
+export PATH=$HOME/bin:$PATH # personal bin
 #export PATH=/usr/local/share/npm/bin:$PATH # npm
 #export NODE_PATH="/usr/local/lib/node" # node path (so you can just require packages without specifying path)
 export TERM=xterm-256color
@@ -63,8 +63,7 @@ export SSH_CLIENT=${SSH_CLIENT}
 if [ -n "$SSH_CLIENT" ] ; then # remote
     export PS1='\[\033[01;32m\]\u@\[\033[1;33m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[0;31m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 else # local
-    #export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[0;31m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
-    export PS1="\[${LIGHT_GREEN}\]\u@\h:\[${LIGHT_BLUE}\]\W\[${NO_COLOR}\]\$ "
+    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[0;31m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 fi
 
 # Plain white, but it works
