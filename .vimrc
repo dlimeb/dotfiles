@@ -8,9 +8,10 @@ set nocompatible " use vim settings, not vi (must be first line)
 " ----------------------------------------------------------------------------
 " Pathogen -- easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory. Must be close to top of vimrc
-call pathogen#helptags()
+filetype off
 call pathogen#runtime_append_all_bundles()
-filetype off 
+call pathogen#helptags()
+
 
 " ----------------------------------------------------------------------------
 "   DEFAULTS (i.e., make vim behave sanely)
@@ -28,6 +29,7 @@ set noerrorbells            " ssssshhhhhhh
 set number                  " view line numbers by default
 set directory=~/.swp        " directory to hold .swp files in
 set history=500             " how many lines of command history to remember
+
 
 " ----------------------------------------------------------------------------
 "   CODE SETTINGS -- tab behaviour, indenting, line wrapping, etc
@@ -48,6 +50,11 @@ set formatoptions=tcrqn1    " set how vim formats text (see :h fo-table)
 set linebreak               " break lines at reasonable spot
 set comments=b:#,:%,fb:-,n:>,n:),sr:/*,mb:*,el:*/,n:##,n:\" " define what comments are
 set listchars=tab:>-,trail:-,nbsp:%,eol:$ " define what whitespace chars are
+highlight UnwantedSpaces ctermbg=red guibg=red
+match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
+"highlight OverLength ctermbg=red guibg=red
+"match OverLength /\%81v.\+/
+
 
 " ----------------------------------------------------------------------------
 "   SEARCHING
@@ -61,6 +68,7 @@ set mat=5                   " 10ths of a second to show matching brackets
 " Fix vim's handling of regexps
 nnoremap / /\v
 vnoremap / /\v
+
 
 " ----------------------------------------------------------------------------
 "   UI SETTINGS
@@ -77,7 +85,7 @@ set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,
 set shortmess+=T            " forego the 'hit enter to continue' msgs
 set foldmethod=marker       " enable folding by markers
 "set foldclose=all          " autoclose folds when moving out of them
-set showcmd	                " display incomplete commands
+set showcmd                 " display incomplete commands
 set scrolljump=5            " jump 5 lines when running out of screen
 
 " Force usage of hjkl -- nuke arrow keys
@@ -92,28 +100,15 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+" Stupid far away Thinkpad Esc key
+map <F1> <Esc>
+
 " Change working dir to what contains the current file
 if exists('+autochdir')
   set autochdir
 else
   autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
-
-"if has("gui_running")
-    "set guioptions-=T " remove menubar
-    "set guioptions-=m " remove toolbar
-    "set guitablabel=%t
-    "set guifont=Consolas:h14
-    "colorscheme mustang
-
-    "" ugly hack for settings that are only present in MacVim (vim 7.3) instead
-    "" of OSX default vim (7.2)
-    "set relativenumber " show line numbers as distance away from current
-    "set undofile " keep track of undos in file for later use
-    "set undodir=~/.undo " directory to hold undo files in
-"else
-    "colorscheme darkblue
-"endif
 
 
 " ----------------------------------------------------------------------------
@@ -164,13 +159,12 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeShowLineNumbers=1
+let NERDTreeShowLineNumbers=0
 map <leader>d :NERDTreeToggle<CR>
 
 " Gist
 let g:gist_clip_command = 'pbcopy'
 let g:github_user = 'dlimeb'
-let g:github_token = '1c84bd4831ad5953a8da017fb4de5393'
 
 " Vimwiki
 "let g:vimwiki_folding = 1 " folds everything up by default
@@ -187,7 +181,7 @@ map <leader>f :FufBuffer<CR>
 map <leader>a :Ack<CR>
 
 " bufexplorer
-let g:bufExplorerDetailedHelp=1
+let g:bufExplorerDetailedHelp=0
 
 " Easy filetype switching
 nnoremap _dt :set ft=html.htmldjango syntax=htmldjango<CR>
@@ -217,7 +211,7 @@ nnoremap Vit vitVkoj
 nnoremap Vat vatV
 
 " Insert a new line without going into insert mode
-map <S-Enter> O<ESC>
+map <leader>O O<ESC>
 
 " Maintain smartindenting when adding comments
 inoremap # X#
