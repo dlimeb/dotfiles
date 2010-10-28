@@ -101,7 +101,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Stupid far away Thinkpad Esc key
-map <F1> <Esc>
+nnoremap <F1> <Esc>
+inoremap <F1> <nop>
 
 " Change working dir to what contains the current file
 if exists('+autochdir')
