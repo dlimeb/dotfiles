@@ -2,5 +2,6 @@
 *.swp
 .DS_Store
 settings_local.py
+doc
 doc/tags
 doc/tags-ja

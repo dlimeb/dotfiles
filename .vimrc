@@ -182,7 +182,7 @@ map <leader>f :FufBuffer<CR>
 let g:snippets_dir = '~/.vim/snippets'
 
 " Ack
-map <leader>a :Ack<CR>
+map <leader>a :Ack
 
 " bufexplorer
 let g:bufExplorerDetailedHelp=0
