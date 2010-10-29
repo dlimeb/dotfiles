@@ -33,8 +33,8 @@ source $HOME/bin/git-completion
 # autojump
 source $HOME/bin/autojump.bash
 
-# Virtualenvwrapper
-export WORKON_HOME=$HOME/Development/virtualenvs
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Set up colors as names

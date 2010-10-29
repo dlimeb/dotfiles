@@ -14,6 +14,7 @@ alias ....='cd ../../..'
 alias nup='ping -c 1 google.ca'
 alias finder='/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder &'
 alias git-svn='git svn'
+alias ack='ack-grep'
 alias ch='open -a "Google Chrome"';
 alias ff='open -a Firefox';
 alias saf='open -a Safari';
