@@ -31,7 +31,7 @@ source $HOME/.bash/aliases
 source $HOME/bin/git-completion
 
 # autojump
-source $HOME/bin/autojump.bash
+source $HOME/bin/autojump.sh
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
