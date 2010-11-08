@@ -22,7 +22,7 @@ alias saf='open -a Safari';
 # colourized ls
 CLICOLOR=1
 LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls='ls -G --color'
+alias ls='ls -G'            # colourized output TODO linux needs --color
 alias la='ls -Al'			# show hidden files
 alias ll='ls -lh'			# plain long ls
 alias lx='ls -lXB'			# sort by extension
