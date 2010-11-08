@@ -265,3 +265,19 @@ iab blcok block
 iab endblcok endblock
 iab requets request
 iab checktou checkout
+
+" HTML escaping of <, >, &
+function HtmlEscape()
+  silent s/&/\&amp;/
+  silent s/</\&lt;/
+  silent s/>/\&gt;/
+endfunction
+
+function HtmlUnEscape()
+  silent s/&lt;/</
+  silent s/&gt;/>/
+  silent s/&amp;/\&/
+endfunction
+
+map <silent> <leader>he :call HtmlEscape()<CR>
+map <silent> <leader>hu :call HtmlUnEscape()<CR>
