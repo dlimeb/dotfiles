@@ -31,7 +31,7 @@ source $HOME/.bash/aliases
 source $HOME/bin/git-completion
 
 # autojump
-source $HOME/bin/autojump # TODO is a symlink to file in different places on osx/linux
+source $HOME/bin/autojump.bash # TODO is a symlink to file in different places on osx/linux
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
