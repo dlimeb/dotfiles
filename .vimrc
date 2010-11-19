@@ -124,7 +124,7 @@ if has("autocmd")
     augroup END
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
