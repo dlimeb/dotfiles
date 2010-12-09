@@ -40,14 +40,16 @@ snippet case
 	${3}
 # for (...) {...}
 snippet for
-	for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3:++}) {
-		${4:$1[$2]}
-	};
-# for (...) {...} (Improved Native For-Loop)
-snippet forr
-	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
-		${4:$1[$2]}
-	};
+	for (var ${1:i} = 0, max = ${2:myarray}.length; $1 < max; ${3:$1++}) {
+		${4:// do something with $2[$1]}
+	}
+# for (var x in y) {...}
+snippet forin
+	for (var ${1:i} in ${2:myobject}) {
+		if ($2.hasOwnProperty($1)) {
+			${4:// do something with $2[$1]}
+		}
+	}
 # while (...) {...}
 snippet wh
 	while (${1:/* condition */}) {
@@ -72,11 +74,6 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
-
-snippet ready
-    $(document).ready(function(){
-		${1}
-    });
 
 # Log to console
 snippet log
