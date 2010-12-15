@@ -1,1 +1,1 @@
-/usr/local/Cellar/autojump/12/etc/autojump.bash
+/usr/local/Cellar/autojump/13/etc/autojump.bash
