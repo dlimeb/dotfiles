@@ -58,17 +58,12 @@
 	path = .vim/bundle/SyntaxAttr.vim
 	url = http://github.com/vim-scripts/SyntaxAttr.vim.git
     ignore = untracked
-[submodule ".vim/bundle/xml.vim"]
-	path = .vim/bundle/xml.vim
-	url = http://github.com/vim-scripts/xml.vim.git
-    ignore = untracked
-[submodule ".vim/bundle/xmledit"]
-	path = .vim/bundle/xmledit
-	url = http://github.com/sukima/xmledit.git
-    ignore = untracked
 [submodule ".vim/bundle/ZoomWin"]
 	path = .vim/bundle/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
 [submodule ".vim/bundle/vim-align"]
 	path = .vim/bundle/vim-align
 	url = https://github.com/tsaleh/vim-align.git
+[submodule ".vim/bundles/xml.vim"]
+	path = .vim/bundles/xml.vim
+	url = https://github.com/vim-scripts/xml.vim.git

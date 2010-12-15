@@ -89,16 +89,16 @@ set showcmd                 " display incomplete commands
 set scrolljump=5            " jump 5 lines when running out of screen
 
 " Force usage of hjkl -- nuke arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
 
 " Stupid far away Thinkpad Esc key
 nnoremap <F1> <Esc>
@@ -145,9 +145,11 @@ let mapleader = ","
 
 " Clear search highlighting
 nnoremap <leader>q :noh <CR>
-"
-" Strip whitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Display whitespace characters
+nmap <silent> <leader>h :set nolist!<CR>
+" Strip whitespace characters
+nnoremap <leader>H :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Rewrap paragraph of text
 nnoremap <leader>Q gqip
@@ -169,7 +171,7 @@ let g:github_user = 'dlimeb'
 
 " Vimwiki
 "let g:vimwiki_folding = 1 " folds everything up by default
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki/', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
+let g:vimwiki_list = [{'path': '~/Dropbox/Dieter/personal/vimwiki', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_fold_trailing_empty_lines = 1
 let g:vimwiki_table_auto_fmt = 0 " frees up tab key for snipmate use
@@ -191,9 +193,6 @@ let g:bufExplorerDetailedHelp=0
 nnoremap _dt :set ft=html.htmldjango syntax=htmldjango<CR>
 nnoremap _jq :set ft=jquery.javascript<CR>
 
-" Display hidden/whitespace characters
-nmap <silent> <leader>h :set nolist!<CR>
-
 " Show info about syntax/color of word
 map -a :call SyntaxAttr()<CR>
 
@@ -203,15 +202,14 @@ nnoremap <C-y> <C-y><C-y><C-y>
 
 " Line numbering
 " Toggle on and off
-nmap <leader>ni :set invnumber<CR>
-nmap <leader>nn :set nu<CR>
-nmap <leader>nr :set rnu<CR>
+nmap <leader>nn :set invnumber<CR>
+"nmap <leader>nu :set nu<CR>
+"nmap <leader>nr :set rnu<CR>
 
 " Make Y consistent with C and D
 nnoremap Y y$
 
 " Make selecting inside an HTML tag less dumb
-nnoremap Vit vitVkoj
 nnoremap Vat vatV
 
 " Insert a new line without going into insert mode
@@ -236,6 +234,7 @@ nmap <leader>es :e ~/.vim/snippets/<cr>
 noremap <leader>v <c-w>v<c-w>l
 noremap <leader>s <c-w>s<c-w>j
 noremap <leader>x <c-w>c
+noremap <leader>z :ZoomWin<cr>
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
@@ -278,6 +277,3 @@ function HtmlUnEscape()
   silent s/&gt;/>/
   silent s/&amp;/\&/
 endfunction
-
-map <silent> <leader>he :call HtmlEscape()<CR>
-map <silent> <leader>hu :call HtmlUnEscape()<CR>
