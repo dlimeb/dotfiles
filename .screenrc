@@ -34,7 +34,7 @@ hardstatus string "Screen: %H %-n - %t"
 # Status bar at bottom
 caption always
 # black bar, blue block around current
-caption string "%>%{bk}%?%-Lw%?%{kb}%n*%f %t%?(%u)%?%{bk}%?%+Lw%?%<"
+caption string "%>%{gk}%?%-Lw%?%{kg}%n*%f %t%?(%u)%?%{gk}%?%+Lw%?%<"
 
 
 # STARTUP
