@@ -11,14 +11,12 @@
 # Perms & env vars
 umask 022 # -rw-r--r--
 
-export EDITOR='/usr/bin/vim'
-export PAGER='/usr/local/bin/most' # TODO osx/brew specific path, requires custom install
+export EDITOR=`which vim`
+export PAGER=`which less`
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:la:ll:cd:pwd:clear:su:df
 export SSHPROXY_USER="dlimeback"
-export PATH=$HOME/bin:$PATH # personal bin
-#export PATH=/usr/local/share/npm/bin:$PATH # npm
-#export NODE_PATH="/usr/local/lib/node" # node path (so you can just require packages without specifying path)
+export PATH=$HOME/bin:/usr/local/sbin:$PATH # personal bin
 export TERM=xterm-color # TODO on linux, better to have xterm-256color
 
 # Don't need to check mail
