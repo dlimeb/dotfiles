@@ -44,7 +44,7 @@ hi DiffText                      guibg=#4C4745 gui=italic,bold
 
 hi Directory       guifg=#A6E22E
 hi Error           guifg=gray guibg=red3
-hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
+hi ErrorMsg        guifg=#ffffff guibg=#ff0000 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
 hi FoldColumn      guifg=#465457 guibg=#000000
@@ -79,7 +79,7 @@ hi Search          guifg=#FFFFFF guibg=#455354
 hi SignColumn      guifg=#A6E22E guibg=#232526
 hi SpecialChar     guifg=#F92672
 hi SpecialComment  guifg=#465457
-hi Special         guifg=#66D9EF guibg=bg      gui=italic
+hi Special         guifg=#66D9EF guibg=bg
 hi SpecialKey      guifg=#888A85               gui=italic
 if has("spell")
     hi SpellBad    guisp=#FF0000 gui=undercurl
@@ -112,16 +112,14 @@ if s:molokai_original == 1
    hi CursorLine                    guibg=#3E3D32
    hi CursorColumn                  guibg=#3E3D32
    hi LineNr          guifg=#BCBCBC guibg=#111111
-   hi NonText         guifg=#BCBCBC guibg=#111111
+   hi NonText         guifg=#666600 guibg=#111111
 else
-"   hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
    hi Normal          guifg=#dddddd guibg=#111111
    hi Comment         guifg=#465457 gui=italic
    hi CursorLine                    guibg=#293739
    hi CursorColumn                  guibg=#293739
    hi LineNr          guifg=#333333 guibg=#111111
-   "hi NonText         guifg=#BCBCBC guibg=#232526
-   hi NonText         guifg=#BCBCBC guibg=#111111
+   hi NonText         guifg=#666600 guibg=#111111
 end
 
 "
@@ -211,3 +209,11 @@ if &t_Co > 255
    hi LineNr          ctermfg=250 ctermbg=234
    hi NonText         ctermfg=250 ctermbg=234
 end
+
+" Other specific syntaxes
+hi diffRemoved      guifg=#cc0000
+hi diffAdded        guifg=#00cc00
+hi VimwikiHeader1   guifg=#FF009B
+hi VimwikiHeader2   guifg=#8dda74
+hi VimwikiHeader3   guifg=#3db698
+hi VimwikiList      guifg=#987526

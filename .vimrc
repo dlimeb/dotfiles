@@ -144,7 +144,8 @@ endif
 let mapleader = ","
 
 " Clear search highlighting
-nnoremap <leader>q :noh <CR>
+"nnoremap <leader>q :noh <CR>
+nnoremap <CR> :noh <CR>
 
 " Display whitespace characters
 nmap <silent> <leader>h :set nolist!<CR>
