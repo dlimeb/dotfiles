@@ -12,13 +12,21 @@ snippet fun
 # Anonymous Function
 snippet f
 	function(${1}) {${2}};
+# Object Method
+snippet func
+	${1:method_name}: function(${2:attribute}) {
+		${4}
+	}${3:,}
 # if
 snippet if
 	if (${1:true}) {${2}}
 # if ... else
 snippet ife
-	if (${1:true}) {${2}}
-	else{${3}}
+	if (${1:true}) {
+		${2}
+	} else {
+		${3}
+	}
 # tertiary conditional
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
@@ -60,11 +68,6 @@ snippet do
 	do {
 		${2:/* code */}
 	} while (${1:/* condition */});
-# Object Method
-snippet func
-	${1:method_name}: function(${2:attribute}) {
-		${4}
-	}${3:,}
 # setTimeout function
 snippet timeout
 	setTimeout(function() {${3}}${2}, ${1:10};
@@ -78,6 +81,10 @@ snippet gett
 # Log to console
 snippet log
 	console.log(${1});
+snippet vlog
+	console.log('${1:var}: ' + $1);
+snippet dir
+	console.dir(${1:obj});
 
 # Titanium specific
 snippet ticr View
