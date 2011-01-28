@@ -117,6 +117,7 @@ endif
 " ----------------------------------------------------------------------------
 if has("autocmd")
     augroup filetypedetect
+        au! BufRead,BufNewFile *.html set ft=html.html5
         au! BufRead,BufNewFile *.txt set ft=human
         au! BufRead,BufNewFile *.mako set ft=mako syntax=html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
@@ -163,7 +164,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeShowLineNumbers=0
+let NERDTreeShowLineNumbers=1
 map <leader>d :NERDTreeToggle<CR>
 
 " Gist
