@@ -192,7 +192,7 @@ map <leader>a :Ack
 let g:bufExplorerDetailedHelp=0
 
 " Easy filetype switching
-nnoremap _dt :set ft=html.htmldjango syntax=htmldjango<CR>
+nnoremap _dt :set ft=html.html5.htmldjango<CR>
 nnoremap _jq :set ft=jquery.javascript<CR>
 
 " Show info about syntax/color of word
