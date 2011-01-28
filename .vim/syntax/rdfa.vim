@@ -1,0 +1,1 @@
+../bundle/html5-syntax.vim/syntax/html/rdfa.vim
