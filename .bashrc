@@ -35,6 +35,9 @@ source $HOME/bin/autojump.bash # TODO is a symlink to file in different places o
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+# pythonbrew
+source $HOME/.pythonbrew/etc/bashrc
+
 # Set up colors as names
 export WHITE='\e[1;37m'
 export BLACK='\e[0;30m'
