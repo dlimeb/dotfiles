@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/xmledit"]
 	path = .vim/bundle/xmledit
 	url = https://sukima@github.com/sukima/xmledit.git
+[submodule ".vim/bundle/django.vim"]
+	path = .vim/bundle/django.vim
+	url = https://github.com/vim-scripts/django.vim.git

@@ -27,8 +27,15 @@ set showmode                " show the current mode
 set scrolloff=3             " number of lines to keep above/below cursor
 set noerrorbells            " ssssshhhhhhh
 set number                  " view line numbers by default
-set directory=~/.swp        " directory to hold .swp files in
 set history=500             " how many lines of command history to remember
+
+" I can count on one hand the number of times I've been saved by a swp file,
+" but would need hundreds of hands to count how often I get annoyed by 
+" the 'yo, swp file already exists!' messages
+"set directory=~/.swp       " directory to hold .swp files in
+set nobackup
+set nowritebackup
+set noswapfile
 
 
 " ----------------------------------------------------------------------------
@@ -119,8 +126,9 @@ if has("autocmd")
     augroup filetypedetect
         au! BufRead,BufNewFile *.html set ft=html.html5
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako syntax=html
+        au! BufRead,BufNewFile *.mako set ft=mako syntax=html.html5.mako
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
+        au! BufRead,BufNewFile *.json set ft=javascript
         au! BufRead,BufNewFile *.mustache set ft=mustache
     augroup END
 
@@ -192,7 +200,7 @@ map <leader>a :Ack
 let g:bufExplorerDetailedHelp=0
 
 " Easy filetype switching
-nnoremap _dt :set ft=html.html5.htmldjango<CR>
+nnoremap _dt :set ft=htmldjango.html.html5<CR>
 nnoremap _jq :set ft=jquery.javascript<CR>
 
 " Show info about syntax/color of word
