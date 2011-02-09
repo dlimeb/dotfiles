@@ -13,8 +13,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias nup='ping -c 1 google.ca'
 alias finder='/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder &'
-alias git-svn='git svn'
-#alias ack='ack-grep' # TODO only required on linux, OSX ack with homebrew is `ack`
 alias ch='open -a "Google Chrome"';
 alias ff='open -a Firefox';
 alias saf='open -a Safari';
@@ -45,4 +43,22 @@ function pman() {
 # quick domain availability check
 function avail() {
     whois $1 | grep -q 'No match' && echo "Yes" || echo "No"
+}
+
+# quick, what's my local IP address
+function ip() {
+    ifconfig | grep 'inet 192.168.1' | awk '{print $2}'
+}
+
+# git remove files that have been marked as deleted
+function git-rmd() {
+  for i in `git status | grep deleted | awk '{print $3}'`; do git rm $i; done
+}
+
+# build my blogofile blog and rsync the built files to NFS
+function deploy-blog() {
+    cd ~/Development/projects/centripetal
+    source ~/.virtualenvs/centripetal/bin/activate
+    blogofile build
+    rsync -e ssh -av --delete _site/ nfs:
 }
