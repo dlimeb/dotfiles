@@ -254,6 +254,9 @@ map <c-Down> <c-w>+
 map <c-Right> <c-w>>
 map <c-Left> <c-w><
 
+" Write file when you forget to sudo first
+cmap w!! w !sudo tee % >/dev/null
+
 " Preview markdown documents in browser
 nmap <leader>pm  :! ~/bin/Markdown.pl % > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
 
