@@ -309,9 +309,9 @@ call s:X("LineNr","605958","151515","none","Black","")
 call s:X("Comment","555555","","italic","Grey","")
 call s:X("Todo","222222","cccc33","bold","","")
 
-call s:X("StatusLine","000000","dddddd","italic","Black","White")
-call s:X("StatusLineNC","ffffff","403c41","italic","White","Black")
-call s:X("VertSplit","777777","403c41","italic","Black","Black")
+call s:X("StatusLine","000000","dddddd","","Black","White")
+call s:X("StatusLineNC","ffffff","403c41","","White","Black")
+call s:X("VertSplit","777777","403c41","","Black","Black")
 
 call s:X("Folded","a0a8b0","384048","italic","black","")
 call s:X("FoldColumn","a0a8b0","384048","","","")
