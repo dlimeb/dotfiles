@@ -124,18 +124,20 @@ endif
 " ----------------------------------------------------------------------------
 if has("autocmd")
     augroup filetypedetect
-        au! BufRead,BufNewFile *.html set ft=html.html5
+        au! BufRead,BufNewFile *.html set ft=htmldjango.html.html5
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako syntax=html.html5.mako
+        au! BufRead,BufNewFile *.mako set ft=mako syntax=mako.html.html5
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
         au! BufRead,BufNewFile *.json set ft=javascript
+        au! BufRead,BufNewFile *.js set ft=javascript.jquery
         au! BufRead,BufNewFile *.mustache set ft=mustache
     augroup END
 
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType python set omnifunc=pythoncomplete#Complete tabstop=4 softtabstop=4 shiftwidth=4
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS tabstop=4 softtabstop=4 shiftwidth=4
+
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
@@ -198,10 +200,6 @@ map <leader>a :Ack
 
 " bufexplorer
 let g:bufExplorerDetailedHelp=0
-
-" Easy filetype switching
-nnoremap _dt :set ft=htmldjango.html.html5<CR>
-nnoremap _jq :set ft=jquery.javascript<CR>
 
 " Show info about syntax/color of word
 map -a :call SyntaxAttr()<CR>
