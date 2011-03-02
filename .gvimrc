@@ -2,7 +2,7 @@ set guioptions-=T " remove menubar
 set guioptions-=m " remove toolbar
 set guitablabel=%t
 set guifont=Consolas:h14
-colorscheme jellybeans
+colorscheme railscasts2_hack
 
 "set relativenumber " show line numbers as distance away from current
 set undofile " keep track of undos in file for later use

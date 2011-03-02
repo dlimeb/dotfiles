@@ -58,7 +58,7 @@ hi PMenuThumb                guibg=#AAAAAA gui=NONE
 "rubyComment
 "hi Comment                   guifg=#546B7B gui=italic
 hi Comment                   guifg=#555555 gui=italic
-hi Todo                      guifg=#BC9458 guibg=NONE gui=italic
+hi Todo                      guifg=#222222 guibg=#cccc33 gui=bold
 
 "rubyPseudoVariable
 "nil, self, symbols, etc
@@ -112,6 +112,9 @@ hi Title                     guifg=#FFFFFF
 
 "rubyConstant
 hi Type                      guifg=#DA4939 gui=NONE
+
+" Django specific
+hi link DjangoStatement      Type
 
 hi DiffAdd                   guifg=#E6E1DC guibg=#144212
 hi DiffDelete                guifg=#E6E1DC guibg=#660000
