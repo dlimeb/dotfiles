@@ -30,7 +30,7 @@ set number                  " view line numbers by default
 set history=500             " how many lines of command history to remember
 
 " I can count on one hand the number of times I've been saved by a swp file,
-" but would need hundreds of hands to count how often I get annoyed by 
+" but would need hundreds of hands to count how often I get annoyed by
 " the 'yo, swp file already exists!' messages
 "set directory=~/.swp       " directory to hold .swp files in
 set nobackup
@@ -124,17 +124,16 @@ endif
 " ----------------------------------------------------------------------------
 if has("autocmd")
     augroup filetypedetect
-        au! BufRead,BufNewFile *.html set ft=htmldjango.html.html5
+        au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako syntax=mako.html.html5
+        au! BufRead,BufNewFile *.mako set ft=mako syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
-        au! BufRead,BufNewFile *.json set ft=javascript
-        au! BufRead,BufNewFile *.js set ft=javascript.jquery
+        au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery
         au! BufRead,BufNewFile *.mustache set ft=mustache
     augroup END
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType javascript.jquery set omnifunc=javascriptcomplete#CompleteJS tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags tabstop=4 softtabstop=4 shiftwidth=4
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS tabstop=4 softtabstop=4 shiftwidth=4
 
@@ -194,6 +193,11 @@ map <leader>f :FufBuffer<CR>
 
 " snipMate
 let g:snippets_dir = '~/.vim/snippets'
+
+" Surround
+let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\n\r\n{% endblock %}\n"
+let g:surround_{char2nr("c")} = "{% comment %}\n\r\n{% endcomment %}"
+let g:surround_{char2nr("i")} = "{% trans '\r' %}"
 
 " Ack
 map <leader>a :Ack
