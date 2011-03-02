@@ -54,6 +54,7 @@ syn keyword djangoTodo contained TODO FIXME XXX
 
 " Django template constants (always surrounded by double quotes)
 syn region djangoArgument contained start=/"/ skip=/\\"/ end=/"/
+syn region djangoArgument contained start=/'/ skip=/\\'/ end=/'/
 
 " Mark illegal characters within tag and variables blocks
 syn match djangoTagError contained "#}\|{{\|[^%]}}\|[&#]"
