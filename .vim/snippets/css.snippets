@@ -1,33 +1,20 @@
 snippet bg
 	background: #${1:color} url(../images/${2:image}) ${3:repeat} ${4:0}px ${5:0}px;
-
 snippet tshad
 	text-shadow: 1px 1px 1px #${1:color};
-
 snippet bshad
 			box-shadow: ${1:0}px ${2:0}px ${3:4}px #${4:color};
 	-webkit-box-shadow: $1px $2px $3px #$4;
 	   -moz-box-shadow: $1px $2px $3px #$4;
-
 snippet brad
-			border-radius: ${1:val}px;
-	-webkit-border-radius: $1px;
-	   -moz-border-radius: $1px;
-
-snippet pbrad
-			border-top-right-radius: ${1:val}px;
-			 border-top-left-radius: $1px;
-	-webkit-border-top-right-radius: $1px;
-	 -webkit-border-top-left-radius: $1px;
-		-moz-border-radius-topright: $1px;
-		 -moz-border-radius-topleft: $1px;
-
+			border-radius: ${1:val}px ${2:$1}px ${3:$1}px ${4:$1}px;
+	-webkit-border-radius: $1px $2px $3px $4px;
+	   -moz-border-radius: $1px $2px $3px $4px;
 snippet grad
 	background-image: linear-gradient(top, #${1:topcolor}, #${2:bottomcolor});
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #$1),color-stop(1, #$2));
 	background-image: -webkit-linear-gradient(#$1, #$2);
 	background-image: -moz-linear-gradient(top, #$1, #$2);
-
 snippet ff
 	@font-face {
 		font-family: '${1:fontname}';
@@ -35,9 +22,11 @@ snippet ff
 		     url('$2.woff') format('woff'),
 		     url('$2.ttf') format('truetype');
 	}
-
 snippet geor
-	font-family: Georgia, "Times New Roman", Times, serif;
-
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 snippet helv
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+snippet luci
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+
+
