@@ -70,9 +70,6 @@
 [submodule ".vim/bundle/django.vim"]
 	path = .vim/bundle/django.vim
 	url = https://github.com/vim-scripts/django.vim.git
-[submodule ".vim/bundle/jslint.vim"]
-	path = .vim/bundle/jslint.vim
-	url = git@github.com:dlimeb/jslint.vim.git
 [submodule ".vim/bundle/vim-scratch"]
 	path = .vim/bundle/vim-scratch
 	url = https://github.com/duff/vim-scratch.git
