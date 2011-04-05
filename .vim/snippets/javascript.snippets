@@ -81,8 +81,8 @@ snippet gett
 # Log to console
 snippet log
 	console.log(${1});
-snippet vlog
-	console.log('${1:var}: ' + $1);
+snippet wlog
+	wave.log(${1});
 snippet dir
 	console.dir(${1:obj});
 
@@ -140,3 +140,14 @@ snippet tiinc
 
 snippet tialert
 	Titanium.UI.createAlertDialog({title:'Alert',message:'${1}'}).show();
+
+# Jasmine snippets
+snippet desc
+	describe("${1:suite}", function(){
+		${2}
+	});
+
+snippet it
+	it("${1:expectation}", function(){
+		${2}
+	});

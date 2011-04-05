@@ -2,7 +2,15 @@ set guioptions-=T " remove menubar
 set guioptions-=m " remove toolbar
 set guitablabel=%t
 set guifont=Consolas:h14
-colorscheme railscasts2_hack
+
+set background=dark
+let g:solarized_termcolors=   256
+let g:solarized_bold      =   1
+let g:solarized_underline =   0
+let g:solarized_italic    =   1
+let g:solarized_style     =   "dark"
+let g:solarized_contrast  =   "high"
+colorscheme solarized
 
 "set relativenumber " show line numbers as distance away from current
 set undofile " keep track of undos in file for later use

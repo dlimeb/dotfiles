@@ -12,7 +12,7 @@ endif
 let g:colors_name = "symfony"
 set background=dark
 
-highlight Normal ctermfg=15 ctermbg=235 guifg=#ffffff guibg=#202020
+highlight Normal ctermfg=15 ctermbg=235 guifg=#ffffff guibg=#191919
 
 " Search
 highlight IncSearch ctermfg=0 ctermbg=226 guifg=#000000 guibg=#ffff00
@@ -27,8 +27,8 @@ highlight Question cterm=bold ctermfg=46 gui=bold guifg=Green
 
 " Split area area
 highlight StatusLine cterm=bold,reverse gui=bold,reverse
-highlight StatusLineNC guifg=#222222 cterm=reverse gui=reverse
-highlight VertSplit guifg=#222222 guibg=#000000 cterm=reverse gui=reverse
+highlight StatusLineNC guifg=#444444 cterm=reverse gui=reverse
+"highlight VertSplit guifg=#222222 guibg=#000000 cterm=reverse gui=reverse
 highlight WildMenu ctermfg=0 ctermbg=226 guifg=Black guibg=Yellow
 
 " Diff
@@ -44,12 +44,12 @@ highlight Cursor ctermfg=0 ctermbg=15 guifg=#000000 guibg=#FFFFFF
 highlight lCursor ctermfg=15 ctermbg=235 guifg=bg guibg=fg
 
 " Fold
-highlight Folded ctermfg=236 ctermbg=248 guifg=#333333 guibg=DarkGrey
-highlight FoldColumn ctermfg=236 ctermbg=250 guifg=#333333 guibg=Grey
-
+highlight Folded ctermfg=236 ctermbg=248 guifg=#333333 guibg=#111111
+highlight FoldColumn ctermfg=236 ctermbg=250 guifg=#333333 guibg=#111111
+"{{{
 " Popup Menu Menu
 "highlight Pmenu ctermbg=201 guifg=#000000 guibg=LightSteelBlue
-"highlight PmenuSel ctermbg=248 guibg=SteelBlue
+"highlight PmenuSel ctermbg=248 guibg=SteelBlue"}}}
 highlight Pmenu ctermbg=201 guifg=#000000 guibg=orchid3
 highlight PmenuSel ctermbg=248 guibg=magenta4
 highlight PmenuSbar ctermbg=250 guibg=DarkGrey
@@ -85,7 +85,8 @@ highlight SpellRare cterm=underline ctermfg=168 gui=underline guifg=#D75F87
 
 " Other
 highlight Directory ctermfg=51 guifg=Cyan
-highlight LineNr ctermfg=235 ctermbg=147 guifg=#2B2B2B guibg=#0f0f0f
+"highlight LineNr ctermfg=235 ctermbg=147 guifg=#2B2B2B guibg=#0f0f0f
+hi LineNr                    guifg=#888888 guibg=#2b2b2b
 highlight NonText ctermfg=239 ctermbg=235 guifg=#505050 guibg=#222222
 highlight SpecialKey ctermfg=60 guifg=lightslategrey
 highlight Title cterm=bold ctermfg=15 gui=bold guifg=Magenta

@@ -81,7 +81,7 @@ vnoremap / /\v
 "   UI SETTINGS
 " ----------------------------------------------------------------------------
 set laststatus=2            " always have a status line
-set statusline=\ %<%f\ %m%=%y%r\ %P\  " ...showing basic file info
+set statusline=\ %<%f\%{fugitive#statusline()}\ %m%=%y%r\ %P\  " ...showing basic file info
 set title                   " title the terminal window
 set titlestring=Vim:\ %f%(\ (%R%M)%)
 set titleold="Vim"          " instead of 'Thanks for flying Vim'
@@ -107,16 +107,12 @@ set scrolljump=5            " jump 5 lines when running out of screen
 "nnoremap j gj
 "nnoremap k gk
 
-" Stupid far away Thinkpad Esc key
-nnoremap <F1> <Esc>
-inoremap <F1> <nop>
-
 " Change working dir to what contains the current file
-if exists('+autochdir')
-  set autochdir
-else
-  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-endif
+"if exists('+autochdir')
+  "set autochdir
+"else
+  "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+"endif
 
 
 " ----------------------------------------------------------------------------
@@ -129,6 +125,7 @@ if has("autocmd")
         au! BufRead,BufNewFile *.mako set ft=mako syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
         au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery
+        au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript
         au! BufRead,BufNewFile *.mustache set ft=mustache
     augroup END
 
@@ -169,12 +166,13 @@ nnoremap <leader>Q gqip
 nnoremap <leader>V V`]
 
 " NERDtree
-let NERDTreeChDirMode=2
+let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowLineNumbers=1
 map <leader>d :NERDTreeToggle<CR>
+map <leader>t :NERDTreeFind<CR>
 
 " Gist
 let g:gist_clip_command = 'pbcopy'
@@ -200,7 +198,13 @@ let g:surround_{char2nr("c")} = "{% comment %}\n\r\n{% endcomment %}"
 let g:surround_{char2nr("i")} = "{% trans '\r' %}"
 
 " Ack
-map <leader>a :Ack
+map <leader>a :Ack<space>
+"" remap align plugin so it doesn't hog 'a'
+"map <leader>A, <Plug>AM_a,
+"map <leader>A( <Plug>AM_a(
+"map <leader>A? <Plug>AM_a?
+"map <leader>A< <Plug>AM_a<
+"map <leader>A= <Plug>AM_a=
 
 " bufexplorer
 let g:bufExplorerDetailedHelp=0
