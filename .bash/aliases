@@ -50,11 +50,6 @@ function ip() {
     ifconfig | grep 'inet 192.168.1' | awk '{print $2}'
 }
 
-# git remove files that have been marked as deleted
-function git-rmd() {
-  for i in `git status | grep deleted | awk '{print $3}'`; do git rm $i; done
-}
-
 # build my blogofile blog and rsync the built files to NFS
 function deploy-blog() {
     cd ~/Development/projects/centripetal
