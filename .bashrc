@@ -15,7 +15,6 @@ export EDITOR=`which vim`
 export PAGER=`which less`
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:la:ll:cd:pwd:clear:su:df
-export SSHPROXY_USER="dlimeback"
 export PATH=$HOME/bin:/usr/local/sbin:$PATH # personal bin
 export PYTHONPATH=$PYTHONPATH:$HOME/bin
 export TERM=xterm-color # TODO on linux, better to have xterm-256color
@@ -36,8 +35,8 @@ source $HOME/bin/autojump.bash # TODO is a symlink to file in different places o
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-# pythonbrew
-source $HOME/.pythonbrew/etc/bashrc
+## pythonbrew
+#source $HOME/.pythonbrew/etc/bashrc
 
 # Set up colors as names
 export WHITE='\e[1;37m'

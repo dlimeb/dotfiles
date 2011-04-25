@@ -23,11 +23,11 @@ if [ $# -eq 0 ] ; then
 fi
 
 if [ $1 == "surf" ] ; then
-    echo "Removing restrictions on blacklisted sites. Enjoy your surfing!"
     sed '1,/START BLACKLIST/!{ /END BLACKLIST/,/START BLACKLIST/!s/^/# /; }' /etc/hosts > /tmp/hosts
     sudo mv /tmp/hosts /etc/hosts
+    echo "Removed restrictions on blacklisted sites. Enjoy your surfing!"
 else
-    echo "Enabling restrictions on blacklisted sites. Enjoy your productivity!"
     sed '1,/START BLACKLIST/!{ /END BLACKLIST/,/START BLACKLIST/!s/[# ]*//; }' /etc/hosts > /tmp/hosts
     sudo mv /tmp/hosts /etc/hosts
+    echo "Enabled restrictions on blacklisted sites. Enjoy your productivity!"
 fi

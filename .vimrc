@@ -264,7 +264,7 @@ map <c-Left> <c-w><
 cmap w!! w !sudo tee % >/dev/null
 
 " Preview markdown documents in browser
-nmap <leader>pm  :! ~/bin/Markdown.pl % > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
+nmap <leader>md  :! ~/bin/Markdown.pl % > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
 
 " Fix common typos
 iab teh the
