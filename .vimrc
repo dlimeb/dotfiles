@@ -129,10 +129,10 @@ if has("autocmd")
         au! BufRead,BufNewFile *.mustache set ft=mustache
     augroup END
 
-    autocmd FileType python set omnifunc=pythoncomplete#Complete tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd FileType javascript.jquery set omnifunc=javascriptcomplete#CompleteJS tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript.jquery set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
     " When editing a file, always jump to the last known cursor position.
@@ -295,4 +295,16 @@ function HtmlUnEscape()
   silent s/&lt;/</
   silent s/&gt;/>/
   silent s/&amp;/\&/
+endfunction
+
+function Tab2()
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
+endfunction
+
+function Tab4()
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
 endfunction
