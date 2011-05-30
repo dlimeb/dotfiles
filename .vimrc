@@ -180,7 +180,7 @@ let g:github_user = 'dlimeb'
 
 " Vimwiki
 "let g:vimwiki_folding = 1 " folds everything up by default
-let g:vimwiki_list = [{'path': '~/Dropbox/Dieter/personal/vimwiki', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
+let g:vimwiki_list = [{'path': '~/Dropbox/personal/vimwiki', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_fold_trailing_empty_lines = 1
 let g:vimwiki_table_auto_fmt = 0 " frees up tab key for snipmate use
