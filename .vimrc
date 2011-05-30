@@ -127,6 +127,7 @@ if has("autocmd")
         au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery
         au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript
         au! BufRead,BufNewFile *.mustache set ft=mustache
+        autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete

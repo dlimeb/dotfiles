@@ -15,8 +15,7 @@ export EDITOR=`which vim`
 export PAGER=`which less`
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:la:ll:cd:pwd:clear:su:df
-export PATH=$HOME/bin:/usr/local/sbin:$PATH # personal bin
-export PYTHONPATH=$PYTHONPATH:$HOME/bin
+export PYTHONPATH=$HOME/bin:$PYTHONPATH
 export TERM=xterm-color # TODO on linux, better to have xterm-256color
 
 # Don't need to check mail
