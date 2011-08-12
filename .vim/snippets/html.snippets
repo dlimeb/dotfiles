@@ -78,6 +78,11 @@ snippet style
 snippet link
 	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
 
+snippet em
+	<em>${1}</em>
+snippet strong
+	<strong>${1}</strong>
+
 snippet h1
 	<h1>${1}</h1>
 snippet h1i
@@ -211,12 +216,6 @@ snippet lii
 	<li id="${1:id}">${2}</li>
 snippet lic
 	<li class="${1:class}">${2}</li>
-
-snippet img
-	<img src="{{ MEDIA_URL }}${1:path}" alt="${2:text}" />
-snippet imgc
-	<img src="{{ MEDIA_URL }}${1:path}" alt="${2:text}" class="${3:class}" />
-
 snippet butt
 	<button type="submit" class="${1:save"}>
 		${2:text}

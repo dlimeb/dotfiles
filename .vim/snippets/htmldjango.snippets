@@ -72,3 +72,11 @@ snippet with
 	{% with ${1:var} as ${2:name} %}
 		${3}
 	{% endwith %}
+snippet tt
+	{% ${1} %}
+
+snippet img
+	<img src="{{ STATIC_URL }}${1:path}" alt="${2:text}" />
+snippet imgc
+	<img src="{{ STATIC_URL }}${1:path}" alt="${2:text}" class="${3:class}" />
+

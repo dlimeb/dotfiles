@@ -17,6 +17,11 @@ snippet func
 	${1:method_name}: function(${2:attribute}) {
 		${4}
 	}${3:,}
+# document ready
+snippet ready
+	$(function () {
+		${1}
+	});
 # if
 snippet if
 	if (${1:true}) {${2}}
@@ -85,61 +90,6 @@ snippet wlog
 	wave.log(${1});
 snippet dir
 	console.dir(${1:obj});
-
-# Titanium specific
-snippet ticr View
-	var ${1:view} = Titanium.UI.createView({
-		${2}
-	});
-
-snippet ticr Window
-	var ${1:win} = Titanium.UI.createWindow({
-		${2}
-	});
-
-snippet ticr Button
-	var ${1:button} = Titanium.UI.createButton({
-		${2}
-	});
-
-snippet ticr Label
-	var ${1:label} = Titanium.UI.createLabel({
-		${2}
-	});
-
-snippet ticr Tab
-	var ${1:tab} = Titanium.UI.createTab({
-		${2}
-	});
-
-snippet ticr TabGroup
-	var ${1:tabGroup} = Titanium.UI.createTabGroup({
-		${2}
-	});
-
-snippet ticr TableView
-	var ${1:tableView} = Titanium.UI.createTableView({
-		${2}
-	});
-
-snippet ticr TableViewRow
-	var ${1:tableViewRow} = Titanium.UI.createTableViewRow({
-		${2}
-	});
-
-snippet ticr TextField
-	var ${1:textField} = Titanium.UI.createTextField({
-		${2}
-	});
-
-snippet tilog
-	Titanium.API.debug('${1}');
-
-snippet tiinc
-	Titanium.include('${1}');
-
-snippet tialert
-	Titanium.UI.createAlertDialog({title:'Alert',message:'${1}'}).show();
 
 # Jasmine snippets
 snippet desc
