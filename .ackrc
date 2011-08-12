@@ -1,0 +1,3 @@
+--ignore-dir=sitestatic
+--type-set=ejs=.ejs
+--type-set=mako=.mako
