@@ -76,3 +76,9 @@
 [submodule ".vim/bundle/jshint.vim"]
 	path = .vim/bundle/jshint.vim
 	url = https://github.com/walm/jshint.vim.git
+[submodule ".vim/bundle/tagbar.vim"]
+	path = .vim/bundle/tagbar.vim
+	url = git://github.com/majutsushi/tagbar
+[submodule ".vim/bundle/mako.vim"]
+	path = .vim/bundle/mako.vim
+	url = https://github.com/vim-scripts/mako.vim.git
