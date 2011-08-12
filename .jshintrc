@@ -1,4 +1,10 @@
 {
+    "predef": [
+        "$",
+        "jQuery",
+        "wave"
+    ],
+
     "asi": false,
     "boss": false,
     "curly": false,
