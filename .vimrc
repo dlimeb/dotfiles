@@ -81,7 +81,7 @@ vnoremap / /\v
 "   UI SETTINGS
 " ----------------------------------------------------------------------------
 set laststatus=2            " always have a status line
-set statusline=\ %<%f\%{fugitive#statusline()}\ %m%=%y%r\ %P\  " ...showing basic file info
+set statusline=[%n]\ %<%f\%{fugitive#statusline()}\ %m%=%y%r\ %P\  " ...showing basic file info
 set title                   " title the terminal window
 set titlestring=Vim:\ %f%(\ (%R%M)%)
 set titleold="Vim"          " instead of 'Thanks for flying Vim'
@@ -127,7 +127,7 @@ if has("autocmd")
         au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery
         au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript
         au! BufRead,BufNewFile *.mustache set ft=mustache
-        autocmd BufWritePost,FileWritePost *.js JSHint
+        "autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -152,8 +152,8 @@ endif
 let mapleader = ","
 
 " Clear search highlighting
-"nnoremap <leader>q :noh <CR>
-nnoremap <CR> :noh <CR>
+nnoremap <leader>q :noh <CR>
+"nnoremap <CR> :noh <CR>
 
 " Display whitespace characters
 nmap <silent> <leader>h :set nolist!<CR>
@@ -175,6 +175,13 @@ let NERDTreeShowLineNumbers=1
 map <leader>d :NERDTreeToggle<CR>
 map <leader>t :NERDTreeFind<CR>
 
+" Tagbar
+let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+map <leader>g :TagbarOpen<CR>
+
+" JSHint
+map <leader>j :JSHint<CR>
+
 " Gist
 let g:gist_clip_command = 'pbcopy'
 let g:github_user = 'dlimeb'
@@ -194,9 +201,9 @@ map <leader>f :FufBuffer<CR>
 let g:snippets_dir = '~/.vim/snippets'
 
 " Surround
-let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\n\r\n{% endblock %}\n"
+let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1 %}\n\r\n{% endblock %}\n"
 let g:surround_{char2nr("c")} = "{% comment %}\n\r\n{% endcomment %}"
-let g:surround_{char2nr("i")} = "{% trans '\r' %}"
+let g:surround_{char2nr("i")} = "{% trans \"\r\" %}"
 
 " Ack
 map <leader>a :Ack<space>
