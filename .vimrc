@@ -87,7 +87,7 @@ set titlestring=Vim:\ %f%(\ (%R%M)%)
 set titleold="Vim"          " instead of 'Thanks for flying Vim'
 set wildmenu                " enhanced command line completion
 set wildmode=list:longest   " ... and show available options
-set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov " ... and ignore some stuff
+set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.avi,*.wmv,*.ogg,*.mp3,*.mov " ... and ignore some stuff
 "set cursorline             " highlight the line the cursor is on
 set shortmess+=T            " forego the 'hit enter to continue' msgs
 set foldmethod=marker       " enable folding by markers
@@ -122,13 +122,16 @@ if has("autocmd")
     augroup filetypedetect
         au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako syntax=mako.html5.html
+        au! BufRead,BufNewFile *.mako set ft=mako.html5.html syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
         au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery
         au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript
         au! BufRead,BufNewFile *.mustache set ft=mustache
         "autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
+
+    " open help window in vertical split
+    autocmd FileType help wincmd L
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType javascript.jquery set omnifunc=javascriptcomplete#CompleteJS
@@ -152,13 +155,20 @@ endif
 let mapleader = ","
 
 " Clear search highlighting
-nnoremap <leader>q :noh <CR>
+"nnoremap <leader>q :noh <CR>
 "nnoremap <CR> :noh <CR>
+noremap <leader><space> :noh<cr>:match none<cr>:2match none<cr>:3match none<cr>
+
+" Open a Quickfix window for the last search.
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Display whitespace characters
 nmap <silent> <leader>h :set nolist!<CR>
 " Strip whitespace characters
 nnoremap <leader>H :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Don't move on *
+nnoremap * mq*`q
 
 " Rewrap paragraph of text
 nnoremap <leader>Q gqip

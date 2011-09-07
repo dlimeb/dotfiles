@@ -4,7 +4,7 @@ set guitablabel=%t
 set guifont=Consolas:h14
 
 set background=dark
-colorscheme jellybeans
+colorscheme rdark
 
 "set relativenumber " show line numbers as distance away from current
 set undofile " keep track of undos in file for later use
