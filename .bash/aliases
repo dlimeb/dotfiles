@@ -48,7 +48,7 @@ function avail() {
 
 # quick, what's my local IP address
 function ip() {
-    ifconfig | grep 'inet 192.168.1' | awk '{print $2}'
+    ifconfig | grep 'inet 192.168' | awk '{print $2}'
 }
 
 # build my blogofile blog and rsync the built files to NFS
