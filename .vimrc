@@ -90,7 +90,7 @@ set wildmode=list:longest   " ... and show available options
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.avi,*.wmv,*.ogg,*.mp3,*.mov " ... and ignore some stuff
 "set cursorline             " highlight the line the cursor is on
 set shortmess+=T            " forego the 'hit enter to continue' msgs
-set foldmethod=marker       " enable folding by markers
+set foldmethod=indent       " enable folding
 "set foldclose=all          " autoclose folds when moving out of them
 set showcmd                 " display incomplete commands
 set scrolljump=5            " jump 5 lines when running out of screen
@@ -119,6 +119,8 @@ set scrolljump=5            " jump 5 lines when running out of screen
 "   AUTOCOMMANDS
 " ----------------------------------------------------------------------------
 if has("autocmd")
+    autocmd BufEnter * exe "normal zR"
+
     augroup filetypedetect
         au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html
         au! BufRead,BufNewFile *.txt set ft=human
