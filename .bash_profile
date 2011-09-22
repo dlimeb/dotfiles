@@ -9,3 +9,4 @@ source $HOME/.profile
 export PATH=/usr/local/sbin:$PATH # for eg rabbitmq
 export PATH=$HOME/bin:$PATH # personal bin
 export PATH=$HOME/local/bin:$HOME/node_modules/.bin:$PATH # for node and npm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

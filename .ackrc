@@ -1,3 +1,4 @@
 --ignore-dir=sitestatic
 --type-set=ejs=.ejs
 --type-set=mako=.mako
+--type-set=haml=.haml
