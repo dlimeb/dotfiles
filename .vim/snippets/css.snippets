@@ -1,5 +1,13 @@
 snippet bg
 	background: #${1:color} url(../images/${2:image}) ${3:repeat} ${4:0}px ${5:0}px;
+snippet bgr
+	background-repeat: ${1:value};
+snippet bgp
+	background-position: ${1:value};
+snippet bgpx
+	background-position-x: ${1:value};
+snippet bgpy
+	background-position-y: ${1:value};
 snippet tshad
 	text-shadow: 1px 1px 1px #${1:color};
 snippet bshad
@@ -28,5 +36,9 @@ snippet helv
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 snippet luci
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
-
-
+snippet bold
+	font-weight: bold;
+snippet tt
+	text-transform: ${1:uppercase};
+snippet size
+	font-size: ${1:value}px;
