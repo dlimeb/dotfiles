@@ -1,0 +1,41 @@
+[user]
+	name = Dieter Limeback
+	email = dlimeb@gmail.com
+
+[push]
+    default = tracking
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[merge]
+    tool = vimdiff
+
+[color]
+    ui = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    diff = auto
+
+[alias]
+    st = status
+    log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    ci = commit
+    co = checkout
+    br = branch
+
+    dfc = diff --cached
+    dfw = diff --word-diff
+
+    # remove files that have been marked as deleted
+    ;rmd = !sh -c '~/bin/git-rmd'
+    rmd = 'git ls-files --deleted | xargs git rm'
+
+    # Usage: git whatsnew <other_branch>
+    # Show commits that are in the current branch,
+    # but not in <other_branch>. Great for an
+    # instant changelog.
+    whatsnew = !sh -c 'git shortlog --format=\"%h %s\" $1..HEAD' -
