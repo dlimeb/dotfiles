@@ -6,3 +6,5 @@ doc/tags
 doc/tags-ja
 compiled.js
 sitestatic
+settings_local.py
+local_settings.py

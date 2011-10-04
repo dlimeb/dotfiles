@@ -12,6 +12,7 @@
 
 [merge]
     tool = vimdiff
+    stat = true
 
 [color]
     ui = auto
@@ -19,6 +20,14 @@
     branch = auto
     interactive = auto
     diff = auto
+
+[diff]
+    renames = copies
+    mnemonicprefix = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
 
 [alias]
     st = status
