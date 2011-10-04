@@ -28,14 +28,10 @@ set scrolloff=3             " number of lines to keep above/below cursor
 set noerrorbells            " ssssshhhhhhh
 set number                  " view line numbers by default
 set history=500             " how many lines of command history to remember
-
-" I can count on one hand the number of times I've been saved by a swp file,
-" but would need hundreds of hands to count how often I get annoyed by
-" the 'yo, swp file already exists!' messages
-"set directory=~/.swp       " directory to hold .swp files in
-set nobackup
-set nowritebackup
-set noswapfile
+set nobackup                " don't make backup files
+set nowritebackup           " no, really
+set noswapfile              " and no swapfiles either
+set autoread                " reload file automatically if it was modified elsewhere
 
 
 " ----------------------------------------------------------------------------
