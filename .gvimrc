@@ -4,11 +4,7 @@ set guitablabel=%t
 set guifont=Consolas:h14
 
 set background=dark
-colorscheme rdark
-
-"set relativenumber " show line numbers as distance away from current
-set undofile " keep track of undos in file for later use
-set undodir=~/.undo " directory to hold undo files in
+colorscheme leak
 
 " Command-Shift-Left/Right to scroll through tabs
 nmap <D-S-Left> :tabprevious<cr>
