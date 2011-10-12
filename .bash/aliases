@@ -18,6 +18,7 @@ alias ff='open -a Firefox';
 alias saf='open -a Safari';
 alias fm='fakemail.py --host=localhost --port=10025 --path=/Users/dlimeb/Desktop'
 alias fixfonts='atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping'
+alias serve='python -m SimpleHTTPServer 8080'
 
 # colourized ls
 CLICOLOR=1
