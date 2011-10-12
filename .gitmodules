@@ -82,3 +82,15 @@
 [submodule ".vim/bundle/vim-indent-object"]
 	path = .vim/bundle/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
+[submodule ".vim/bundle/vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/vim-jquery"]
+	path = .vim/bundle/vim-jquery
+	url = https://github.com/itspriddle/vim-jquery.git
+[submodule ".vim/bundle/xmledit"]
+	path = .vim/bundle/xmledit
+	url = https://github.com/sukima/xmledit.git
+[submodule ".vim/bundle/detectindent"]
+	path = .vim/bundle/detectindent
+	url = https://github.com/ciaranm/detectindent.git

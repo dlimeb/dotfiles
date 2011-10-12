@@ -27,11 +27,14 @@ set showmode                " show the current mode
 set scrolloff=3             " number of lines to keep above/below cursor
 set noerrorbells            " ssssshhhhhhh
 set number                  " view line numbers by default
+"set relativenumber         " show line numbers as distance away from current
 set history=500             " how many lines of command history to remember
 set nobackup                " don't make backup files
 set nowritebackup           " no, really
 set noswapfile              " and no swapfiles either
 set autoread                " reload file automatically if it was modified elsewhere
+set undofile                " keep track of undos in file for later use
+set undodir=~/.undo         " directory to hold undo files in
 
 
 " ----------------------------------------------------------------------------
@@ -115,8 +118,11 @@ set scrolljump=5            " jump 5 lines when running out of screen
 "   AUTOCOMMANDS
 " ----------------------------------------------------------------------------
 if has("autocmd")
+
+    " Open all folds
     autocmd BufEnter * exe "normal zR"
 
+    " Set filetypes
     augroup filetypedetect
         au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html
         au! BufRead,BufNewFile *.txt set ft=human
@@ -131,11 +137,11 @@ if has("autocmd")
     " open help window in vertical split
     autocmd FileType help wincmd L
 
+    " Set tab completion
     autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType javascript.jquery set omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
@@ -143,6 +149,9 @@ if has("autocmd")
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \   exe "normal g`\"" |
         \ endif
+
+    " Detect indenting used in filed and set settings accordingly
+    autocmd BufReadPost * :DetectIndent
 endif
 
 
