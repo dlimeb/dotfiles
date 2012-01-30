@@ -25,7 +25,8 @@ set hidden                  " allow unsaved buffer to be put in background
 set report=0                " always report changes
 set showmode                " show the current mode
 set scrolloff=3             " number of lines to keep above/below cursor
-set noerrorbells            " ssssshhhhhhh
+"set noerrorbells            " ssssshhhhhhh
+set visualbell
 set number                  " view line numbers by default
 "set relativenumber         " show line numbers as distance away from current
 set history=500             " how many lines of command history to remember
@@ -33,8 +34,6 @@ set nobackup                " don't make backup files
 set nowritebackup           " no, really
 set noswapfile              " and no swapfiles either
 set autoread                " reload file automatically if it was modified elsewhere
-set undofile                " keep track of undos in file for later use
-set undodir=~/.undo         " directory to hold undo files in
 
 
 " ----------------------------------------------------------------------------
@@ -80,7 +79,7 @@ vnoremap / /\v
 "   UI SETTINGS
 " ----------------------------------------------------------------------------
 set laststatus=2            " always have a status line
-set statusline=[%n]\ %<%f\%{fugitive#statusline()}\ %m%=%y%r\ %P\  " ...showing basic file info
+set statusline=[%n]\ %<%f\ %{fugitive#statusline()}\ %m%=%y%r\ %P\  " ...showing basic file info
 set title                   " title the terminal window
 set titlestring=Vim:\ %f%(\ (%R%M)%)
 set titleold="Vim"          " instead of 'Thanks for flying Vim'
@@ -88,8 +87,8 @@ set wildmenu                " enhanced command line completion
 set wildmode=list:longest   " ... and show available options
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.avi,*.wmv,*.ogg,*.mp3,*.mov " ... and ignore some stuff
 "set cursorline             " highlight the line the cursor is on
-set shortmess+=T            " forego the 'hit enter to continue' msgs
-set foldmethod=indent       " enable folding
+set shortmess=atI           " forego unnecessary messages
+set foldmethod=marker       " enable folding
 "set foldclose=all          " autoclose folds when moving out of them
 set showcmd                 " display incomplete commands
 set scrolljump=5            " jump 5 lines when running out of screen
@@ -120,7 +119,7 @@ set scrolljump=5            " jump 5 lines when running out of screen
 if has("autocmd")
 
     " Open all folds
-    autocmd BufEnter * exe "normal zR"
+    "autocmd BufEnter * exe "normal zR"
 
     " Set filetypes
     augroup filetypedetect
@@ -128,10 +127,11 @@ if has("autocmd")
         au! BufRead,BufNewFile *.txt set ft=human
         au! BufRead,BufNewFile *.mako set ft=mako.html5.html syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
-        au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery
+        au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript
         au! BufRead,BufNewFile *.mustache set ft=mustache
-        "autocmd BufWritePost,FileWritePost *.js JSHint
+        au! BufRead,BufNewFile *.less set ft=less.css
+        autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
     " open help window in vertical split
@@ -151,7 +151,7 @@ if has("autocmd")
         \ endif
 
     " Detect indenting used in filed and set settings accordingly
-    autocmd BufReadPost * :DetectIndent
+    "autocmd BufReadPost * :DetectIndent
 endif
 
 
@@ -282,14 +282,14 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 map <c-Up> <c-w>-
 map <c-Down> <c-w>+
-map <c-Right> <c-w>>
-map <c-Left> <c-w><
+map <c-Right> 10<c-w>>
+map <c-Left> 10<c-w><
 
 " Write file when you forget to sudo first
 cmap w!! w !sudo tee % >/dev/null
 
 " Preview markdown documents in browser
-nmap <leader>md  :! ~/bin/Markdown.pl % > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
+nmap <leader>mp  :! ~/bin/Markdown.pl % > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
 
 " Fix common typos
 iab teh the
@@ -322,14 +322,14 @@ function HtmlUnEscape()
   silent s/&amp;/\&/
 endfunction
 
-function Tab2()
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
-endfunction
+"function Tab2()
+    "set tabstop=2
+    "set softtabstop=2
+    "set shiftwidth=2
+"endfunction
 
-function Tab4()
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-endfunction
+"function Tab4()
+    "set tabstop=4
+    "set softtabstop=4
+    "set shiftwidth=4
+"endfunction

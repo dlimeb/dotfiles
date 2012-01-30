@@ -6,6 +6,10 @@ set guifont=Consolas:h14
 set background=dark
 colorscheme leak
 
+" Settings that OSX's /usr/bin/vim doesn't dig
+set undofile                " keep track of undos in file for later use
+set undodir=~/.undo         " directory to hold undo files in
+
 " Command-Shift-Left/Right to scroll through tabs
 nmap <D-S-Left> :tabprevious<cr>
 nmap <D-S-Right> :tabnext<cr>
