@@ -11,10 +11,12 @@ snippet fun
 	}
 # Anonymous Function
 snippet f
-	function(${1}) {${2}};
+	function (${1}) {
+		${2}
+	};
 # Object Method
 snippet func
-	${1:method_name}: function(${2:attribute}) {
+	${1:method_name}: function (${2:attribute}) {
 		${4}
 	}${3:,}
 # document ready
@@ -24,7 +26,9 @@ snippet ready
 	});
 # if
 snippet if
-	if (${1:true}) {${2}}
+	if (${1:true}) {
+		${2}
+	}
 # if ... else
 snippet ife
 	if (${1:true}) {
@@ -34,7 +38,7 @@ snippet ife
 	}
 # tertiary conditional
 snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
+	${1:/* condition */} ? ${2:a} : ${3:b};
 # switch
 snippet switch
 	switch(${1:expression}) {
@@ -74,14 +78,20 @@ snippet do
 		${2:/* code */}
 	} while (${1:/* condition */});
 # setTimeout function
-snippet timeout
-	setTimeout(function() {${3}}${2}, ${1:10};
+snippet tout
+	setTimeout(function() {
+		${3}
+	}${2}, ${1:10});
 # Get Elements
 snippet get
 	getElementsBy${1:TagName}('${2}')${3}
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
+
+# prevent default
+snippet pd
+	e.preventDefault();
 
 # Log to console
 snippet log
@@ -93,11 +103,14 @@ snippet dir
 
 # Jasmine snippets
 snippet desc
-	describe("${1:suite}", function(){
+	describe("${1:suite}", function () {
 		${2}
 	});
 
 snippet it
-	it("${1:expectation}", function(){
+	it("${1:expectation}", function () {
 		${2}
 	});
+
+snippet exp
+	expect(${1})${2};

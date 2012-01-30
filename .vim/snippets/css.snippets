@@ -20,6 +20,11 @@ snippet brad
 			border-radius: ${1:val}px ${2:$1}px ${3:$1}px ${4:$1}px;
 	-webkit-border-radius: $1px $2px $3px $4px;
 	   -moz-border-radius: $1px $2px $3px $4px;
+snippet bradv
+	border-${1:bottom|top}-${2:left|right}-radius: ${3:val}px;
+	-moz-border-radius-$1$2: $3px;
+	-webkit-border-$1-$2-radius: $3px;
+
 snippet grad
 	background-image: linear-gradient(top, #${1:topcolor}, #${2:bottomcolor});
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #$1),color-stop(1, #$2));
@@ -43,8 +48,14 @@ snippet helv
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 snippet luci
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+snippet mono
+	font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 snippet bold
 	font-weight: bold;
+snippet ital
+	font-style: italic;
+snippet col
+	color: #${1:hex};
 snippet tt
 	text-transform: ${1:uppercase};
 snippet size
@@ -53,3 +64,27 @@ snippet textdec
 	text-decoration: ${1:none};
 snippet lh
 	line-height: ${1:1};
+snippet tac
+	text-align: center;
+snippet tal
+	text-align: left;
+snippet tar
+	text-align: right;
+snippet bord
+	border: 1px solid ${1:color};
+snippet mt
+	margin-top: ${1}px;
+snippet mr
+	margin-right: ${1}px;
+snippet mb
+	margin-bottom: ${1}px;
+snippet ml
+	margin-left: ${1}px;
+snippet pt
+	padding-top: ${1}px;
+snippet pr
+	padding-right: ${1}px;
+snippet pb
+	padding-bottom: ${1}px;
+snippet pl
+	padding-left: ${1}px;

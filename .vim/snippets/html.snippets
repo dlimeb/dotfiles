@@ -77,7 +77,7 @@ snippet style
 		${2}
 	</style>${3}
 snippet link
-	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
+	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}">${4}
 
 snippet em
 	<em>${1}</em>
@@ -107,7 +107,7 @@ snippet img
 	<img src="${1}" alt="${2}" />
 
 snippet form
-	<form action="${1:`Filename('$1_submit')`}" method="${2:post}" accept-charset="utf-8">
+	<form action="${1:`Filename('$1_submit')`}" method="${2:post}">
 		${3}
 		<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
