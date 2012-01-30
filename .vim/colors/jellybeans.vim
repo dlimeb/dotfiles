@@ -304,8 +304,8 @@ endif
 call s:X("Visual","","404040","","","")
 call s:X("Cursor","","b0d0f0","","","")
 
-call s:X("Normal","e8e8d3","121212","","White","")
-call s:X("LineNr","605958","121212","none","Black","")
+call s:X("Normal","d6d6be","151515","","White","")
+call s:X("LineNr","605958","151515","none","Black","")
 call s:X("Comment","555555","","italic","Grey","")
 call s:X("Todo","222222","cccc33","bold","","")
 
