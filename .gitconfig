@@ -42,7 +42,7 @@
     # remove files that have been marked as deleted
     ;rmd = !sh -c '~/bin/git-rmd'
     ;rmd = 'git ls-files --deleted | /usr/bin/xargs git rm'
-    ;try git add -u
+    rmd = !git rm `git ls-files --deleted`
 
     # Usage: git whatsnew <other_branch>
     # Show commits that are in the current branch,
