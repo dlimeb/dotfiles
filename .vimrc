@@ -322,14 +322,14 @@ function HtmlUnEscape()
   silent s/&amp;/\&/
 endfunction
 
-"function Tab2()
-    "set tabstop=2
-    "set softtabstop=2
-    "set shiftwidth=2
-"endfunction
+function Tab2()
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
+endfunction
 
-"function Tab4()
-    "set tabstop=4
-    "set softtabstop=4
-    "set shiftwidth=4
-"endfunction
+function Tab4()
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+endfunction

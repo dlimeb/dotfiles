@@ -22,15 +22,19 @@ if has("gui_running")
   highlight LineNr guibg=#323232 guifg=#888888
   highlight Folded guifg=#f1f3e8 guibg=#444444
   highlight Pmenu guibg=#84A7C1
+  highlight Visual guifg=#00B6D1 guibg=#444444 gui=none
+  highlight NonText guifg=#0860C8
 
   "General Colors
-  highlight Comment guifg=#AEAEAE
+  highlight Comment guifg=#777777 gui=italic
   highlight Constant guifg=#CAFE1E
   highlight Keyword guifg=#FFDE00
   highlight String guifg=#00D42D
-  highlight Type guifg=#84A7C1
+  highlight Type guifg=#84A7C1 gui=NONE
   highlight Identifier guifg=#00D42D gui=NONE
   highlight Function guifg=#FF5600 gui=NONE
+  highlight Statement gui=NONE
+  highlight Title gui=NONE
   highlight clear Search
   highlight Search guibg=#1C3B79
   highlight PreProc guifg=#FF5600
@@ -39,17 +43,4 @@ if has("gui_running")
   highlight link htmlTag Type
   highlight link htmlEndTag htmlTag
   highlight link htmlTagName htmlTag
-
-  "Ruby Colors
-  highlight link rubyClass Keyword
-  highlight link rubyDefine Keyword
-  highlight link rubyConstant Type
-  highlight link rubySymbol Constant
-  highlight link rubyStringDelimiter rubyString
-  highlight link rubyInclude Keyword
-  highlight link rubyAttribute Keyword
-  highlight link rubyInstanceVariable Normal
-
-  "Rails Colors
-  highlight link railsMethod Type
 end

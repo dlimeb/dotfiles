@@ -13,23 +13,20 @@ snippet bgy
 snippet tshad
 	text-shadow: 1px 1px 1px #${1:color};
 snippet bshad
-			box-shadow: ${1:0}px ${2:0}px ${3:4}px #${4:color};
-	-webkit-box-shadow: $1px $2px $3px #$4;
-	   -moz-box-shadow: $1px $2px $3px #$4;
+	box-shadow: ${1:horiz-offset}px ${2:vert-offset}px ${3:blur-radius}px ${4:spread-radius}px #${5:color};
 snippet brad
-			border-radius: ${1:val}px ${2:$1}px ${3:$1}px ${4:$1}px;
-	-webkit-border-radius: $1px $2px $3px $4px;
-	   -moz-border-radius: $1px $2px $3px $4px;
+	border-radius: ${1:val}px ${2:$1}px ${3:$1}px ${4:$1}px;
 snippet bradv
 	border-${1:bottom|top}-${2:left|right}-radius: ${3:val}px;
-	-moz-border-radius-$1$2: $3px;
-	-webkit-border-$1-$2-radius: $3px;
 
 snippet grad
+	background-color: #$2; /* old browsers */
 	background-image: linear-gradient(top, #${1:topcolor}, #${2:bottomcolor});
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #$1),color-stop(1, #$2));
 	background-image: -webkit-linear-gradient(#$1, #$2);
 	background-image: -moz-linear-gradient(top, #$1, #$2);
+	background-image: -ms-linear-gradient(top, #$1 0%, #$2 100%);
+
 snippet trans
 	 -webkit-transition: color 0.25s linear, border-color 0.25s linear;
 		-moz-transition: color 0.25s linear, border-color 0.25s linear;
@@ -60,7 +57,7 @@ snippet tt
 	text-transform: ${1:uppercase};
 snippet size
 	font-size: ${1:value}px;
-snippet textdec
+snippet tdec
 	text-decoration: ${1:none};
 snippet lh
 	line-height: ${1:1};
@@ -72,14 +69,18 @@ snippet tar
 	text-align: right;
 snippet bord
 	border: 1px solid ${1:color};
+snippet m
+	margin: ${1:0}px;
 snippet mt
-	margin-top: ${1}px;
+	margin-top: ${1:0}px;
 snippet mr
-	margin-right: ${1}px;
+	margin-right: ${1:0}px;
 snippet mb
-	margin-bottom: ${1}px;
+	margin-bottom: ${1:0}px;
 snippet ml
-	margin-left: ${1}px;
+	margin-left: ${1:0}px;
+snippet p
+	padding: ${1:0}px;
 snippet pt
 	padding-top: ${1}px;
 snippet pr
