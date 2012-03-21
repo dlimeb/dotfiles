@@ -1,1 +1,0 @@
-/usr/local/Cellar/autojump/13/etc/autojump.bash
