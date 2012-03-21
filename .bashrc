@@ -22,7 +22,7 @@ export TERM=xterm-color # TODO on linux, better to have xterm-256color
 unset MAILCHECK
 
 # Aliases
-source $HOME/.bash/aliases
+source $HOME/.bash_aliases
 
 # Git completion
 source $HOME/bin/git-completion
