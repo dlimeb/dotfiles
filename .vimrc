@@ -123,14 +123,14 @@ if has("autocmd")
 
     " Set filetypes
     augroup filetypedetect
-        au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html
+        au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html tabstop=4 softtabstop=4 shiftwidth=4
         au! BufRead,BufNewFile *.txt set ft=human
         au! BufRead,BufNewFile *.mako set ft=mako.html5.html syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
         au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
-        au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript
+        au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.mustache set ft=mustache
-        au! BufRead,BufNewFile *.less set ft=less.css
+        au! BufRead,BufNewFile *.less set ft=less.css tabstop=2 softtabstop=2 shiftwidth=2
         autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
