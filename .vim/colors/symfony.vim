@@ -56,7 +56,7 @@ highlight PmenuSbar ctermbg=250 guibg=DarkGrey
 highlight PmenuThumb cterm=reverse gui=reverse
 
 " Syntax group
-highlight Comment ctermfg=133 guifg=#444444 gui=italic
+highlight Comment ctermfg=133 guifg=#888888 gui=italic
 highlight Constant ctermfg=67 guifg=#6D9CBE
 highlight Error ctermfg=215 ctermbg=88 guifg=#FFC66D guibg=#990000
 highlight Identifier ctermfg=67 guifg=#6D9CBE

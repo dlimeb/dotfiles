@@ -122,7 +122,7 @@ highlight Search        guifg=NONE ctermfg=NONE gui=none cterm=none
 call s:hibg("Search"    ,"#555555","DarkBlue",81)
 highlight IncSearch     guifg=White guibg=Black ctermfg=White ctermbg=Black
 highlight MoreMsg       guifg=#00AA00 ctermfg=Green
-highlight LineNr        guifg=#DDEEFF ctermfg=White
+highlight LineNr        guifg=#aaaaaa ctermfg=White
 call s:hibg("LineNr"    ,"#222222","DarkBlue",80)
 highlight Question      none
 high link Question      MoreMsg
@@ -174,7 +174,7 @@ endif
 hi Identifier cterm=none
 " Commented numbers at the end are *old* 256 color values
 "highlight PreProc       guifg=#EDF8F9
-call s:hifg("Comment"        ,"#9933CC","DarkMagenta",34) " 92
+call s:hifg("Comment"        ,"#888888","Grey",34) " 92
 " 26 instead?
 call s:hifg("Constant"       ,"#339999","DarkCyan",21) " 30
 call s:hifg("rubyNumber"     ,"#CCFF33","Yellow",60) " 190

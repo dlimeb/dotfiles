@@ -11,15 +11,15 @@ endif
 let g:colors_name = "Clouds Midnight"
 
 hi Cursor           guifg=NONE    guibg=#7da5dc gui=NONE
-hi Visual           guifg=NONE    guibg=#000000 gui=NONE
+hi Visual           guifg=#111111 guibg=#927c5d gui=NONE
 hi CursorLine       guifg=NONE    guibg=#1f1f1f gui=NONE
 hi CursorColumn     guifg=NONE    guibg=#1f1f1f gui=NONE
 hi ColorColumn      guifg=NONE    guibg=#1f1f1f gui=NONE
 hi LineNr           guifg=#565656 guibg=#191919 gui=NONE
 hi VertSplit        guifg=#303030 guibg=#303030 gui=NONE
 hi MatchParen       guifg=#927c5d guibg=NONE    gui=NONE
-hi StatusLine       guifg=#929292 guibg=#303030 gui=bold
-hi StatusLineNC     guifg=#929292 guibg=#303030 gui=NONE
+hi StatusLine       guifg=#ffffff guibg=#303030 gui=bold
+hi StatusLineNC     guifg=#929292 guibg=#303030 gui=italic
 hi Pmenu            guifg=NONE    guibg=NONE    gui=NONE
 hi PmenuSel         guifg=NONE    guibg=#000000 gui=NONE
 hi IncSearch        guifg=NONE    guibg=#413a2f gui=NONE
@@ -31,7 +31,7 @@ hi Normal           guifg=#929292 guibg=#191919 gui=NONE
 hi Boolean          guifg=#39946a guibg=NONE    gui=NONE
 hi Character        guifg=NONE    guibg=NONE    gui=NONE
 "hi Comment          guifg=#3c403b guibg=NONE    gui=NONE
-hi Comment          guifg=#444444 guibg=NONE    gui=NONE
+hi Comment          guifg=#444444 guibg=NONE    gui=italic
 hi Conditional      guifg=#927c5d guibg=NONE    gui=NONE
 hi Constant         guifg=NONE    guibg=NONE    gui=NONE
 hi Define           guifg=#927c5d guibg=NONE    gui=NONE
@@ -53,7 +53,7 @@ hi StorageClass     guifg=#e92e2e guibg=NONE    gui=NONE
 hi String           guifg=#5d90cd guibg=NONE    gui=NONE
 hi Tag              guifg=#606060 guibg=NONE    gui=NONE
 hi Title            guifg=#929292 guibg=NONE    gui=bold
-hi Todo             guifg=#3c403b guibg=NONE    gui=inverse,bold
+hi Todo             guifg=#3c403b guibg=yellow2    gui=bold
 hi Type             guifg=NONE    guibg=NONE    gui=NONE
 hi Underlined       guifg=NONE    guibg=NONE    gui=underline
 hi rubyClass  guifg=#927c5d guibg=NONE gui=NONE
