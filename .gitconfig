@@ -31,6 +31,7 @@
 
 [alias]
     st = status
+    tst = status # keep typoing this
     log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ci = commit
     co = checkout

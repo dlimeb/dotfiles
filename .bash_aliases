@@ -20,6 +20,7 @@ alias fm='fakemail.py --host=localhost --port=10025 --path=/Users/dlimeb/Desktop
 alias fixfonts='atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping'
 alias serve='python -m SimpleHTTPServer 8080'
 alias serveemail='python -m smtpd -n -c DebuggingServer localhost:1025'
+alias gi='git'
 
 # colourized ls
 CLICOLOR=1
