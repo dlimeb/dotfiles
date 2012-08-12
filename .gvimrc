@@ -4,7 +4,7 @@ set guitablabel=%t
 set guifont=Consolas:h14
 
 set background=dark
-colorscheme vividchalk
+colorscheme phd
 
 " Settings that OSX's /usr/bin/vim doesn't dig
 set undofile                " keep track of undos in file for later use
