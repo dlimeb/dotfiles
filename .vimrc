@@ -124,6 +124,7 @@ if has("autocmd")
     " Set filetypes
     augroup filetypedetect
         au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html tabstop=4 softtabstop=4 shiftwidth=4
+        au! BufRead,BufNewFile *.php set ft=php.html5.html tabstop=4 softtabstop=4 shiftwidth=4
         au! BufRead,BufNewFile *.txt set ft=human
         au! BufRead,BufNewFile *.mako set ft=mako.html5.html syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
@@ -142,6 +143,7 @@ if has("autocmd")
     autocmd FileType javascript.jquery set omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    imap <Tab> <C-P>
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
