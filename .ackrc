@@ -3,3 +3,4 @@
 --type-set=mako=.mako
 --type-set=haml=.haml
 --type-set=less=.less
+--type-set=coffee=.coffee

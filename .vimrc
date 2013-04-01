@@ -53,10 +53,12 @@ set textwidth=0             " text width (0 is unlimited)
 set formatoptions=tcrqn1    " set how vim formats text (see :h fo-table)
 "set colorcolumn=85         " show indicator of line length
 set linebreak               " break lines at reasonable spot
+"set iskeyword+=:            " allow TODOs to have a colon
 set comments=b:#,:%,fb:-,n:>,n:),sr:/*,mb:*,el:*/,n:##,n:\" " define what comments are
 set listchars=tab:>-,trail:-,nbsp:%,eol:$ " define what whitespace chars are
 highlight UnwantedSpaces ctermbg=red guibg=red
 match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
+highlight Todo guifg=#333 guibg=yellow2 gui=bold
 "highlight OverLength ctermbg=red guibg=red
 "match OverLength /\%81v.\+/
 
@@ -335,3 +337,7 @@ function Tab4()
     set softtabstop=4
     set shiftwidth=4
 endfunction
+
+" Quick spacing switching
+map <leader>2 :call Tab2()<CR>
+map <leader>4 :call Tab4()<CR>

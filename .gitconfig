@@ -54,3 +54,8 @@
     # but not in <other_branch>. Great for an
     # instant changelog.
     whatsnew = !sh -c 'git shortlog --format=\"%h %s\" $1..HEAD' -
+
+[init]
+	templatedir = ~/.git_templates
+[credential]
+	helper = osxkeychain

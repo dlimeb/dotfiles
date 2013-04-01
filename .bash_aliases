@@ -21,6 +21,8 @@ alias fixfonts='atsutil databases -removeUser && atsutil server -shutdown && ats
 alias serve='python -m SimpleHTTPServer 8080'
 alias serveemail='python -m smtpd -n -c DebuggingServer localhost:1025'
 alias gi='git'
+alias v='vagrant'
+
 
 # colourized ls
 CLICOLOR=1
@@ -55,6 +57,11 @@ function ip() {
     ifconfig | grep 'inet 192.168' | awk '{print $2}'
 }
 
+# generate a data URI for an image file
+function datauri() {
+  uuencode -m ${1} foo
+}
+
 # build my blogofile blog and rsync the built files to NFS
 function deploy-blog() {
     cd ~/Development/projects/centripetal
@@ -62,4 +69,5 @@ function deploy-blog() {
     blogofile build
     rsync -e ssh -av --delete _site/ nfs:
 }
+
 

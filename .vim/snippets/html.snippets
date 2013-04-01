@@ -79,6 +79,10 @@ snippet style
 snippet link
 	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}">${4}
 
+snippet span
+	<span>${1}</span>
+snippet spanc
+	<span class="${1}">${2}</span>
 snippet em
 	<em>${1}</em>
 snippet strong
@@ -228,3 +232,15 @@ snippet butt
 # Bootstrap stuff
 snippet i
 	<i class="icon-${1:type}"></i>
+snippet modal
+	<div class="modal hide" id="${1}Modal" tabindex="-1">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>{% trans "${2}" %}</h3>
+		</div>
+		<div class="modal-body">
+			${3}
+		</div>
+		<div class="modal-footer">
+		</div>
+	</div>
