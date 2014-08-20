@@ -56,12 +56,6 @@ set linebreak               " break lines at reasonable spot
 "set iskeyword+=:            " allow TODOs to have a colon
 set comments=b:#,:%,fb:-,n:>,n:),sr:/*,mb:*,el:*/,n:##,n:\" " define what comments are
 set listchars=tab:>-,trail:-,nbsp:%,eol:$ " define what whitespace chars are
-highlight UnwantedSpaces ctermbg=red guibg=red
-match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
-highlight Todo guifg=#333 guibg=yellow2 gui=bold
-"highlight OverLength ctermbg=red guibg=red
-"match OverLength /\%81v.\+/
-
 
 " ----------------------------------------------------------------------------
 "   SEARCHING
@@ -125,15 +119,17 @@ if has("autocmd")
 
     " Set filetypes
     augroup filetypedetect
-        au! BufRead,BufNewFile *.html set ft=htmldjango.html5.html tabstop=4 softtabstop=4 shiftwidth=4
+        au! BufRead,BufNewFile *.html set ft=html5.html tabstop=4 softtabstop=4 shiftwidth=4
+        au! BufRead,BufNewFile *.haml set ft=haml.html5.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.php set ft=php.html5.html tabstop=4 softtabstop=4 shiftwidth=4
         au! BufRead,BufNewFile *.txt set ft=human
         au! BufRead,BufNewFile *.mako set ft=mako.html5.html syntax=mako.html5.html
-        au! BufRead,BufNewFile *.mkd,*.markdown,*mdwn,*md set ft=markdown
-        au! BufRead,BufNewFile *.js,*.json set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.md set ft=markdown
+        au! BufRead,BufNewFile *.js,*.json,*.jstalk set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.mustache set ft=mustache
         au! BufRead,BufNewFile *.less set ft=less.css tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.scss set ft=scss.sass.css tabstop=2 softtabstop=2 shiftwidth=2
         autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
@@ -156,6 +152,16 @@ if has("autocmd")
 
     " Detect indenting used in filed and set settings accordingly
     "autocmd BufReadPost * :DetectIndent
+
+    " Syntax highlight "TODO" et al as well as "TODO:" (got tired of fighting
+    " with `iskeyword` for the colon)
+    augroup HiglightTODO
+        autocmd!
+        autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
+        autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'FIXME', -1)
+        autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'XXX', -1)
+        autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'NOTE', -1)
+    augroup END
 endif
 
 
@@ -209,10 +215,10 @@ let g:github_user = 'dlimeb'
 
 " Vimwiki
 "let g:vimwiki_folding = 1 " folds everything up by default
-let g:vimwiki_list = [{'path': '~/Dropbox/personal/vimwiki', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
-let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_fold_trailing_empty_lines = 1
-let g:vimwiki_table_auto_fmt = 0 " frees up tab key for snipmate use
+"let g:vimwiki_list = [{'path': '~/Dropbox/personal/vimwiki', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
+"let g:vimwiki_hl_cb_checked = 1
+"let g:vimwiki_fold_trailing_empty_lines = 1
+"let g:vimwiki_table_auto_fmt = 0 " frees up tab key for snipmate use
 
 " Fuzzy Finder
 " See also settings: g:fuzzy_roots, g:fuzzy_ceiling, g:fuzzy_ignore, g:fuzzy_matching_limit
@@ -288,6 +294,10 @@ map <c-Up> <c-w>-
 map <c-Down> <c-w>+
 map <c-Right> 10<c-w>>
 map <c-Left> 10<c-w><
+
+" Insert timestamp
+iab <expr> _ds strftime("\%Y-\%m-\%d \%H:\%M:\%S") 
+iab <expr> _ts strftime("\%Y-\%m-\%d \%H:\%M:\%S") 
 
 " Write file when you forget to sudo first
 cmap w!! w !sudo tee % >/dev/null

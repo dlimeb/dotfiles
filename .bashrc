@@ -28,10 +28,10 @@ source $HOME/.bash_aliases
 source $HOME/bin/git-completion
 
 # autojump
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
-export PROMPT_COMMAND="update_terminal_cwd "
+#if [ -f `brew --prefix`/etc/autojump ]; then
+  #. `brew --prefix`/etc/autojump
+#fi
+#export PROMPT_COMMAND="update_terminal_cwd "
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -72,3 +72,5 @@ fi
 #export PS1="\[${LIGHT_GREEN}\]\u@\h:\[${LIGHT_BLUE}\]\W\[${NO_COLOR}\]\$ "
 # With verbose escape codes
 #export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

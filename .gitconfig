@@ -47,7 +47,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
     # remove files that have been marked as deleted
-    rmd = !git rm `git ls-files --deleted`
+    rmd = "!git ls-files --deleted -z | xargs -0 git rm"
 
     # Usage: git whatsnew <other_branch>
     # Show commits that are in the current branch,
@@ -59,3 +59,5 @@
 	templatedir = ~/.git_templates
 [credential]
 	helper = osxkeychain
+[github]
+	user = dlimeb

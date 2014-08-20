@@ -77,7 +77,9 @@ snippet style
 		${2}
 	</style>${3}
 snippet link
-	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}">${4}
+	<link href="${1:/css/master.css}" rel="${2:stylesheet}">${3}
+snippet css
+	<link href="${2:/css/master.css}" rel="stylesheet">
 
 snippet span
 	<span>${1}</span>
@@ -108,7 +110,9 @@ snippet h3c
 	<h3 class="${1:class}">${2}</h3>
 
 snippet img
-	<img src="${1}" alt="${2}" />
+	<img src="${1}" alt="${2}">
+snippet imgc
+	<img src="${1}" alt="${2}" class="${3}">
 
 snippet form
 	<form action="${1:`Filename('$1_submit')`}" method="${2:post}">

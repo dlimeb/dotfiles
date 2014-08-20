@@ -32,7 +32,7 @@ hi StatusLineNC guifg=#777777 guibg=#444444 gui=italic ctermfg=246 ctermbg=238 c
 hi VertSplit 	guifg=#444444 guibg=#202020 gui=none ctermfg=238 ctermbg=238
 hi Folded 		guifg=#a0a8b0 guibg=#202020 gui=none ctermbg=4 ctermfg=248
 hi Title		guifg=#f6f3e8 guibg=NONE	gui=none ctermfg=254 cterm=none
-hi Visual		guifg=#efefa7 guibg=#3c414c gui=none ctermfg=254 ctermbg=4
+hi Visual		guifg=#dfdf9e guibg=#3c414c gui=none ctermfg=254 ctermbg=4
 hi SpecialKey	guifg=#808080 guibg=#191919 gui=none ctermfg=244 ctermbg=236
 
 " Syntax highlighting
@@ -48,7 +48,7 @@ hi Keyword		guifg=#ff9800 gui=none ctermfg=208
 hi Constant 	guifg=#ff9800 gui=none  ctermfg=208
 hi Number		guifg=#ff9800 gui=none ctermfg=208
 hi Special		guifg=#ff9800 gui=none ctermfg=208
-hi PreProc 		guifg=#efefa7 gui=none ctermfg=230
+hi PreProc 		guifg=#dfdf9e gui=none ctermfg=230
 hi Todo         guifg=#000000 guibg=#e6ea50 gui=italic
 
 " Code-specific colors

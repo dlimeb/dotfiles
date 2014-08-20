@@ -4,7 +4,14 @@ set guitablabel=%t
 set guifont=Consolas:h14
 
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme peacocks-in-space
+" Override syntax highlighting in themes
+highlight clear Todo
+highlight Todo guifg=#333 guibg=yellow2 gui=bold
+highlight UnwantedSpaces guibg=#7C0111
+match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
+"highlight OverLength ctermbg=red guibg=red
+"match OverLength /\%81v.\+/
 
 " Settings that OSX's /usr/bin/vim doesn't dig
 set undofile                " keep track of undos in file for later use
@@ -17,3 +24,4 @@ map <D-S-Left> :tabprevious<cr>
 map <D-S-Right> :tabnext<cr>
 imap <D-S-Left> :tabprevious<cr>
 imap <D-S-Right> :tabnext<cr>
+

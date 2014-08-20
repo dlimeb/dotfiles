@@ -22,6 +22,7 @@ alias serve='python -m SimpleHTTPServer 8080'
 alias serveemail='python -m smtpd -n -c DebuggingServer localhost:1025'
 alias gi='git'
 alias v='vagrant'
+alias j='jekyll'
 
 
 # colourized ls
