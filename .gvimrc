@@ -4,8 +4,11 @@ set guitablabel=%t
 set guifont=Consolas:h14
 
 set background=dark
-colorscheme peacocks-in-space
+colorscheme hybrid
+"colorscheme peacocks-in-space
+
 " Override syntax highlighting in themes
+highlight link cssDeprecated cssFontProp
 highlight clear Todo
 highlight Todo guifg=#333 guibg=yellow2 gui=bold
 highlight UnwantedSpaces guibg=#7C0111

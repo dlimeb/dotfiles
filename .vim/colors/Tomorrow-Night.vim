@@ -8,7 +8,7 @@ let s:foreground = "c5c8c6"
 let s:background = "1d1f21"
 let s:selection = "373b41"
 let s:line = "282a2e"
-let s:comment = "969896"
+let s:comment = "777777"
 let s:red = "cc6666"
 let s:orange = "de935f"
 let s:yellow = "f0c674"
@@ -271,8 +271,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
 	" Standard Highlighting
-	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("Todo", s:comment, s:background, "")
+	call <SID>X("Comment", s:comment, "", "italic")
+	"call <SID>X("Todo", s:comment, s:background, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
 	call <SID>X("Statement", s:foreground, "", "")
@@ -342,6 +342,16 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Diff Highlighting
 	call <SID>X("diffAdded", s:green, "", "")
 	call <SID>X("diffRemoved", s:red, "", "")
+  "
+	" Vimwiki Highlighting
+	call <SID>X("VimwikiHeader1", s:red, "", "")
+    call <SID>X("VimwikiHeader2", s:blue, "", "")
+    call <SID>X("VimwikiHeader3", s:green, "", "")
+	call <SID>X("VimwikiList", s:orange, "", "")
+	call <SID>X("VimwikiLink", s:blue, "", "")
+	call <SID>X("VimwikiHeaderChar", s:comment, "", "")
+	call <SID>X("VimwikiHr", s:comment, "", "")
+	call <SID>X("Conceal", s:blue, s:background, "")
 
     " ShowMarks Highlighting
     call <SID>X("ShowMarksHLl", s:orange, s:background, "none")

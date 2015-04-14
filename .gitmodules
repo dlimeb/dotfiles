@@ -22,10 +22,6 @@
 	path = .vim/bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
     ignore = untracked
-[submodule ".vim/bundle/gist-vim"]
-	path = .vim/bundle/gist-vim
-	url = http://github.com/mattn/gist-vim.git
-    ignore = untracked
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
@@ -37,10 +33,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-    ignore = untracked
-[submodule ".vim/bundle/html5-syntax.vim"]
-	path = .vim/bundle/html5-syntax.vim
-	url = http://github.com/othree/html5-syntax.vim.git
     ignore = untracked
 [submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
@@ -58,27 +50,12 @@
 	path = .vim/bundle/SyntaxAttr.vim
 	url = http://github.com/vim-scripts/SyntaxAttr.vim.git
     ignore = untracked
-[submodule ".vim/bundle/ZoomWin"]
-	path = .vim/bundle/ZoomWin
-	url = https://github.com/vim-scripts/ZoomWin.git
 [submodule ".vim/bundle/django.vim"]
 	path = .vim/bundle/django.vim
 	url = https://github.com/vim-scripts/django.vim.git
-[submodule ".vim/bundle/vim-scratch"]
-	path = .vim/bundle/vim-scratch
-	url = https://github.com/duff/vim-scratch.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/jshint.vim"]
 	path = .vim/bundle/jshint.vim
 	url = https://github.com/walm/jshint.vim.git
-[submodule ".vim/bundle/tagbar.vim"]
-	path = .vim/bundle/tagbar.vim
-	url = git://github.com/majutsushi/tagbar
-[submodule ".vim/bundle/mako.vim"]
-	path = .vim/bundle/mako.vim
-	url = https://github.com/vim-scripts/mako.vim.git
 [submodule ".vim/bundle/vim-indent-object"]
 	path = .vim/bundle/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
@@ -88,9 +65,6 @@
 [submodule ".vim/bundle/vim-jquery"]
 	path = .vim/bundle/vim-jquery
 	url = https://github.com/itspriddle/vim-jquery.git
-[submodule ".vim/bundle/xmledit"]
-	path = .vim/bundle/xmledit
-	url = https://github.com/sukima/xmledit.git
 [submodule ".vim/bundle/detectindent"]
 	path = .vim/bundle/detectindent
 	url = https://github.com/ciaranm/detectindent.git

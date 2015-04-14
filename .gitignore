@@ -6,3 +6,4 @@ settings_local.py
 local_settings.py
 .vagrant
 sitestatic
+bower_components

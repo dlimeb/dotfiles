@@ -1,68 +1,31 @@
-snippet bg
+snippet bi
 	background: #${1:color} url(../images/${2:image}) ${3:repeat} ${4:0}px ${5:0}px;
-snippet bgc
+snippet bg
 	background-color: #${1:color};
-snippet bgi
-	background-image: url(${1:value});
-snippet bgr
-	background-repeat: ${1:value};
-snippet bgp
-	background-position: ${1:value};
 snippet tshad
 	text-shadow: 0px -1px 0px #${1:color};
 snippet bshad
 	box-shadow: ${1:horiz-offset}px ${2:vert-offset}px ${3:blur-radius}px ${4:spread-radius}px #${5:color};
-snippet brad
-	border-radius: ${1:val}px ${2:$1}px ${3:$1}px ${4:$1}px;
-snippet .brad
-	.border-radius(${1:val}px);
+snippet br
+	border-radius: ${1:0}px;
 snippet bradv
-	border-${1:bottom|top}-${2:left|right}-radius: ${3:val}px;
-
-snippet grad
-	background-color: #$2; /* old browsers */
-	background-image: linear-gradient(top, #${1:topcolor}, #${2:bottomcolor});
-	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #$1),color-stop(1, #$2));
-	background-image: -webkit-linear-gradient(#$1, #$2);
-	background-image: -moz-linear-gradient(top, #$1, #$2);
-	background-image: -ms-linear-gradient(top, #$1 0%, #$2 100%);
-
-snippet trans
-	 -webkit-transition: all 0.25s linear;
-			-moz-transition: all 0.25s linear;
-					 transition: all 0.25s linear;
-
-snippet ff
-	@font-face {
-		font-family: '${1:fontname}';
-		src: url('${2:filename}.eot?') format('eot'),
-		     url('$2.woff') format('woff'),
-		     url('$2.ttf') format('truetype');
-	}
-
+	border-${1:bottom|top}-${2:left|right}-radius: ${3:0}px;
 snippet posa
 	position: absolute;
 snippet posr
 	position: relative;
-
-snippet geor
-	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-snippet helv
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-snippet luci
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
-snippet mono
-	font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+snippet posf
+	position: fixed;
 snippet bold
 	font-weight: bold;
+snippet fw
+	font-weight: ${1:value};
+snippet fs
+	font-size: ${1:value};
 snippet ital
 	font-style: italic;
-snippet col
-	color: #${1:hex};
 snippet tt
 	text-transform: ${1:uppercase};
-snippet size
-	font-size: ${1:value}px;
 snippet tdec
 	text-decoration: ${1:none};
 snippet lh
@@ -73,10 +36,16 @@ snippet tal
 	text-align: left;
 snippet tar
 	text-align: right;
+snippet c
+	color: ${1};
 snippet bord
 	border: 1px solid ${1:color};
+snippet bt
+	border-top: 1px solid ${1:color};
+snippet bb
+	border-bottom: 1px solid ${1:color};
 snippet m
-	margin: ${1:0}px;
+	margin: ${1:0px};
 snippet mt
 	margin-top: ${1:0}px;
 snippet mr
@@ -88,12 +57,28 @@ snippet ml
 snippet p
 	padding: ${1:0}px;
 snippet pt
-	padding-top: ${1}px;
+	padding-top: ${1:0}px;
 snippet pr
-	padding-right: ${1}px;
+	padding-right: ${1:0}px;
 snippet pb
-	padding-bottom: ${1}px;
+	padding-bottom: ${1:0}px;
 snippet pl
-	padding-left: ${1}px;
+	padding-left: ${1:0}px;
 snippet dib
 	display: inline-block;
+snippet db
+	display: block;
+snippet di
+	display: inline;
+snippet fl
+	float: left;
+snippet fr
+	float: right;
+snippet bs
+	box-sizing: border-box;
+snippet va
+	vertical-align: ${1};
+snippet media
+	@media (max-width: ${1:0}px) {
+		${2}
+	}

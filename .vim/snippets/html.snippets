@@ -47,7 +47,6 @@ snippet backspace
 # ⎋
 snippet escape
 	&#x238B;
-
 snippet template
 	<!doctype html>
 	<html lang="en">
@@ -80,7 +79,8 @@ snippet link
 	<link href="${1:/css/master.css}" rel="${2:stylesheet}">${3}
 snippet css
 	<link href="${2:/css/master.css}" rel="stylesheet">
-
+snippet code
+	<code>${1}</code>
 snippet span
 	<span>${1}</span>
 snippet spanc
@@ -89,7 +89,6 @@ snippet em
 	<em>${1}</em>
 snippet strong
 	<strong>${1}</strong>
-
 snippet h1
 	<h1>${1}</h1>
 snippet h1i
@@ -108,12 +107,10 @@ snippet h3i
 	<h3 id="${1:id}">${2}</h3>
 snippet h3c
 	<h3 class="${1:class}">${2}</h3>
-
 snippet img
 	<img src="${1}" alt="${2}">
 snippet imgc
 	<img src="${1}" alt="${2}" class="${3}">
-
 snippet form
 	<form action="${1:`Filename('$1_submit')`}" method="${2:post}">
 		${3}
@@ -137,7 +134,6 @@ snippet select
 	</select>${5}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
-
 snippet href
 	<a href="${1:url}">${2:link text}</a>
 snippet hrefi
@@ -146,7 +142,6 @@ snippet hrefc
 	<a href="${1:url}" class="${2:class}">${3:link text}</a>
 snippet mailto
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
-
 snippet table
 	<table>
 		<thead>
@@ -186,7 +181,6 @@ snippet tablec
 			</tr>
 		</tbody>
 	</table>
-
 snippet div
 	<div>
 		${1}
@@ -205,7 +199,6 @@ snippet pi
 	<p id="${1:id}">${2}</p>
 snippet pc
 	<p class="${1:class}">${2}</p>
-
 snippet ul
 	<ul>
 		<li>${1}</li>
@@ -232,19 +225,58 @@ snippet butt
 	<button type="submit" class="${1:save"}>
 		${2:text}
 	</button>
-
-# Bootstrap stuff
-snippet i
-	<i class="icon-${1:type}"></i>
-snippet modal
-	<div class="modal hide" id="${1}Modal" tabindex="-1">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>{% trans "${2}" %}</h3>
-		</div>
-		<div class="modal-body">
-			${3}
-		</div>
-		<div class="modal-footer">
-		</div>
-	</div>
+# HTML5 elements
+snippet sect
+	<section>
+		${1}
+	</section>
+snippet secti
+	<section id="${1:id}">
+		${2}
+	</section>
+snippet sectc
+	<section class="${1:class}">
+		${2}
+	</section>
+snippet head
+	<header>${1}</header>
+snippet headi
+	<header id="${1:id}">${2}</header>
+snippet headc
+	<header class="${1:class}">${2}</header>
+snippet hr
+	<hr>
+snippet br
+	<br>
+snippet wd
+	<hr class="wv-divider">
+snippet wi
+	<i class="wv-icon--${1}"></i>
+snippet wtb
+	class="wv-text--body"
+snippet wtl
+	class="wv-text--link" 
+snippet wts
+	class="wv-text--strong"
+snippet wte
+	class="wv-text--emphasized"
+snippet wtbl
+	class="wv-text--block-label"
+snippet wht
+	class="wv-heading--title"
+snippet whsb
+	class="wv-heading--subtitle"
+snippet whst
+	class="wv-heading--section-title"
+snippet whsst
+	class="wv-heading--subsection-title"
+snippet wl
+	class="wv-list"
+snippet wlb
+	class="wv-list--bulleted"
+snippet wlu
+	class="wv-list--bulleted"
+snippet wln
+	class="wv-list--numbered"
+snippet wlo
+	class="wv-list--numbered"

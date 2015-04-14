@@ -1,6 +1,16 @@
 --ignore-dir=sitestatic
+--ignore-dir=build
+--ignore-dir=dist
+--ignore-dir=test
+--ignore-dir=lib
+--ignore-dir=bower_components
+--ignore-dir=.sass-cache
+--ignore-file=match:.dist.js
+--ignore-file=match:.dist.css
 --type-set=ejs=.ejs
 --type-set=mako=.mako
 --type-set=haml=.haml
 --type-set=less=.less
+--type-set=scss=.scss
+--type-set=sass=.sass
 --type-set=coffee=.coffee

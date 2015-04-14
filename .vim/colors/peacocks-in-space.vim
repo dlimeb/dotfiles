@@ -16,12 +16,12 @@ syntax reset
 
 hi Cursor      guibg=#dddd00  guifg=bg     ctermbg=4 ctermfg=15
 hi link CursorIM Cursor
-hi Normal      guibg=#2b303b  guifg=#dee3ec    gui=none ctermbg=0 ctermfg=15
+hi Normal      guibg=#242830  guifg=#cccccc    gui=none ctermbg=0 ctermfg=15
 "hi NonText     guibg=#445566  guifg=#dee3ec   ctermbg=8 ctermfg=14
-hi NonText     guibg=#2b303b  guifg=#555555   ctermbg=8 ctermfg=14
+hi NonText     guibg=#242830  guifg=#555555   ctermbg=8 ctermfg=14
 hi Visual      guibg=#557799  guifg=white    gui=none ctermbg=9 ctermfg=15
 
-hi Linenr      guibg=bg       guifg=#999999  gui=none ctermbg=bg ctermfg=7
+hi Linenr      guibg=bg       guifg=#555555  gui=none ctermbg=bg ctermfg=7
 
 hi Directory   guibg=bg       guifg=#bcd42a  gui=none ctermbg=bg ctermfg=10
 hi CursorLine       guibg=#557799 guifg=white
@@ -53,6 +53,8 @@ hi DiffText    guibg=#884444  guifg=fg     ctermbg=4 ctermfg=fg
 
 hi Comment  guibg=bg  guifg=#6e7a94  gui=italic    ctermbg=8   ctermfg=7
 
+hi Conceal guibg=bg guifg=#9BCDFD gui=underline
+
 hi Constant    guibg=bg    guifg=white        ctermbg=8   ctermfg=15
 hi String      guibg=bg    guifg=#BCD42A    ctermbg=bg  ctermfg=14
 hi Character   guibg=bg    guifg=#FF5D38      ctermbg=bg  ctermfg=14
@@ -82,9 +84,9 @@ hi StorageClass   guibg=bg   guifg=#FF5D38      ctermbg=bg  ctermfg=10
 hi Structure      guibg=bg   guifg=#dee3ec      ctermbg=bg  ctermfg=10
 hi Typedef    guibg=bg   guifg=#26A6A6    ctermbg=bg  ctermfg=10
 
-hi Special    guibg=bg   guifg=#bbddff      ctermbg=1   ctermfg=15
-hi SpecialChar    guibg=bg   guifg=#bbddff      ctermbg=1   ctermfg=15
-hi Tag        guibg=bg   guifg=#bbddff      ctermbg=1   ctermfg=15
+hi Special    guibg=bg   guifg=#cccccc      ctermbg=1   ctermfg=15
+hi SpecialChar    guibg=bg   guifg=#cccccc      ctermbg=1   ctermfg=15
+hi Tag        guibg=bg   guifg=#cccccc      ctermbg=1   ctermfg=15
 hi Delimiter      guibg=bg   guifg=fg       ctermbg=1   ctermfg=fg
 hi SpecialComment guibg=#334455  guifg=#8998b9    ctermbg=1   ctermfg=15
 hi Debug      guibg=bg   guifg=#ff9999  gui=none    ctermbg=8   ctermfg=12
@@ -102,9 +104,17 @@ hi link htmlH4 htmlH3
 hi link htmlH5 htmlH4
 hi link htmlH6 htmlH5
 
+hi link VimwikiHeader1 Statement
+"hi link VimwikiHeader2 Vimwikiheader1
+"hi link VimwikiHeader3 Vimwikiheader1
+hi link VimwikiHeaderChar Comment
+hi link VimwikiList PreProc
+hi link VimwikiCode Boolean
+hi link VimwikiHr Comment
 
 " And finally.
 
 let g:colors_name = "Peacocks In Space"
 let colors_name   = "Peacocks In Space"
+
 

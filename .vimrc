@@ -119,18 +119,19 @@ if has("autocmd")
 
     " Set filetypes
     augroup filetypedetect
-        au! BufRead,BufNewFile *.html set ft=html5.html tabstop=4 softtabstop=4 shiftwidth=4
-        au! BufRead,BufNewFile *.haml set ft=haml.html5.html tabstop=2 softtabstop=2 shiftwidth=2
-        au! BufRead,BufNewFile *.php set ft=php.html5.html tabstop=4 softtabstop=4 shiftwidth=4
+        au! BufRead,BufNewFile *.html set ft=htmldjango.html tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.haml set ft=haml.html tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.php set ft=php.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako.html5.html syntax=mako.html5.html
+        au! BufRead,BufNewFile *.mako set ft=mako.html syntax=mako.html5.html
         au! BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.md set ft=markdown
+        au! BufRead,BufNewFile */vimwiki/* set filetype=vimwiki
         au! BufRead,BufNewFile *.js,*.json,*.jstalk set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
-        au! BufRead,BufNewFile *.ejs set ft=html.html5.javascript tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.ejs set ft=html.javascript tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.mustache set ft=mustache
         au! BufRead,BufNewFile *.less set ft=less.css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.scss set ft=scss.sass.css tabstop=2 softtabstop=2 shiftwidth=2
-        autocmd BufWritePost,FileWritePost *.js JSHint
+        "autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
     " open help window in vertical split
@@ -214,15 +215,28 @@ let g:gist_clip_command = 'pbcopy'
 let g:github_user = 'dlimeb'
 
 " Vimwiki
-"let g:vimwiki_folding = 1 " folds everything up by default
-"let g:vimwiki_list = [{'path': '~/Dropbox/personal/vimwiki', 'diary_header': 'DailyLog', 'diary_index': 'DailyLog', 'diary_rel_path': '/', 'diary_link_count': 5}]
-"let g:vimwiki_hl_cb_checked = 1
-"let g:vimwiki_fold_trailing_empty_lines = 1
-"let g:vimwiki_table_auto_fmt = 0 " frees up tab key for snipmate use
+let wiki = {}
+let wiki.path = '/Users/dlimeb/Development/repos/vimwiki'
+let wiki.syntax = 'markdown'
+let wiki.ext = '.md'
+"let wiki.diary_header = 'Journal'
+"let wiki.diary_index = 'index'
+"let wiki.diary_rel_path = '/'
+"let wiki.diary_link_count = 5
+"let wiki.diary_sort = 'asc'
+let g:vimwiki_hl_headers = 1        " different header levels get different colours
+let g:vimwiki_hl_cb_checked = 1     " checked todos get a colour
+let g:vimwiki_folding = 1           " fold everything up by default
+let g:vimwiki_fold_trailing_empty_lines = 1
+let g:vimwiki_table_mappings = 0    " free up tab key for snipmate use
+let g:vimwiki_ext2syntax = {}       " don't set filetype to 'vimwiki' for all markdown files
+let g:vimwiki_list = [wiki]
+map <leader>w<leader>g :VimwikiDiaryGenerateLinks<CR>
 
 " Fuzzy Finder
 " See also settings: g:fuzzy_roots, g:fuzzy_ceiling, g:fuzzy_ignore, g:fuzzy_matching_limit
 map <leader>f :FufBuffer<CR>
+map <leader>e :FufCoverageFile<CR>
 
 " snipMate
 let g:snippets_dir = '~/.vim/snippets'
@@ -253,7 +267,7 @@ nnoremap <C-y> <C-y><C-y><C-y>
 
 " Line numbering
 " Toggle on and off
-nmap <leader>nn :set invnumber<CR>
+"nmap <leader>nn :set invnumber<CR>
 "nmap <leader>nu :set nu<CR>
 "nmap <leader>nr :set rnu<CR>
 
@@ -276,6 +290,10 @@ nnoremap ` '
 " Easier block indenting
 :vnoremap < <gv
 :vnoremap > >gv
+
+" Faster prev/next through quickfix errors
+nmap <leader>n :cnext<cr>
+nmap <leader>p :cprev<cr>
 
 " Fast editing of vim stuff
 nmap <leader>ev :e $MYVIMRC<cr>
@@ -303,7 +321,7 @@ iab <expr> _ts strftime("\%Y-\%m-\%d \%H:\%M:\%S")
 cmap w!! w !sudo tee % >/dev/null
 
 " Preview markdown documents in browser
-nmap <leader>mp  :! ~/bin/Markdown.pl % > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
+nmap <leader>mp  :! ~/bin/Markdown.pl "%" > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
 
 " Fix common typos
 iab teh the
@@ -324,30 +342,30 @@ iab requets request
 iab checktou checkout
 
 " HTML escaping of <, >, &
-function HtmlEscape()
-  silent s/&/\&amp;/
-  silent s/</\&lt;/
-  silent s/>/\&gt;/
-endfunction
+"function HtmlEscape()
+  "silent s/&/\&amp;/
+  "silent s/</\&lt;/
+  "silent s/>/\&gt;/
+"endfunction
 
-function HtmlUnEscape()
-  silent s/&lt;/</
-  silent s/&gt;/>/
-  silent s/&amp;/\&/
-endfunction
+"function HtmlUnEscape()
+  "silent s/&lt;/</
+  "silent s/&gt;/>/
+  "silent s/&amp;/\&/
+"endfunction
 
-function Tab2()
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
-endfunction
+"function Tab2()
+    "set tabstop=2
+    "set softtabstop=2
+    "set shiftwidth=2
+"endfunction
 
-function Tab4()
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-endfunction
+"function Tab4()
+    "set tabstop=4
+    "set softtabstop=4
+    "set shiftwidth=4
+"endfunction
 
 " Quick spacing switching
-map <leader>2 :call Tab2()<CR>
-map <leader>4 :call Tab4()<CR>
+"map <leader>2 :call Tab2()<CR>
+"map <leader>4 :call Tab4()<CR>

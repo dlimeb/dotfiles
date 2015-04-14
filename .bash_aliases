@@ -63,12 +63,7 @@ function datauri() {
   uuencode -m ${1} foo
 }
 
-# build my blogofile blog and rsync the built files to NFS
-function deploy-blog() {
-    cd ~/Development/projects/centripetal
-    source ~/.virtualenvs/centripetal/bin/activate
-    blogofile build
-    rsync -e ssh -av --delete _site/ nfs:
+# keep local gif repository in sync with dlmb.co
+function heh() {
+    rsync -av -e "ssh -p 2200" ~/Development/repos/heh/ digitalocean:~/public_html/dlmb.co/
 }
-
-

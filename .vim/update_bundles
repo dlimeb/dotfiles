@@ -1,0 +1,59 @@
+#!/usr/bin/env ruby
+git_bundles = [
+  "git://github.com/edsono/vim-matchit.git",
+  "git://github.com/itspriddle/vim-jquery.git",
+  "git://github.com/jlanzarotta/bufexplorer.git",
+  "git://github.com/mileszs/ack.vim.git",
+  "git://github.com/msanders/snipmate.vim.git",
+  "git://github.com/othree/html5.vim.git",
+  "git://github.com/pangloss/vim-javascript.git",
+  "git://github.com/scrooloose/nerdcommenter.git",
+  "git://github.com/scrooloose/nerdtree.git",
+  "git://github.com/tpope/vim-fugitive.git",
+  "git://github.com/tpope/vim-markdown.git",
+  "git://github.com/tpope/vim-repeat.git",
+  "git://github.com/tpope/vim-surround.git",
+  "git://github.com/vim-scripts/DetectIndent.git",
+  "git://github.com/vim-scripts/L9.git",
+  "git://github.com/vim-scripts/FuzzyFinder.git",
+  "git://github.com/vim-scripts/SyntaxAttr.vim.git",
+  "git://github.com/vim-scripts/django.vim.git",
+  "git://github.com/vim-scripts/jshint.vim.git",
+  "git://github.com/vim-scripts/scratch.vim.git",
+  "git://github.com/vim-scripts/vim-coffee-script.git",
+  "git://github.com/vim-scripts/vim-indent-object.git",
+  "git://github.com/vim-scripts/vimwiki.git",
+]
+
+# See http://www.vim.org/scripts/script.php?script_id=
+# script type is one of "utility", "plugin", "syntax"
+vim_org_scripts = [
+  #["L9", "3252",  "utility"],
+  #["FuzzyFinder", "1984", "utility"],
+]
+
+require 'fileutils'
+require 'open-uri'
+
+bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+
+FileUtils.cd(bundles_dir)
+
+puts "trashing everything (lookout!)"
+Dir["*"].each {|d| FileUtils.rm_rf d }
+
+git_bundles.each do |url|
+  dir = url.split('/').last.sub(/\.git$/, '')
+  puts "unpacking #{url} into #{dir}"
+  `git clone #{url} #{dir}`
+  FileUtils.rm_rf(File.join(dir, ".git"))
+end
+
+vim_org_scripts.each do |name, script_id, script_type|
+  puts "downloading #{name}"
+  local_file = File.join(name, script_type, "#{name}.vim")
+  FileUtils.mkdir_p(File.dirname(local_file))
+  File.open(local_file, "w") do |file|
+    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
+  end
+end

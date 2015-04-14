@@ -39,18 +39,21 @@ gui=
 opts=
 
 # GUI mode, implies forking
-case "$name" in m*|g*|rg*) gui=true ;; esac
+case "$name" in m*|g*|rm*|rg*) gui=true ;; esac
 
 # Restricted mode
 case "$name" in r*) opts="$opts -Z";; esac
 
-# vimdiff and view
+# vimdiff, view, and ex mode
 case "$name" in
 	*vimdiff)
 		opts="$opts -dO"
 		;;
 	*view)
 		opts="$opts -R"
+		;;
+	*ex)
+		opts="$opts -e"
 		;;
 esac
 
@@ -63,25 +66,7 @@ if [ "$gui" ]; then
 	# terminal instead of the console log.
 	# But if you use open instead, you will need to fully qualify the
 	# path names for any filenames you specify, which is hard.
-#    exec "$binary" -g $opts ${1:+"$@"}
-
-    # Add workaround to open files relative to current dir. Files can
-    # either be provided with no path, in which case they are treated as
-    # relative to `pwd`, or starting with / or ~ (which bash expands to /
-    # anyway) in which case they are left alone. 
-    # Note the -p flag will open multiple files in a tab each, but you can't open a
-    # single file and send it to a new tab in an existing window.
-    for f in ${1:+"$@"} ; do
-        use_pwd=true
-        firstchar=${f:0:1} 
-        case "$firstchar" in "/") use_pwd=false ;; esac
-        if [ $use_pwd == true ] ; then
-            files+=`pwd`/"$f " 
-        else
-            files+="$f " 
-        fi
-    done
-    exec "$binary" -g -p $opts $files
+	exec "$binary" -g $opts ${1:+"$@"}
 else
-    exec "$binary" $opts ${1:+"$@"}
+	exec "$binary" $opts ${1:+"$@"}
 fi
