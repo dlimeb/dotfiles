@@ -16,13 +16,13 @@ alias finder='/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder &'
 alias ch='open -a "Google Chrome"';
 alias ff='open -a Firefox';
 alias saf='open -a Safari';
-alias fm='fakemail.py --host=localhost --port=10025 --path=/Users/dlimeb/Desktop'
-alias fixfonts='atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping'
 alias serve='python -m SimpleHTTPServer 8080'
+alias fm='fakemail.py --host=localhost --port=10025 --path=/Users/dlimeb/Desktop'
 alias serveemail='python -m smtpd -n -c DebuggingServer localhost:1025'
+alias j='jekyll'
 alias gi='git'
 alias v='vagrant'
-alias j='jekyll'
+alias vm="cd ~/waveapps && vagrant ssh"
 
 
 # colourized ls

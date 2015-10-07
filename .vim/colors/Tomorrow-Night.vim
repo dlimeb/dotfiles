@@ -345,8 +345,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "
 	" Vimwiki Highlighting
 	call <SID>X("VimwikiHeader1", s:red, "", "")
-    call <SID>X("VimwikiHeader2", s:blue, "", "")
-    call <SID>X("VimwikiHeader3", s:green, "", "")
+  call <SID>X("VimwikiHeader2", s:blue, "", "")
+  call <SID>X("VimwikiHeader3", s:green, "", "")
 	call <SID>X("VimwikiList", s:orange, "", "")
 	call <SID>X("VimwikiLink", s:blue, "", "")
 	call <SID>X("VimwikiHeaderChar", s:comment, "", "")

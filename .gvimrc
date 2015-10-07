@@ -1,11 +1,15 @@
 set guioptions-=T " remove menubar
 set guioptions-=m " remove toolbar
 set guitablabel=%t
-set guifont=Consolas:h14
+set guifont=InconsolataForPowerline:h15
+"set guifont=FiraMono-Regular:h14
+"set guifont=Consolas:h14
 
 set background=dark
+"colorscheme wesbalt
 colorscheme hybrid
 "colorscheme peacocks-in-space
+"colorscheme superman
 
 " Override syntax highlighting in themes
 highlight link cssDeprecated cssFontProp

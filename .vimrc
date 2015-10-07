@@ -123,14 +123,16 @@ if has("autocmd")
         au! BufRead,BufNewFile *.haml set ft=haml.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.php set ft=php.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako.html syntax=mako.html5.html
-        au! BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.md set ft=markdown
+        au! BufRead,BufNewFile *.mako set ft=mako.html syntax=mako.html5.html tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.md set ft=markdown tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile */vimwiki/* set filetype=vimwiki
         au! BufRead,BufNewFile *.js,*.json,*.jstalk set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.ejs set ft=html.javascript tabstop=2 softtabstop=2 shiftwidth=2
-        au! BufRead,BufNewFile *.mustache set ft=mustache
+        au! BufRead,BufNewFile *.mustache,*.hbs set ft=mustache.html tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.css set ft=css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.less set ft=less.css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.scss set ft=scss.sass.css tabstop=2 softtabstop=2 shiftwidth=2
+        "autocmd BufWritePost,FileWritePost *.scss.sass.css CSScommb
         "autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
@@ -196,7 +198,8 @@ nnoremap <leader>V V`]
 
 " NERDtree
 let NERDTreeChDirMode=0
-let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+"let NERDTreeDirArrows=0
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowLineNumbers=1
@@ -204,8 +207,8 @@ map <leader>d :NERDTreeToggle<CR>
 map <leader>t :NERDTreeFind<CR>
 
 " Tagbar
-let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
-map <leader>g :TagbarOpen<CR>
+"let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+"map <leader>g :TagbarOpen<CR>
 
 " JSHint
 map <leader>j :JSHint<CR>
@@ -238,6 +241,9 @@ map <leader>w<leader>g :VimwikiDiaryGenerateLinks<CR>
 map <leader>f :FufBuffer<CR>
 map <leader>e :FufCoverageFile<CR>
 
+" Airline / Powerline
+let g:airline_powerline_fonts = 1
+
 " snipMate
 let g:snippets_dir = '~/.vim/snippets'
 
@@ -259,7 +265,10 @@ map <leader>a :Ack<space>
 let g:bufExplorerDetailedHelp=0
 
 " Show info about syntax/color of word
-map -a :call SyntaxAttr()<CR>
+"map -a :call SyntaxAttr()<CR>
+
+" Quick, make it bulleted
+nnoremap _ :s/^/* /<CR>:noh<CR>
 
 " Scroll viewport by a few lines
 nnoremap <C-e> <C-e><C-e><C-e>
@@ -290,6 +299,8 @@ nnoremap ` '
 " Easier block indenting
 :vnoremap < <gv
 :vnoremap > >gv
+nmap <leader>, vii<<cr><esc>
+"nmap <leader>. vii><cr><esc>
 
 " Faster prev/next through quickfix errors
 nmap <leader>n :cnext<cr>
@@ -314,8 +325,8 @@ map <c-Right> 10<c-w>>
 map <c-Left> 10<c-w><
 
 " Insert timestamp
-iab <expr> _ds strftime("\%Y-\%m-\%d \%H:\%M:\%S") 
-iab <expr> _ts strftime("\%Y-\%m-\%d \%H:\%M:\%S") 
+iab <expr> _ds strftime("\%Y-\%m-\%d \%H:\%M:\%S")
+iab <expr> _ts strftime("\%Y-\%m-\%d \%H:\%M:\%S")
 
 " Write file when you forget to sudo first
 cmap w!! w !sudo tee % >/dev/null

@@ -34,7 +34,7 @@
 
 [alias]
     st = status
-    tst = status # keep typoing this
+    tst = status # I keep typoing this :/ see also bash which has an alias for `gi`
     ci = commit
     co = checkout
     br = branch
@@ -54,6 +54,9 @@
     # but not in <other_branch>. Great for an
     # instant changelog.
     whatsnew = !sh -c 'git shortlog --format=\"%h %s\" $1..HEAD' -
+
+    # Delete all local branches that are already merged into the current branch
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 
 [init]
 	templatedir = ~/.git_templates

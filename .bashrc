@@ -34,8 +34,8 @@ source $HOME/bin/git-completion
 #export PROMPT_COMMAND="update_terminal_cwd "
 
 # virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # Set up colors as names
 export WHITE='\e[1;37m'

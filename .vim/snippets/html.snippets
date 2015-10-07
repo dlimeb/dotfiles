@@ -249,11 +249,13 @@ snippet hr
 snippet br
 	<br>
 snippet wd
-	<hr class="wv-divider">
+	<hr class="wv-divider${1}">
+snippet wdo
+	<div class="wv-divider--options">or</div>
 snippet wi
 	<i class="wv-icon--${1}"></i>
-snippet wtb
-	class="wv-text--body"
+snippet wt
+	class="wv-text"
 snippet wtl
 	class="wv-text--link" 
 snippet wts
@@ -280,3 +282,21 @@ snippet wln
 	class="wv-list--numbered"
 snippet wlo
 	class="wv-list--numbered"
+snippet wb
+	class="wv-table"
+snippet wbp
+	class="wv-table--plain"
+snippet wbh
+	class="wv-table__header"
+snippet wbb
+	class="wv-table__body"
+snippet wbf
+	class="wv-table__footer"
+snippet wbr
+	class="wv-table__row"
+snippet wbc
+	class="wv-table__cell"
+snippet wtt
+	class="wv-tooltip__target"
+snippet wttt
+	<span class="wv-tooltip">${1}</span>
