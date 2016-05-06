@@ -1,3 +1,4 @@
+--ignore-case
 --ignore-dir=sitestatic
 --ignore-dir=build
 --ignore-dir=dist

@@ -1,1 +1,0 @@
-bundle/vim-jquery/syntax/jquery.vim

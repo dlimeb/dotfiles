@@ -211,7 +211,7 @@ map <leader>t :NERDTreeFind<CR>
 "map <leader>g :TagbarOpen<CR>
 
 " JSHint
-map <leader>j :JSHint<CR>
+"map <leader>j :JSHint<CR>
 
 " Gist
 let g:gist_clip_command = 'pbcopy'
@@ -219,7 +219,8 @@ let g:github_user = 'dlimeb'
 
 " Vimwiki
 let wiki = {}
-let wiki.path = '/Users/dlimeb/Development/repos/vimwiki'
+"let wiki.path = '/Users/dlimeb/Development/repos/vimwiki'
+let wiki.path = '/Users/dlimeback/Dropbox/personal/vimwiki'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
 "let wiki.diary_header = 'Journal'
@@ -254,21 +255,15 @@ let g:surround_{char2nr("i")} = "{% trans \"\r\" %}"
 
 " Ack
 map <leader>a :Ack<space>
-"" remap align plugin so it doesn't hog 'a'
-"map <leader>A, <Plug>AM_a,
-"map <leader>A( <Plug>AM_a(
-"map <leader>A? <Plug>AM_a?
-"map <leader>A< <Plug>AM_a<
-"map <leader>A= <Plug>AM_a=
 
 " bufexplorer
 let g:bufExplorerDetailedHelp=0
 
 " Show info about syntax/color of word
-"map -a :call SyntaxAttr()<CR>
+map -a :call SyntaxAttr()<CR>
 
 " Quick, make it bulleted
-nnoremap _ :s/^/* /<CR>:noh<CR>
+nnoremap _ :s/^/- /<CR>:noh<CR>
 
 " Scroll viewport by a few lines
 nnoremap <C-e> <C-e><C-e><C-e>
@@ -332,7 +327,7 @@ iab <expr> _ts strftime("\%Y-\%m-\%d \%H:\%M:\%S")
 cmap w!! w !sudo tee % >/dev/null
 
 " Preview markdown documents in browser
-nmap <leader>mp  :! ~/bin/Markdown.pl "%" > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
+"nmap <leader>mp  :! ~/bin/Markdown.pl "%" > /tmp/preview.html && open -a "Google Chrome" /tmp/preview.html<CR><CR>
 
 " Fix common typos
 iab teh the

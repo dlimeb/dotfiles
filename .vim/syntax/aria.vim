@@ -1,1 +1,0 @@
-../bundle/html5-syntax.vim/syntax/html/aria.vim

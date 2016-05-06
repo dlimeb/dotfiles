@@ -2,12 +2,13 @@ set guioptions-=T " remove menubar
 set guioptions-=m " remove toolbar
 set guitablabel=%t
 set guifont=InconsolataForPowerline:h15
-"set guifont=FiraMono-Regular:h14
-"set guifont=Consolas:h14
 
 set background=dark
+colorscheme toothpaste
+"colorscheme solarized
 "colorscheme wesbalt
-colorscheme hybrid
+"colorscheme hybrid
+"colorscheme tomorrownight
 "colorscheme peacocks-in-space
 "colorscheme superman
 
