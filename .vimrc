@@ -82,7 +82,7 @@ set titleold="Vim"          " instead of 'Thanks for flying Vim'
 set wildmenu                " enhanced command line completion
 set wildmode=list:longest   " ... and show available options
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.avi,*.wmv,*.ogg,*.mp3,*.mov " ... and ignore some stuff
-"set cursorline             " highlight the line the cursor is on
+set cursorline             " highlight the line the cursor is on
 set shortmess=atI           " forego unnecessary messages
 set foldmethod=marker       " enable folding
 "set foldclose=all          " autoclose folds when moving out of them

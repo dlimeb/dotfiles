@@ -10,25 +10,25 @@ endif
 
 let g:colors_name = "Wesbalt"
 
-"hi Cursor ctermfg=17 ctermbg=220 cterm=NONE guifg=#042029 guibg=#ffc600 gui=NONE
-hi Cursor ctermfg=17 ctermbg=220 cterm=NONE guifg=#042029 guibg=#009900 gui=NONE
+"hi Cursor ctermfg=17 ctermbg=220 cterm=NONE guifg=#122B34 guibg=#ffc600 gui=NONE
+hi Cursor ctermfg=17 ctermbg=220 cterm=NONE guifg=#122B34 guibg=#009900 gui=NONE
 hi Visual ctermfg=NONE ctermbg=25 cterm=NONE guifg=NONE guibg=#0050a4 gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=23 cterm=NONE guifg=NONE guibg=#0d3a58 gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=23 cterm=NONE guifg=NONE guibg=#0d3a58 gui=NONE
 hi ColorColumn ctermfg=NONE ctermbg=23 cterm=NONE guifg=NONE guibg=#0d3a58 gui=NONE
-hi LineNr ctermfg=103 ctermbg=23 cterm=NONE guifg=#6C7F8C guibg=#042029 gui=NONE
-hi VertSplit ctermfg=60 ctermbg=60 cterm=NONE guifg=#6C7F8C guibg=#042029 gui=NONE
-hi MatchParen ctermfg=214 ctermbg=NONE cterm=NONE guifg=#042029 guibg=#f0c674 gui=NONE
+hi LineNr ctermfg=103 ctermbg=23 cterm=NONE guifg=#6C7F8C guibg=#122B34 gui=NONE
+hi VertSplit ctermfg=60 ctermbg=60 cterm=NONE guifg=#6C7F8C guibg=#122B34 gui=NONE
+hi MatchParen ctermfg=214 ctermbg=NONE cterm=NONE guifg=#122B34 guibg=#f0c674 gui=NONE
 hi StatusLine ctermfg=15 ctermbg=60 cterm=bold guifg=#eeeeee guibg=#4a6b82 gui=bold
 hi StatusLineNC ctermfg=15 ctermbg=60 cterm=NONE guifg=#eeeeee guibg=#4a6b82 gui=NONE
 hi Pmenu ctermfg=220 ctermbg=NONE cterm=NONE guifg=#E0CB43 guibg=NONE gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=25 cterm=NONE guifg=NONE guibg=#0050a4 gui=NONE
-hi IncSearch ctermfg=17 ctermbg=76 cterm=NONE guifg=#042029 guibg=#aaaaaa gui=NONE
-hi Search ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#042029 guibg=#aaaaaa gui=NONE
+hi IncSearch ctermfg=17 ctermbg=76 cterm=NONE guifg=#122B34 guibg=#aaaaaa gui=NONE
+hi Search ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#122B34 guibg=#aaaaaa gui=NONE
 hi Directory ctermfg=204 ctermbg=NONE cterm=NONE guifg=#D9738E guibg=NONE gui=NONE
-hi Folded ctermfg=33 ctermbg=17 cterm=NONE guifg=#0088ff guibg=#042029 gui=NONE
+hi Folded ctermfg=33 ctermbg=17 cterm=NONE guifg=#0088ff guibg=#122B34 gui=NONE
 
-hi Normal ctermfg=15 ctermbg=17 cterm=NONE guifg=#cccccc guibg=#042029 gui=NONE
+hi Normal ctermfg=15 ctermbg=17 cterm=NONE guifg=#cccccc guibg=#122B34 gui=NONE
 hi Boolean ctermfg=204 ctermbg=NONE cterm=NONE guifg=#D9738E guibg=NONE gui=NONE
 hi Character ctermfg=204 ctermbg=NONE cterm=NONE guifg=#D9738E guibg=NONE gui=NONE
 hi Comment ctermfg=33 ctermbg=NONE cterm=NONE guifg=#6C7F8C guibg=NONE gui=italic
@@ -46,7 +46,7 @@ hi Function ctermfg=220 ctermbg=NONE cterm=NONE guifg=#E0CB43 guibg=NONE gui=NON
 hi Identifier ctermfg=220 ctermbg=NONE cterm=NONE guifg=#E0CB43 guibg=NONE gui=NONE
 hi Keyword ctermfg=214 ctermbg=NONE cterm=NONE guifg=#E0A443 guibg=NONE gui=NONE
 hi Label ctermfg=76 ctermbg=NONE cterm=NONE guifg=#82C769 guibg=NONE gui=NONE
-hi NonText ctermfg=220 ctermbg=23 cterm=NONE guifg=#6C7F8C guibg=#042029 gui=NONE
+hi NonText ctermfg=220 ctermbg=23 cterm=NONE guifg=#6C7F8C guibg=#122B34 gui=NONE
 hi Number ctermfg=204 ctermbg=NONE cterm=NONE guifg=#D9738E guibg=NONE gui=NONE
 hi Operator ctermfg=214 ctermbg=NONE cterm=NONE guifg=#E0A443 guibg=NONE gui=NONE
 hi PreProc ctermfg=214 ctermbg=NONE cterm=NONE guifg=#E0A443 guibg=NONE gui=NONE

@@ -4,8 +4,8 @@ set guitablabel=%t
 set guifont=InconsolataForPowerline:h15
 
 set background=dark
-colorscheme toothpaste
-"colorscheme solarized
+colorscheme onedark
+"colorscheme toothpaste
 "colorscheme wesbalt
 "colorscheme hybrid
 "colorscheme tomorrownight
