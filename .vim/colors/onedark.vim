@@ -164,7 +164,7 @@ call s:h("Tag", {}) " you can use CTRL-] on this
 call s:h("Delimiter", {}) " character that needs attention
 call s:h("SpecialComment", {}) " special things inside a comment
 call s:h("Debug", {}) " debugging statements
-call s:h("Underlined", {}) " text that stands out, HTML links
+call s:h("Underlined", { "gui": "underline" }) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:red }) " any erroneous construct
 call s:h("Todo", { "fg": s:purple }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -378,6 +378,9 @@ call s:h("xmlAttrib", { "fg": s:dark_yellow })
 call s:h("xmlEndTag", { "fg": s:red })
 call s:h("xmlTag", { "fg": s:red })
 call s:h("xmlTagName", { "fg": s:red })
+
+" Vimwiki
+call s:h("VimwikiLink", { "fg": s:blue, "gui": "underline" })
 
 " +---------------------+
 " | Plugin Highlighting |
