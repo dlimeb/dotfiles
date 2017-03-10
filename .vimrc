@@ -132,7 +132,7 @@ if has("autocmd")
         au! BufRead,BufNewFile *.css set ft=css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.less set ft=less.css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.scss set ft=scss.sass.css tabstop=2 softtabstop=2 shiftwidth=2
-        "autocmd BufWritePost,FileWritePost *.scss.sass.css CSScommb
+        autocmd BufWritePost,FileWritePost *.scss.sass.css CSScommb
         "autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
@@ -219,7 +219,6 @@ let g:github_user = 'dlimeb'
 
 " Vimwiki
 let wiki = {}
-"let wiki.path = '/Users/dlimeb/Development/repos/vimwiki'
 let wiki.path = '/Users/dlimeback/Dropbox/personal/vimwiki'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
@@ -295,7 +294,6 @@ nnoremap ` '
 :vnoremap < <gv
 :vnoremap > >gv
 nmap <leader>, vii<<cr><esc>
-"nmap <leader>. vii><cr><esc>
 
 " Faster prev/next through quickfix errors
 nmap <leader>n :cnext<cr>
@@ -348,30 +346,18 @@ iab requets request
 iab checktou checkout
 
 " HTML escaping of <, >, &
-"function HtmlEscape()
-  "silent s/&/\&amp;/
-  "silent s/</\&lt;/
-  "silent s/>/\&gt;/
-"endfunction
+function! HtmlEscape()
+  silent s/&/\&amp;/e
+  silent s/</\&lt;/e
+  silent s/>/\&gt;/e
+endfunction
 
-"function HtmlUnEscape()
-  "silent s/&lt;/</
-  "silent s/&gt;/>/
-  "silent s/&amp;/\&/
-"endfunction
+function! HtmlUnEscape()
+  silent s/&lt;/</e
+  silent s/&gt;/>/e
+  silent s/&amp;/\&/e
+endfunction
 
-"function Tab2()
-    "set tabstop=2
-    "set softtabstop=2
-    "set shiftwidth=2
-"endfunction
+map <silent> <Leader>he :call HtmlEscape()<CR>
+map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 
-"function Tab4()
-    "set tabstop=4
-    "set softtabstop=4
-    "set shiftwidth=4
-"endfunction
-
-" Quick spacing switching
-"map <leader>2 :call Tab2()<CR>
-"map <leader>4 :call Tab4()<CR>

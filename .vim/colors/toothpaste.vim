@@ -10,27 +10,27 @@ endif
 
 let g:colors_name = "Toothpaste"
 
-hi Cursor ctermfg=17 ctermbg=59 cterm=NONE guifg=#222e33 guibg=#465e68 gui=NONE
+hi Cursor ctermfg=17 ctermbg=59 cterm=NONE guifg=#242830 guibg=#465e68 gui=NONE
 hi Visual ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#49483e gui=NONE
-hi CursorLine ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#222e33 gui=NONE
-hi CursorLineNR ctermfg=NONE ctermbg=59 cterm=NONE guifg=#DFFD35 guibg=#222e33 gui=NONE
-hi CursorColumn ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#222e33 gui=NONE
-hi ColorColumn ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#222e33 gui=NONE
-hi LineNr ctermfg=102 ctermbg=59 cterm=NONE guifg=#465e68 guibg=#222e33 gui=NONE
-hi VertSplit ctermfg=59 ctermbg=59 cterm=NONE guifg=#465e68 guibg=#222e33 gui=NONE
+hi CursorLine ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#242830 gui=NONE
+hi CursorLineNR ctermfg=NONE ctermbg=59 cterm=NONE guifg=#DFFD35 guibg=#242830 gui=NONE
+hi CursorColumn ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#242830 gui=NONE
+hi ColorColumn ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#242830 gui=NONE
+hi LineNr ctermfg=102 ctermbg=59 cterm=NONE guifg=#465e68 guibg=#242830 gui=NONE
+hi VertSplit ctermfg=59 ctermbg=59 cterm=NONE guifg=#465e68 guibg=#242830 gui=NONE
 hi MatchParen ctermfg=71 ctermbg=NONE cterm=underline guifg=#62a665 guibg=NONE gui=underline
 hi StatusLine ctermfg=188 ctermbg=59 cterm=bold guifg=#BFC6C7 guibg=#576267 gui=bold
 hi StatusLineNC ctermfg=188 ctermbg=59 cterm=NONE guifg=#BFC6C7 guibg=#576267 gui=NONE
 hi Pmenu ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#49483e gui=NONE
-"hi IncSearch ctermfg=17 ctermbg=186 cterm=NONE guifg=#222e33 guibg=#dbcd7f gui=NONE
+"hi IncSearch ctermfg=17 ctermbg=186 cterm=NONE guifg=#242830 guibg=#dbcd7f gui=NONE
 "hi Search ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
 hi IncSearch ctermfg=17 ctermbg=76 cterm=NONE guifg=#042029 guibg=#9dc777 gui=NONE
 hi Search ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#042029 guibg=#9dc777 gui=NONE
 hi Directory ctermfg=167 ctermbg=NONE cterm=NONE guifg=#e36868 guibg=NONE gui=NONE
-hi Folded ctermfg=59 ctermbg=17 cterm=NONE guifg=#465e68 guibg=#222e33 gui=NONE
+hi Folded ctermfg=59 ctermbg=17 cterm=NONE guifg=#465e68 guibg=#242830 gui=NONE
 
-hi Normal ctermfg=188 ctermbg=17 cterm=NONE guifg=#BFC6C7 guibg=#222e33 gui=NONE
+hi Normal ctermfg=188 ctermbg=17 cterm=NONE guifg=#BFC6C7 guibg=#242830 gui=NONE
 hi Boolean ctermfg=167 ctermbg=NONE cterm=NONE guifg=#e36868 guibg=NONE gui=NONE
 hi Character ctermfg=167 ctermbg=NONE cterm=NONE guifg=#e36868 guibg=NONE gui=NONE
 hi Comment ctermfg=59 ctermbg=NONE cterm=NONE guifg=#465e68 guibg=NONE gui=NONE
@@ -48,12 +48,12 @@ hi Function ctermfg=107 ctermbg=NONE cterm=NONE guifg=#97b853 guibg=NONE gui=NON
 hi Identifier ctermfg=73 ctermbg=NONE cterm=NONE guifg=#73b3c0 guibg=NONE gui=italic
 hi Keyword ctermfg=71 ctermbg=NONE cterm=NONE guifg=#62a665 guibg=NONE gui=NONE
 hi Label ctermfg=186 ctermbg=NONE cterm=NONE guifg=#dbcd7f guibg=NONE gui=NONE
-hi NonText ctermfg=59 ctermbg=23 cterm=NONE guifg=#3b3a32 guibg=#222e33 gui=NONE
+hi NonText ctermfg=59 ctermbg=23 cterm=NONE guifg=#3b3a32 guibg=#242830 gui=NONE
 hi Number ctermfg=150 ctermbg=NONE cterm=NONE guifg=#9dc777 guibg=NONE gui=NONE
 hi Operator ctermfg=71 ctermbg=NONE cterm=NONE guifg=#62a665 guibg=NONE gui=NONE
 hi PreProc ctermfg=71 ctermbg=NONE cterm=NONE guifg=#62a665 guibg=NONE gui=NONE
 hi Special ctermfg=188 ctermbg=NONE cterm=NONE guifg=#BFC6C7 guibg=NONE gui=NONE
-hi SpecialKey ctermfg=59 ctermbg=59 cterm=NONE guifg=#3b3a32 guibg=#222e33 gui=NONE
+hi SpecialKey ctermfg=59 ctermbg=59 cterm=NONE guifg=#3b3a32 guibg=#242830 gui=NONE
 hi Statement ctermfg=71 ctermbg=NONE cterm=NONE guifg=#62a665 guibg=NONE gui=NONE
 hi StorageClass ctermfg=73 ctermbg=NONE cterm=NONE guifg=#73b3c0 guibg=NONE gui=italic
 hi String ctermfg=186 ctermbg=NONE cterm=NONE guifg=#dbcd7f guibg=NONE gui=NONE

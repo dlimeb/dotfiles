@@ -4,13 +4,10 @@ set guitablabel=%t
 set guifont=InconsolataForPowerline:h15
 
 set background=dark
-colorscheme onedark
+"colorscheme onedark
 "colorscheme toothpaste
-"colorscheme wesbalt
-"colorscheme hybrid
+colorscheme hybrid
 "colorscheme tomorrownight
-"colorscheme peacocks-in-space
-"colorscheme superman
 
 " Override syntax highlighting in themes
 highlight link cssDeprecated cssFontProp
