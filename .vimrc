@@ -120,19 +120,19 @@ if has("autocmd")
     " Set filetypes
     augroup filetypedetect
         au! BufRead,BufNewFile *.html set ft=htmldjango.html tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.mjml set ft=html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.haml set ft=haml.html tabstop=2 softtabstop=2 shiftwidth=2
+        au! BufRead,BufNewFile *.erb set ft=erb.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.php set ft=php.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.txt set ft=human
-        au! BufRead,BufNewFile *.mako set ft=mako.html syntax=mako.html5.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.md set ft=markdown tabstop=2 softtabstop=2 shiftwidth=2
-        au! BufRead,BufNewFile */vimwiki/* set filetype=vimwiki
-        au! BufRead,BufNewFile *.js,*.json,*.jstalk set ft=javascript.jquery tabstop=2 softtabstop=2 shiftwidth=2
-        au! BufRead,BufNewFile *.ejs set ft=html.javascript tabstop=2 softtabstop=2 shiftwidth=2
+        "au! BufRead,BufNewFile */vimwiki/* set filetype=vimwiki
+        au! BufRead,BufNewFile *.js,*.json,*.jstalk set ft=javascript tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.mustache,*.hbs set ft=mustache.html tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.css set ft=css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.less set ft=less.css tabstop=2 softtabstop=2 shiftwidth=2
         au! BufRead,BufNewFile *.scss set ft=scss.sass.css tabstop=2 softtabstop=2 shiftwidth=2
-        autocmd BufWritePost,FileWritePost *.scss.sass.css CSScommb
+        "autocmd BufWritePost,FileWritePost *.scss.sass.css CSScommb
         "autocmd BufWritePost,FileWritePost *.js JSHint
     augroup END
 
@@ -198,48 +198,60 @@ nnoremap <leader>V V`]
 
 " NERDtree
 let NERDTreeChDirMode=0
-"let NERDTreeDirArrows=0
+let NERDTreeDirArrows=0
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeShowLineNumbers=1
+let NERDTreeShowLineNumbers=0
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows = 1
+let NERDTreeCascadeSingleChildDir=0
+let NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <leader>d :NERDTreeToggle<CR>
-map <leader>t :NERDTreeFind<CR>
+map <leader>f :NERDTreeFind<CR>
+
+" CommandT
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/.git"
+map <leader>t :CommandT<CR>
 
 " Tagbar
 "let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
 "map <leader>g :TagbarOpen<CR>
 
-" JSHint
-"map <leader>j :JSHint<CR>
+" Ale linting
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:airline#extensions#ale#enabled = 1
 
 " Gist
 let g:gist_clip_command = 'pbcopy'
 let g:github_user = 'dlimeb'
 
 " Vimwiki
-let wiki = {}
-let wiki.path = '/Users/dlimeback/Dropbox/personal/vimwiki'
-let wiki.syntax = 'markdown'
-let wiki.ext = '.md'
+"let wiki = {}
+"let wiki.path = '/Users/dlimeback/Dropbox/personal/vimwiki'
+"let wiki.syntax = 'markdown'
+"let wiki.ext = '.md'
 "let wiki.diary_header = 'Journal'
 "let wiki.diary_index = 'index'
 "let wiki.diary_rel_path = '/'
 "let wiki.diary_link_count = 5
 "let wiki.diary_sort = 'asc'
-let g:vimwiki_hl_headers = 1        " different header levels get different colours
-let g:vimwiki_hl_cb_checked = 1     " checked todos get a colour
-let g:vimwiki_folding = 1           " fold everything up by default
-let g:vimwiki_fold_trailing_empty_lines = 1
-let g:vimwiki_table_mappings = 0    " free up tab key for snipmate use
-let g:vimwiki_ext2syntax = {}       " don't set filetype to 'vimwiki' for all markdown files
-let g:vimwiki_list = [wiki]
-map <leader>w<leader>g :VimwikiDiaryGenerateLinks<CR>
-
-" Fuzzy Finder
-" See also settings: g:fuzzy_roots, g:fuzzy_ceiling, g:fuzzy_ignore, g:fuzzy_matching_limit
-map <leader>f :FufBuffer<CR>
-map <leader>e :FufCoverageFile<CR>
+"let g:vimwiki_hl_headers = 1        " different header levels get different colours
+"let g:vimwiki_hl_cb_checked = 1     " checked todos get a colour
+"let g:vimwiki_folding = 1           " fold everything up by default
+"let g:vimwiki_fold_trailing_empty_lines = 1
+"let g:vimwiki_table_mappings = 0    " free up tab key for snipmate use
+"let g:vimwiki_ext2syntax = {'.md': 'markdown'}
+"let g:vimwiki_list = [wiki]
+"map <leader>w<leader>g :VimwikiDiaryGenerateLinks<CR>
+"map <leader>ww :e /Users/dlimeback/Dropbox/personal/notes/index.md<CR>
 
 " Airline / Powerline
 let g:airline_powerline_fonts = 1
@@ -256,7 +268,7 @@ let g:surround_{char2nr("i")} = "{% trans \"\r\" %}"
 map <leader>a :Ack<space>
 
 " bufexplorer
-let g:bufExplorerDetailedHelp=0
+"let g:bufExplorerDetailedHelp=0
 
 " Show info about syntax/color of word
 map -a :call SyntaxAttr()<CR>
@@ -346,18 +358,18 @@ iab requets request
 iab checktou checkout
 
 " HTML escaping of <, >, &
-function! HtmlEscape()
-  silent s/&/\&amp;/e
-  silent s/</\&lt;/e
-  silent s/>/\&gt;/e
-endfunction
+"function! HtmlEscape()
+  "silent s/&/\&amp;/e
+  "silent s/</\&lt;/e
+  "silent s/>/\&gt;/e
+"endfunction
 
-function! HtmlUnEscape()
-  silent s/&lt;/</e
-  silent s/&gt;/>/e
-  silent s/&amp;/\&/e
-endfunction
+"function! HtmlUnEscape()
+  "silent s/&lt;/</e
+  "silent s/&gt;/>/e
+  "silent s/&amp;/\&/e
+"endfunction
 
-map <silent> <Leader>he :call HtmlEscape()<CR>
-map <silent> <Leader>hu :call HtmlUnEscape()<CR>
+"map <silent> <Leader>he :call HtmlEscape()<CR>
+"map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 

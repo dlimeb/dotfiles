@@ -81,7 +81,7 @@ if has("gui_running")
   "let s:background = "#1d1f21"
   let s:background = "#222e33"
   let s:foreground = "#c5c8c6"
-  let s:selection  = "#373b41"
+  let s:selection  = "#394950"
   let s:line       = "#192226"
   let s:comment    = "#707880"
   let s:red        = "#cc6666"

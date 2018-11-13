@@ -302,3 +302,19 @@ snippet wttt
 	<span class="wv-tooltip">${1}</span>
 snippet wff
 	wv-form-field
+snippet wv-notify
+	<div class="wv-notify--${0}" role="alert">
+		<div class="wv-notify__column wv-notify__icon-holder"><svg class="wv-svg-icon"><use xlink:href="#attention" href="#attention"></use></svg></div>
+		<div class="wv-notify__column wv-notify__content">
+			<div class="wv-notify__title">This is a notification title.</div>
+			<div class="wv-notify__message">
+				<div class="wv-text">This is the notification message, with an action and close. And here's a <a class="wv-text--link" href="#">link</a>.</div>
+			</div>
+		</div>
+		<div class="wv-notify__column wv-notify__action">
+			<button class="wv-button--secondary">Action</button>
+		</div>
+		<div class="wv-notify__column wv-notify__close">
+			<button type="button" class="wv-close" aria-label="Close"></button>
+		</div>
+	</div>

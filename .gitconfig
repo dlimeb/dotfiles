@@ -1,9 +1,9 @@
 [user]
-	name = Dieter Limeback
-	email = dlimeb@gmail.com
+    name = Dieter Limeback
+    email = dlimeb@gmail.com
 
 [push]
-    default = tracking
+    default = current
 
 [core]
     editor = vim
@@ -59,8 +59,13 @@
     cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 
 [init]
-	templatedir = ~/.git_templates
+    templatedir = ~/.git_templates
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [github]
-	user = dlimeb
+    user = dlimeb
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
