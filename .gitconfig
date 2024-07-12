@@ -5,6 +5,15 @@
 [push]
     default = current
 
+[credential]
+    helper = osxkeychain
+
+[github]
+    user = dlimeb
+
+[init]
+    templatedir = ~/.git_templates
+
 [core]
     editor = vim
     excludesfile = ~/.gitignore
@@ -34,14 +43,11 @@
 
 [alias]
     st = status
-    tst = status # I keep typoing this :/ see also bash which has an alias for `gi`
     ci = commit
     co = checkout
     br = branch
-
     dfc = diff --cached
     dfw = diff --word-diff
-
     log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -56,14 +62,8 @@
     whatsnew = !sh -c 'git shortlog --format=\"%h %s\" $1..HEAD' -
 
     # Delete all local branches that are already merged into the current branch
-    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|main' | xargs -n 1 git branch -d"
 
-[init]
-    templatedir = ~/.git_templates
-[credential]
-    helper = osxkeychain
-[github]
-    user = dlimeb
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
