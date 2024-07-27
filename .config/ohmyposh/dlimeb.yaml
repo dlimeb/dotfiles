@@ -1,0 +1,89 @@
+#
+# default.yaml -- oh-my-posh config
+#
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+#
+
+version: 2
+final_space: true
+
+# Set title of console
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+
+# Define colour palette
+# Rather than define every colour needed here, use the default 16 ANSI colour
+# names when styling the prompt below. Then ensure those colours are defined in
+# your terminal program according to your desired theme. This is much easier
+# than duplicating here, and ensures consistency between prompt and non-prompt
+# colour usage. Only define colours here if you need something custom.
+palette:
+  gray: '#6C7086'
+
+# Define main prompt
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - type: text
+    style: plain
+    foreground_templates:
+    - "{{if gt .Code 0}}red{{end}}"
+    - "{{if eq .Code 0}}magenta{{end}}"
+    background: transparent
+    template: "→"
+    # template: '{{ if eq .UserName "root" }}<red><b>#</b></>{{else}}→{{end}}'
+  - type: session
+    style: plain
+    background: transparent
+    foreground: p:white
+    template: '<cyan>{{ if .SSHSession }}[{{ .HostName }}]{{ end }}</> '
+  - type: path
+    style: plain
+    background: transparent
+    foreground: blue
+    template: "{{ .Path }}"
+    properties:
+      style: full
+  - type: git
+    style: plain
+    foreground: p:gray
+    background: transparent
+    template: ' [<red>{{ .HEAD }}</>] {{ if or (.Working.Changed) (.Staging.Changed) }}<yellow><b>︎✕</b></>{{ end }}<cyan>{{ if gt .Behind 0 }} ⇣{{ end }}{{ if gt .Ahead 0 }} ⇡{{ end }}</>'
+    properties:
+      branch_icon: ''
+      commit_icon: '@'
+      fetch_status: true
+# TODO: enable root segment
+  # - type: text
+  #   style: plain
+  #   foreground_templates:
+  #   - "{{if gt .Code 0}}red{{end}}"
+  #   - "{{if eq .Code 0}}magenta{{end}}"
+  #   background: transparent
+  #   # template: "→"
+  #   template: '{{ if eq .UserName "root" }}<red><b>#</b></>{{else}}→{{end}}'
+
+- type: rprompt
+  overflow: hidden
+  segments:
+  - type: executiontime
+    style: plain
+    foreground: green
+    background: transparent
+    template: '{{ .FormattedMs }}'
+    properties:
+      threshold: 5000
+
+
+# Define additional prompts
+transient_prompt:
+  foreground_templates:
+  - "{{if gt .Code 0}}red{{end}}"
+  - "{{if eq .Code 0}}magenta{{end}}"
+  background: transparent
+  template: "→ "
+
+secondary_prompt:
+  foreground: magenta
+  background: transparent
+  template: "- "
