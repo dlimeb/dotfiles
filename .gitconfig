@@ -34,13 +34,12 @@
 
 [alias]
     st = status
-    tst = status # I keep typoing this :/ see also bash which has an alias for `gi`
     ci = commit
     co = checkout
     br = branch
 
-    dfc = diff --cached
-    dfw = diff --word-diff
+    dc = diff --cached
+    dw = diff --word-diff
 
     log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -49,21 +48,18 @@
     # remove files that have been marked as deleted
     rmd = "!git ls-files --deleted -z | xargs -0 git rm"
 
-    # Usage: git whatsnew <other_branch>
-    # Show commits that are in the current branch,
-    # but not in <other_branch>. Great for an
-    # instant changelog.
-    whatsnew = !sh -c 'git shortlog --format=\"%h %s\" $1..HEAD' -
-
     # Delete all local branches that are already merged into the current branch
-    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    cleanup = "!git branch --merged | grep -v '\\*\\|master\\|main\\|develop' | xargs -n 1 -r git branch -d"
 
 [init]
     templatedir = ~/.git_templates
+
 [credential]
     helper = osxkeychain
+
 [github]
     user = dlimeb
+
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
