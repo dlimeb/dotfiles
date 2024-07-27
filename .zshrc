@@ -23,7 +23,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Initialize oh-my-posh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/default.yaml)"
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/dlimeb.yaml)"
 fi
 
 # Add colour to commands
