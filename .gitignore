@@ -7,3 +7,4 @@ local_settings.py
 .vagrant
 sitestatic
 bower_components
+.config/tmux/plugins/*
