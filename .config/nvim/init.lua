@@ -39,9 +39,9 @@ vim.o.formatoptions = 'jcroqln'   -- set some formatting features (see :h fo-tab
 
 -- KEYBINDINGS
 --
--- Splits
--- Note <C-h/j/k/l> for switching between splits and panes is set in the
--- vim-tmux-navigator plugin config
+-- Splits: Create vert/horiz, close
+-- (Note <C-h/j/k/l> for switching between splits and panes is set in the
+-- vim-tmux-navigator plugin config)
 vim.keymap.set('n', '<Leader>v', '<C-w>v<C-w>l', {})
 vim.keymap.set('n', '<Leader>h', '<C-w>s<C-w>j', {})
 vim.keymap.set('n', '<Leader>x', '<C-w>c', {})
@@ -60,8 +60,6 @@ vim.keymap.set('n', '<C-y>', '<C-y><C-y><C-y>', {})
 vim.keymap.set('n', '<Leader>O', 'O<ESC>', {})
 
 -- Toggle showing whitespace characters
--- NOTE: May not need this, trim.nvim strips end of line etc on save
--- and linters should probably do convert tabs to spaces
 vim.o.listchars = 'tab:>=,trail:~,nbsp:%,eol:$,extends:>,precedes:<,space:•'
 vim.keymap.set('n', '<Leader>W', ':set nolist!<CR>', {})
 
@@ -84,11 +82,13 @@ vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<Leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<Leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<Leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<Leader>fm', builtin.man_pages, {})
+-- note there are git pickers as well
 
 -- Plugin: nvim-tree
 vim.keymap.set('n', '<Leader>tt', ':NvimTreeToggle<CR>', {})
 vim.keymap.set('n', '<Leader>tf', ':NvimTreeFocus<CR>', {})
-vim.keymap.set('n', '<Leader>ts', ':NvimTreeFindFile<CR>', {})
+vim.keymap.set('n', '<Leader>tl', ':NvimTreeFindFile<CR>', {})
 
 -- Plugin: nvim-comments
 -- These are the fancy comments to highlight TODO, XXX, etc
