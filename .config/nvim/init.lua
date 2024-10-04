@@ -35,6 +35,7 @@ vim.o.showmode = false            -- hide mode on statusline (lualine plugin doe
 vim.o.showmatch = true            -- highlight matching brackets
 vim.o.foldmethod = indent         -- enable folding
 vim.o.formatoptions = 'jcroqln'   -- set some formatting features (see :h fo-table)
+vim.o.mouse = 'a'                 -- enable mouse mode
 
 
 -- KEYBINDINGS
