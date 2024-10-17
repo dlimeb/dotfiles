@@ -48,8 +48,8 @@ vim.keymap.set('n', '<Leader>h', '<C-w>s<C-w>j', {})
 vim.keymap.set('n', '<Leader>x', '<C-w>c', {})
 
 -- Window resizing
-vim.keymap.set('n', '<C-S-Right>', '5<C-w>>', {})
-vim.keymap.set('n', '<C-S-Left>', '5<C-w><', {})
+vim.keymap.set('n', '<C-S-Left>', '5<C-w>>', {})
+vim.keymap.set('n', '<C-S-Right>', '5<C-w><', {})
 vim.keymap.set('n', '<C-S-Up>', '<C-w>-', {})
 vim.keymap.set('n', '<C-S-Down>', '<C-w>+', {})
 
@@ -73,18 +73,19 @@ vim.keymap.set('n', '<Leader><space>', ':noh<CR>')
 
 -- Inspect syntax info under cursor
 vim.keymap.set('n', '<Leader>I', ':Inspect<CR>', {})
---
+
 -- Plugin: Lazy
 vim.keymap.set('n', '<Leader>L', ':Lazy<CR>', {})
 
 -- Plugin: Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<Leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<Leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<Leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<Leader>fm', builtin.man_pages, {})
--- note there are git pickers as well
+vim.keymap.set('n', '<Leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<Leader>fs', builtin.grep_string, { desc = 'Telescope grep string' })
+vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+vim.keymap.set('n', '<Leader>fm', builtin.man_pages, { desc = 'Telescope man pages' })
+vim.keymap.set('n', '<Leader>fc', builtin.git_commits, { desc = 'Telescope git commits' })
 
 -- Plugin: nvim-tree
 vim.keymap.set('n', '<Leader>tt', ':NvimTreeToggle<CR>', {})
@@ -96,6 +97,7 @@ vim.keymap.set('n', '<Leader>tl', ':NvimTreeFindFile<CR>', {})
 -- Commands can display all of them in Telescope or Quickfix window
 -- TODO: figure out keymapping, want to keep ,t for nvim-tree
 -- vim.keymap.set('n', '<Leader>tt', ':TodoTelescope<cr>', {})
+--
 
 
 -- SHORTCUTS AND HELPERS
