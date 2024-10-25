@@ -1,0 +1,562 @@
+/*=============================================================================
+
+CONTENT
+
+Styling for native markdown elements in the main content area.
+
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  GLOBAL
+-----------------------------------------------------------------------------*/
+.cm-s-obsidian,
+.markdown-preview-view,
+body {
+  font-size: var(--font-adaptive-normal);
+  font-weight: var(--normal-weight);
+  line-height: var(--line-height);
+  letter-spacing: -0.01em;
+
+  /* make Inter nicer */
+  /* font-feature-settings: "ss01","ss04";
+  letter-spacing: -1.8%; */
+}
+
+.markdown-rendered div:has( > :is(p,pre,table,ul,ol)) + div > :is(h1,h2,h3,h4,h5,h6) {
+  margin-top: 0;
+}
+
+
+/*-----------------------------------------------------------------------------
+  HEADINGS
+-----------------------------------------------------------------------------*/
+/* tweak header colour and spacing */
+.cm-header-1,
+.markdown-rendered h1,
+.cm-header-2,
+.markdown-rendered h2,
+.cm-header-3,
+.markdown-rendered h3 {
+  color: var(--dl-header-color) !important;
+}
+.cm-header-4,
+.markdown-rendered h4,
+.cm-header-5,
+.markdown-rendered h5,
+.cm-header-6,
+.markdown-rendered h6 {
+  color: var(--text-muted);
+}
+.cm-s-obsidian .cm-line.HyperMD-header {
+  padding-top: 1em !important;
+  padding-bottom: 0.5em !important;
+  margin-bottom: 0.25em !important;
+}
+.mod-cm6 .cm-editor .HyperMD-header-2,
+.mod-cm6 .cm-editor .HyperMD-header-3,
+.mod-cm6 .cm-editor .HyperMD-header-4,
+.mod-cm6 .cm-editor .HyperMD-header-5,
+.mod-cm6 .cm-editor .HyperMD-header-6 {
+  padding-bottom: 0em !important;
+  margin-bottom: 0em !important;
+}
+.HyperMD-header .cm-header-1,
+.HyperMD-header .cm-header-2,
+.HyperMD-header .cm-header-3,
+.HyperMD-header .cm-header-4,
+.HyperMD-header .cm-header-5,
+.HyperMD-header .cm-header-6 {
+  /* iA Writer style, all headings the same size.
+     Could also try h1 as slightly bigger, but all other levels can be the same -- bc really I should only be using h2; if I have h3+, prob need to refactor into several notes */
+  font-size: var(--font-adaptive-normal) !important;
+}
+
+/* deemphasize ## when editing headers */
+.cm-formatting-header {
+
+  /* would be nice to outhang like iA Writer, but too complicated and interferes w collapse arrow */
+  /* margin-left: -20px; */
+}
+
+/*-----------------------------------------------------------------------------
+  TEXT
+-----------------------------------------------------------------------------*/
+::selection {
+  background-color: var(--ax4) !important;
+}
+.markdown-rendered p {
+  margin-top: 0;
+}
+/* numbers in <ol> same colour as text */
+.cm-s-obsidian .cm-formatting-list-ol {
+  color: var(--text-color);
+}
+/* links */
+.markdown-source-view.mod-cm6 .cm-underline,
+.metadata-container .internal-link,
+.markdown-rendered .internal-link {
+  text-underline-offset: 2px;
+}
+.cm-s-obsidian span.cm-hmd-internal-link:hover,
+.markdown-source-view.mod-cm6 .cm-underline:hover,
+.metadata-container .internal-link:hover,
+.markdown-rendered .internal-link:hover {
+  text-decoration: none !important;
+}
+/* lists */
+ul > li {
+  min-height: 1.4em;
+}
+ol > li {
+  margin-inline-start: 0;
+}
+ol {
+  margin-inline-start: 0;
+  list-style: default;
+}
+/* make markdown highlight similar appearance to inline code */
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  padding: 0 0.25em;
+  display: inline-block;
+}
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight.cm-hmd-internal-link,
+.cm-s-obsidian span.cm-formatting-link-start,
+.cm-s-obsidian span.cm-formatting-link-end {
+  padding: 0 !important;
+}
+/* don't really need to see blockids */
+.cm-s-obsidian span.cm-blockid {
+  display: none;
+}
+.external-link {
+  background-image: none !important;
+  display: inline-block;
+  text-decoration-line: none !important;
+  width: 0.5em;
+}
+.external-link:before {
+  content: "↗︎";
+  color: var(--tx1) !important;
+  margin-left: 0.3em;
+  font-size: 0.9em;
+}
+
+
+/*-----------------------------------------------------------------------------
+  TABLES
+-----------------------------------------------------------------------------*/
+.table-view-table > thead > tr > th {
+  font-weight: 400;
+  font-size: var(--table-header-size);
+  color: var(--text-muted);
+  border-bottom: 0;
+  cursor: var(--cursor);
+  padding: var(--table-cell-padding);
+}
+.table-view-table > thead > tr > th:first-child {
+  padding-left: var(--table-edge-cell-padding-first);
+}
+.table-view-table > thead > tr > th:last-child {
+  padding-right: var(--table-edge-cell-padding-last);
+}
+
+
+/*-----------------------------------------------------------------------------
+  TAGS
+-----------------------------------------------------------------------------*/
+.cm-hashtag {
+  padding-top: 0;
+}
+.multi-select-pill {
+  line-height: 0.8;
+  margin-right: 0.5em;
+  text-underline-offset: 2px;
+}
+.multi-select-pill-content {
+  margin-left: calc(1.5 * var(--pill-padding-x));
+}
+/* make pill size same as tag size (can't use --tag-size because it's in em and
+ * there's a parent element in properties also setting font size) */
+.metadata-property[data-property-key="tags"] .multi-select-pill {
+  font-size: 0.9em !important;
+  color: var(--pill-color) !important;
+  /* hack to make optically same size as tags lol */
+  height: 20px;
+  margin-top: 2px;
+}
+/* make tags hover like pills */
+a.tag:hover,
+.cm-hashtag:hover {
+  background-color: var(--tag-background-hover);
+}
+
+
+/*-----------------------------------------------------------------------------
+  CODE
+-----------------------------------------------------------------------------*/
+/* INLINE CODE */
+/* tweak cosmetics */
+.cm-s-obsidian span.cm-inline-code {
+  padding: 0 0.25em !important;
+  display: inline-block;
+  background-color: var(--ui1);
+  color: var(--text-color);
+}
+/* backticks are separate elements */
+.cm-s-obsidian span.cm-formatting-code.cm-inline-code {
+  padding: 0 !important;
+  color: var(--text-color) !important;
+}
+/* templater code */
+.cm-s-obsidian .templater-inline .cm-templater-command,
+.cm-s-obsidian .templater-command-bg {
+  background-color: var(--background-primary) !important;
+}
+/* CODE BLOCKS
+   Code blocks are used for both regular code snippets and editing eg Tasks or
+   Dataview queries. */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  padding-left: var(--size-4-6);
+}
+
+
+/*-----------------------------------------------------------------------------
+  COMMENTS
+-----------------------------------------------------------------------------*/
+/* these affect both inline markdown comments (`%%`) and comments in
+ * code blocks */
+.cm-comment,
+.cm-comment > * {
+    color: var(--text-muted);
+    font-size: var(--font-adaptive-small);
+    line-height: 1;
+}
+/* hide %% markup except for when line is selected */
+.cm-line:not(.cm-active) .cm-comment.cm-comment-start,
+.cm-line:not(.cm-active) .cm-comment.cm-comment-end {
+    display: none;
+}
+
+
+/*-----------------------------------------------------------------------------
+  DIVIDERS
+-----------------------------------------------------------------------------*/
+.markdown-source-view.mod-cm6 hr {
+  border-color: var(--ui2) !important;
+  border-width: 1px;
+}
+
+
+/*-----------------------------------------------------------------------------
+  CALLOUTS
+-----------------------------------------------------------------------------*/
+/* colour, alignment tweaks */
+.callout {
+  background-color: rgba(var(--callout-color), var(--dl-callout-opacity));
+}
+.callout-title {
+  gap: var(--size-4-3);
+}
+.callout-title-inner {
+  flex-grow: 1;
+}
+.is-collapsible .callout-title:hover {
+  cursor: pointer;
+}
+.callout-fold {
+  padding-right: 0;
+}
+.callout-fold svg {
+  height: 20px;
+  width: 20px;
+}
+.callout-content {
+  padding-top: 1em;
+}
+.callout-content p {
+  margin-block-end: 1em;
+}
+.callout-content ul,
+.callout-content ol {
+  padding-inline-start: 1em;
+  margin-top: 0;
+}
+.callout-content :is(p, ul, ol):first-child {
+  margin-top: 0 !important;
+}
+.callout-content :is(p, ul, ol):last-child {
+  margin-bottom: 0 !important;
+}
+
+/* tweak padding for callouts in left panel */
+.workspace-split.mod-left-split .callout {
+  padding: var(--size-4-3);
+}
+
+.markdown-preview-view .callout {
+  margin-bottom: 1em !important;
+}
+/* CUSTOM CALLOUTS */
+.callout[data-callout="plain"] {
+  --callout-color: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* give colour to plain callouts nested in normal ones */
+/* .callout[data-callout="blue"] .callout-content .callout[data-callout="plain"] .callout-title-inner {
+  --callout-color: var(--color-blue-rgb);
+} */
+.markdown-preview-view .callout[data-callout="plain"] {
+  padding-top: 0;
+}
+.callout[data-callout="plain"] .callout-title-inner {
+  font-weight: normal;
+}
+.callout[data-callout="green"] {
+  --callout-color: var(--color-green-rgb);
+}
+.callout[data-callout="blue"] {
+  --callout-color: var(--color-blue-rgb);
+}
+.callout[data-callout="purple"] {
+  --callout-color: var(--color-purple-rgb);
+}
+.callout[data-callout="teal"] {
+  --callout-color: var(--color-teal-rgb);
+}
+.callout[data-callout="grey"],
+.callout[data-callout="gray"] {
+  --callout-color: var(--callout-quote);
+}
+.callout[data-callout="orange"] {
+  --callout-color: var(--color-orange-rgb);
+}
+.callout[data-callout="red"] {
+  --callout-color: var(--color-red-rgb);
+}
+/* hide icon for callouts of type `[colour]`, which are intended to be plain */
+.callout[data-callout="plain"] .callout-icon,
+.callout[data-callout="green"] .callout-icon,
+.callout[data-callout="blue"] .callout-icon,
+.callout[data-callout="purple"] .callout-icon,
+.callout[data-callout="teal"] .callout-icon,
+.callout[data-callout="grey"] .callout-icon,
+.callout[data-callout="gray"] .callout-icon,
+.callout[data-callout="orange"] .callout-icon,
+.callout[data-callout="red"] .callout-icon {
+  display: none;
+}
+
+
+/*-----------------------------------------------------------------------------
+  PLUGINS
+-----------------------------------------------------------------------------*/
+/*--- DATAVIEW ---*/
+.dataview-inline-lists .markdown-preview-view .dataview-ul,
+.dataview-inline-lists .markdown-source-view .dataview-ul {
+  --list-spacing: 0;
+}
+.dataview-inline-lists .markdown-preview-view .dataview-ul li:not(:last-child):after,
+.dataview-inline-lists .markdown-source-view .dataview-ul li:not(:last-child):after {
+  content: ", ";
+}
+.dataview-inline-lists .markdown-preview-view ul.dataview-ul > li::before,
+.dataview-inline-lists .markdown-source-view ul.dataview-ul > li::before {
+  display: none;
+}
+.dataview-inline-lists .markdown-preview-view .dataview-ul li,
+.dataview-inline-lists .markdown-source-view .dataview-ul li {
+  display: inline-block;
+  padding-right: 0.25em;
+}
+.markdown-preview-view td:first-child,
+.table-view-table > tbody > tr > td:first-child {
+  padding-left: var(--table-edge-cell-padding-first) !important;
+}
+table.dataview ul.dataview-ul {
+  list-style: none;
+  margin-block-start: 0em !important;
+  margin-block-end: 0em !important;
+  padding: 0;
+}
+.markdown-preview-view .table-view-table > tbody > tr > td,
+.markdown-source-view.mod-cm6 .table-view-table > tbody > tr > td {
+  max-width: var(--max-col-width);
+  padding: var(--table-cell-padding);
+  vertical-align: top;
+}
+body .dataview.small-text {
+  color: var(--text-faint);
+  font-size: var(--font-adaptive-small) !important;
+}
+body:not(.row-hover) .dataview.task-list-basic-item:hover,
+body:not(.row-hover) .dataview.task-list-item:hover,
+body:not(.row-hover) .table-view-table > tbody > tr:hover {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+body.row-hover .dataview.task-list-basic-item:hover,
+body.row-hover .dataview.task-list-item:hover,
+body.row-hover .table-view-table > tbody > tr:hover {
+  background-color: var(--table-row-background-hover) !important;
+}
+ul .dataview .task-list-basic-item:hover,
+ul .dataview .task-list-item:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+body .dataview.result-group {
+  padding-left: 0;
+}
+body .dataview .inline-field-standalone-value,
+body .dataview.inline-field-key,
+body .dataview.inline-field-value {
+  font-family: var(--font-text);
+  font-size: calc(var(--font-adaptive-normal) - 2px);
+  background: 0 0;
+  color: var(--text-muted);
+}
+body .dataview.inline-field-key {
+  padding: 0;
+}
+body .dataview .inline-field-standalone-value {
+  padding: 0;
+}
+body .dataview.inline-field-key::after {
+  margin-left: 3px;
+  content: "|";
+  color: var(--background-modifier-border);
+}
+body .dataview.inline-field-value {
+  padding: 0 1px 0 3px;
+}
+.markdown-preview-view .block-language-dataview table.calendar th {
+  border: none;
+  cursor: default;
+  background-image: none;
+}
+.markdown-preview-view .block-language-dataview table.calendar .day {
+  font-size: var(--font-adaptive-small);
+}
+
+/*--- TASKS ---
+   Tasks modal content is styled in UI.css. This is Tasks output in content,
+   either task lines themselves, or rows in queries.
+
+   Note the styling for metadata below (due, scheduled, priority, etc) only
+   applies to tasks in queries. The original task (with the #task tag) does not
+   provide the additional HTML wrappers around that data; it's just one text
+   line.
+
+   There are also data attributes in that HTML which could be used for extra
+   styling. For example, .task-due has `data-task-due` of "today" or "past-2d".
+*/
+/* tweaks for spacing and legibility */
+.markdown-preview-view ul > li.task-list-item {
+  line-height: var(--line-height);
+}
+ul.contains-task-list {
+  /* padding-left: 1.5em; */
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+.markdown-source-view.mod-cm6 .task-list-item-checkbox {
+  top: -2px !important;
+}
+.task-due,
+.task-priority,
+.task-start,
+.task-created,
+.task-scheduled,
+.task-done {
+  font-size: var(--font-adaptive-small);
+  color: var(--text-muted);
+}
+.task-priority {
+  margin-left: 0.5rem;
+}
+/* hide brackets around source link ;) */
+.tasks-backlink {
+  color: var(--background-primary);
+  font-size: 0;
+}
+.tasks-backlink a {
+  font-size: var(--font-adaptive-small);
+  white-space: nowrap;
+}
+.internal-link.internal-link-short-mode:hover {
+  text-decoration: none !important;
+}
+/* turn off tooltips on item hover in short mode */
+.tasks-list-text .tooltip {
+  display: none;
+}
+/* replace the highest priority red triangle icon. no way to replace this
+ * on the original task line, so this is in queries only */
+label[for="priority-highest"] span:last-child,
+.task-priority[data-task-priority="highest"] span {
+  display: none;
+}
+label[for="priority-highest"]:after,
+.task-priority[data-task-priority="highest"]:before {
+  content: "🔥";
+}
+.tasks-modal-priorities > label[for="priority-highest"]:after {
+  display: none;
+}
+
+/* only show extras icons on hover */
+li.task-list-item .task-extras {
+  opacity: 0;
+  margin-left: 0.4rem;
+}
+li.task-list-item:hover .task-extras {
+  opacity: 1;
+}
+/* replace the edit pencil icon (nice, now all emoji) */
+.tasks-edit {
+  font-size: var(--font-adaptive-small);
+  background-color: transparent;
+  mask-image: none;
+  -webkit-mask-image: none;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin-right: 0.4em;
+}
+.tasks-edit:before {
+  /* content: "️✏️✎"; */
+  content: "Edit";
+  display: inline-block;
+  /* transform: scaleX(-1); */
+}
+#postpone-button::after,
+.tasks-edit:after {
+  display: none;
+}
+.markdown-source-view.mod-cm6 .task-list-item-checkbox {
+  margin-right: 0.5rem;
+}
+/* count at bottom of query */
+.task-count {
+  color: var(--text-muted);
+}
+
+
+/*--- BUTTONS ---*/
+/* Use the Button Maker command to create new buttons. The default one works fine,
+but you can also add a custom css classname to be added. If you do that, be sure
+to also add the `button-default` classname, so it can inherit styling. You can
+add a custom button-id manually or the command window can insert it.
+```button
+name My Cool Button
+type command
+action Save current file
+class button-default dl-button-my-cool-button
+```
+^button-my-cool-button
+*/
+.dl-button-add-new {
+  width: 100%;
+}

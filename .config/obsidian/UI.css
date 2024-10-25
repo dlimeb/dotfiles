@@ -1,0 +1,1008 @@
+/*=============================================================================
+
+UI
+
+Styling for Obsidian UI components, and anything that plugins draw to
+non-content panes.
+
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  SIDEBARS
+-----------------------------------------------------------------------------*/
+.mod-left-split .workspace-leaf-resize-handle,
+.mod-right-split .workspace-leaf-resize-handle {
+  border-color: transparent;
+}
+.workspace-ribbon {
+  /* border-right: 1px solid var(--bg3); */
+  border-right: 0;
+}
+.nav-folder.mod-root .nav-folder > .nav-folder-children {
+  border-left: 0;
+}
+.workspace-split.mod-left-split {
+  background-color: var(--bg2);
+}
+.workspace-ribbon.mod-left:before {
+  border-bottom: 0;
+}
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+  /* border-top: 1px solid var(--bg3); */
+}
+.mod-right-split  {
+  background-color: var(--background-primary);
+}
+.workspace-split:not(.mod-root) .graph-controls.is-close {
+  background-color: transparent;
+}
+/* divider between vertical splits */
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+  border-right-width: 0 !important;
+}
+.workspace-leaf-resize-handle {
+  transition: none;
+}
+/* set reading-mode in notes displayed in left sidebar (no need to edit there) so hide the properties */
+.mod-left-split .workspace-leaf-content .metadata-container {
+  display: none !important;
+}
+/* sub items  */
+.tree-item-self {
+  margin-bottom: 0;
+}
+.tree-item-children {
+  border-left: 0;
+}
+.tree-item-children .tree-item-self.bookmark {
+  gap: 4px;
+}
+
+/*-----------------------------------------------------------------------------
+  TABS
+-----------------------------------------------------------------------------*/
+/* all tabs (both individual sidebar panels, and main open files tabs in content */
+.workspace-tab-header-container {
+  border-bottom: none;
+}
+/* active tab */
+.workspace-tab-header.is-active {
+  box-shadow: none;
+  background-color: var(--bg1) !important;
+}
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+  background-color: transparent !important;
+}
+.workspace-tabs .workspace-leaf,
+.mod-top .workspace-tab-header-container,
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+  border-bottom: 0 !important;
+  background-color: transparent;
+  /* border-right: 1px solid var(--bg3); */
+}
+.mod-top .workspace-tab-header-container {
+  background-color: var(--bg2);
+}
+/* file tabs themselves */
+.workspace .mod-root .workspace-tab-header {
+  background-color: transparent;
+  padding: 0 4px;
+  border-radius: 0;
+}
+.mod-root .workspace-tab-header-inner {
+  padding: 0 6px 0 10px;
+  border-radius: 0;
+}
+.mod-root .workspace-tab-header-container-inner {
+  padding: 0 15px;
+  margin: 0;
+}
+.workspace-tab-header::before,
+.workspace-tab-header::after {
+  box-shadow: none !important;
+}
+
+/*-----------------------------------------------------------------------------
+  CONTENT AREA
+-----------------------------------------------------------------------------*/
+/* three dots on collapsed items */
+.markdown-source-view.mod-cm6 .cm-foldPlaceholder {
+  color: var(--text-faint);
+  display: inline-block;
+  height: 0.6em;
+  position: absolute;
+  /* top: 1.6em; */
+  line-height: 0px;
+  padding: 0 4px;
+  font-size: 1.4em;
+}
+.markdown-source-view.mod-cm6 .cm-foldPlaceholder:hover {
+  background-color: var(--bg3);
+  cursor: default;
+}
+/* when in heading folding up a section */
+.markdown-source-view.mod-cm6 .HyperMD-header .cm-foldPlaceholder {
+  top: 0.95em;
+  font-weight: 400;
+}
+/* when on regular line as collapsed list */
+.markdown-source-view.mod-cm6 .HyperMD-list-line .cm-foldPlaceholder {
+  top: 0.45em;
+}
+
+/* from Minimal */
+.view-header-title,
+.view-header-title-parent {
+  text-overflow: ellipsis;
+}
+body:not(.is-mobile) .view-actions .view-action:last-child {
+  margin-left: -1px;
+}
+.mod-right.is-collapsed ~ .mod-root .view-header:hover .view-actions,
+.view-action.is-active:hover,
+.workspace-ribbon.mod-left.is-collapsed ~ .mod-root .view-header:hover .view-actions,
+body .workspace-ribbon:not(.is-collapsed) ~ .mod-root .view-actions {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+.view-header-title-container {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+.view-header-title-container:focus-within {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+.view-header:hover .view-header-title-container,
+.workspace-tab-header-container:hover + .workspace-tab-container .view-header-title-container {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+body.window-title-off .titlebar-text {
+  display: none;
+}
+.titlebar-button-container.mod-right {
+  background-color: transparent !important;
+}
+.canvas-node-label {
+  font-size: var(--font-adaptive-small);
+}
+.canvas-edges :not(.is-themed) path.canvas-display-path {
+  stroke: var(--background-modifier-border-focus);
+}
+.canvas-edges :not(.is-themed) polyline.canvas-path-end {
+  stroke: var(--background-modifier-border-focus);
+  fill: var(--background-modifier-border-focus);
+}
+.canvas-node-container {
+  border: 1.5px solid var(--background-modifier-border-focus);
+}
+.node-insert-event.mod-inside-iframe {
+  --max-width: 100%;
+  --folding-offset: 0px;
+}
+body:not(.is-mobile) .nav-folder.mod-root > .nav-folder-title .nav-folder-title-content {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-size: var(--font-adaptive-smallest);
+}
+.nav-buttons-container {
+  justify-content: flex-start;
+}
+.nav-file-tag {
+  padding-top: 0.2em;
+  background-color: transparent;
+  color: var(--text-faint);
+}
+.nav-file .is-active .nav-file-tag,
+.nav-file:hover .nav-file-tag {
+  color: var(--text-muted);
+}
+
+
+/*-----------------------------------------------------------------------------
+  GRAPH VIEW
+
+  Preprend .theme-light or -dark if needed to tweak.
+-----------------------------------------------------------------------------*/
+/* connecting lines between nodes */
+.graph-view.color-line {
+    color: var(--ui1);
+}
+/* head of arrow (if displayed) not the whole line
+.graph-view.color-arrow {
+  color: pink;
+} */
+/* tags (if displayed) */
+.graph-view.color-fill-tag {
+  color: var(--color-cyan);
+}
+/* attachments (if displayed) */
+.graph-view.color-fill-attachment {
+  color: var(--text-faint);
+}
+/* orphans/non-existing files (if displayed) */
+.graph-view.color-fill-unresolved {
+  color: rgb(252, 90, 90);
+}
+
+
+
+/*-----------------------------------------------------------------------------
+  MODALS & PROMPTS
+-----------------------------------------------------------------------------*/
+.prompt,
+.modal {
+  border: 0;
+}
+.modal.mod-settings .vertical-tab-header {
+  border-right: 0;
+}
+input.prompt-input:focus {
+  border-bottom: 1px solid var(--background-secondary) !important;
+}
+.modal-container.mod-confirmation .modal {
+  width: 480px;
+  min-width: 0;
+}
+/* matching keystrokes in eg command prompt */
+.suggestion-highlight {
+  font-weight: 500 !important;
+  background-color: var(--text-highlight-bg);
+}
+.suggestion-item.is-selected {
+  background-color: var(--bg2);
+}
+
+
+/*-----------------------------------------------------------------------------
+  SEARCH
+-----------------------------------------------------------------------------*/
+.search-result-file-matches {
+  margin: 0 0 var(--size-4-4) !important;
+  box-shadow: none !important;
+}
+.search-results-info {
+  border-bottom: none;
+}
+.document-replace,
+.document-search {
+  max-width: 100%;
+  padding: 0;
+}
+.document-search-container {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: var(--line-width);
+}
+
+
+/*-----------------------------------------------------------------------------
+  EMBEDS
+  Dataview & Tasks query blocks, Callouts, inline PDFs, etc.
+-----------------------------------------------------------------------------*/
+/* fix style and positioning of edit block button */
+.markdown-source-view.mod-cm6 .edit-block-button {
+  color: var(--icon-color);
+  background-color: transparent;
+  /* opacity: 1 !important; */
+}
+.markdown-source-view.mod-cm6 .edit-block-button:hover {
+  color: var(--icon-color-focused) !important;
+  background-color: var(--background-modifier-hover);
+}
+.cm-preview-code-block .edit-block-button {
+  margin-top: -3px;
+  margin-right: -3px;
+}
+/* callout edit button */
+.cm-callout .edit-block-button {
+  margin-top: 10px;
+  margin-right: 40px;
+}
+/* callouts in left panel */
+.workspace-split.mod-left-split .edit-block-button {
+  margin-top: 5px;
+}
+.markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
+  top: 7px !important;
+}
+/* embed editing button */
+.file-embed-link,
+.markdown-embed-link {
+  top: 0;
+  right: 0;
+  text-align: right;
+  justify-content: flex-end;
+}
+.file-embed-link svg,
+.markdown-embed-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/*-----------------------------------------------------------------------------
+  PROPERTIES
+-----------------------------------------------------------------------------*/
+.metadata-container {
+  --input-height: 2rem;
+}
+.metadata-container.is-collapsed {
+  margin-block-end: 0;
+}
+.metadata-dividers {
+  --metadata-divider-width: 1px;
+  --metadata-gap: 0px;
+}
+/* hide the main "properties" string... */
+.metadata-properties-title {
+  display: none;
+}
+/* and then hack in a different indicator */
+.metadata-properties-heading::before {
+  content: '•••';
+  font-size: var(--font-adaptive-smallest);
+  top: 0px;
+  left: 0px;
+  padding-left: 4px;
+}
+.metadata-properties-heading {
+  width: 28px;
+  height: 15px;
+  left: -1px;
+  border-radius: var(--metadata-property-radius);
+}
+.metadata-properties-heading:hover {
+  background: var(--bg3);
+}
+.metadata-properties-heading .collapse-indicator,
+.metadata-properties-heading:hover .collapse-indicator {
+  /* top: -2px; /* align with dots if you need it */
+  opacity: 0;
+}
+.metadata-container .metadata-add-button {
+  padding: 2px 8px 2px 4px;
+  height: auto;
+}
+.metadata-property:focus-within {
+  box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
+}
+/* inside tags datatype are "pills", make them share styling */
+.metadata-property[data-property-key="tags"] {
+  --pill-color: var(--tag-color);
+  --pill-background: var(--tag-background);
+  --pill-background-hover: var(--tag-background-hover);
+  --pill-border-width: var(--tag-border-width);
+  --pill-padding-y: 0;
+}
+.metadata-property[data-property-key="tags"] .multi-select-pill {
+  margin-top: 0;
+}
+
+/*-----------------------------------------------------------------------------
+  LINKED MENTIONS
+-----------------------------------------------------------------------------*/
+.embedded-backlinks .nav-header ~ .search-input-container {
+  width: calc(100% - 140px);
+  margin-top: 12px;
+}
+.embedded-backlinks .nav-buttons-container {
+  position: absolute;
+  right: 0;
+  top: 14px;
+}
+.embedded-backlinks .backlink-pane > .tree-item-self,
+.embedded-backlinks .backlink-pane > .tree-item-self:hover {
+  text-transform: none;
+  color: var(--text-normal);
+  font-size: var(--font-adaptive-normal);
+  letter-spacing: unset;
+}
+.search-result-file-match {
+  padding: var(--nav-item-padding);
+}
+
+/* when using pane instead of in document */
+.backlink-pane > .tree-item-self,
+.backlink-pane > .tree-item-self:hover,
+.outgoing-link-pane > .tree-item-self,
+.outgoing-link-pane > .tree-item-self:hover {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--font-adaptive-smallest);
+  font-weight: 500;
+}
+
+
+/*-----------------------------------------------------------------------------
+  INPUTS, BUTTONS
+-----------------------------------------------------------------------------*/
+/* Search dropdown in left panel */
+.suggestion-container {
+  border: none !important;
+}
+textarea:active,
+input.metadata-input-text:active,
+input[type='date']:active,
+input[type='datetime-local']:active,
+input[type='text']:active,
+input[type='search']:active,
+input[type='email']:active,
+input[type='password']:active,
+input[type='number']:active,
+textarea:focus,
+input.metadata-input-text:focus,
+input[type='date']:focus,
+input[type='datetime-local']:focus,
+input[type='text']:focus,
+input[type='search']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='number']:focus,
+textarea:focus-visible,
+input.metadata-input-text:focus-visible,
+input[type='date']:focus-visible,
+input[type='datetime-local']:focus-visible,
+input[type='text']:focus-visible,
+input[type='search']:focus-visible,
+input[type='email']:focus-visible,
+input[type='password']:focus-visible,
+input[type='number']:focus-visible {
+  box-shadow: none;
+}
+.checkbox-square {
+  --checkbox-size: calc(var(--font-text-size) * 0.85);
+  --checkbox-radius: 4px;
+  --checkbox-top: 1px;
+  --checkbox-left: 0px;
+  --checkbox-margin: 0px 8px 0px -2em;
+}
+.modal-button-container .mod-checkbox {
+  --checkbox-radius: 4px;
+}
+button:focus-visible,
+select:focus,
+.dropdown:focus {
+  box-shadow: 0 0 0px 1px var(--background-modifier-border-focus) !important;
+}
+body.theme-dark .button-default,
+body.theme-light .button-default {
+  border: none;
+  box-shadow: none;
+  height: var(--input-height);
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+  font-size: revert;
+  font-weight: 500;
+  transform: none;
+  transition: all 0.1s linear;
+  padding: 0 20px;
+}
+body.theme-dark .button-default:hover,
+body.theme-light .button-default:hover {
+  border: none;
+  background: var(--background-modifier-border-hover);
+  box-shadow: none;
+  transform: none;
+  transition: all 0.1s linear;
+}
+body.theme-dark .button-default:active,
+body.theme-dark .button-default:focus,
+body.theme-light .button-default:active,
+body.theme-light .button-default:focus {
+  box-shadow: none;
+}
+body .button-default.blue {
+  background-color: var(--color-blue) !important;
+}
+.button-default.red {
+  background-color: var(--color-red) !important;
+}
+.button-default.green {
+  background-color: var(--color-green) !important;
+}
+.button-default.yellow {
+  background-color: var(--color-yellow) !important;
+}
+.button-default.purple {
+  background-color: var(--color-purple) !important;
+}
+.modal button:not(.mod-warning),
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning),
+.modal.mod-settings button:not(.mod-warning) {
+  white-space: nowrap;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+button.mod-warning {
+  border: 1px solid var(--background-modifier-error);
+  color: var(--text-error);
+  box-shadow: 0 1px 1px 0 var(--btn-shadow-color);
+  transition: background-color 0.2s ease-out;
+}
+button.mod-warning:hover {
+  border: 1px solid var(--background-modifier-error);
+  color: var(--text-error);
+  box-shadow: 0 2px 3px 0 var(--btn-shadow-color);
+  transition: background-color 0.2s ease-out;
+}
+
+
+/*-----------------------------------------------------------------------------
+  STATUS BAR
+-----------------------------------------------------------------------------*/
+.status-bar {
+  transition: color 0.2s linear;
+  color: var(--text-faint);
+  font-size: var(--font-adaptive-smallest);
+  border: none;
+}
+.status-bar .sync-status-icon.mod-success,
+.status-bar .sync-status-icon.mod-working {
+  color: var(--text-faint);
+}
+.status-bar:hover,
+.status-bar:hover .sync-status-icon.mod-success,
+.status-bar:hover .sync-status-icon.mod-working {
+  color: var(--text-muted);
+  transition: color 0.2s linear;
+}
+.status-bar .plugin-sync:hover .sync-status-icon.mod-success,
+.status-bar .plugin-sync:hover .sync-status-icon.mod-working {
+  color: var(--text-normal);
+}
+.status-bar .status-bar-item {
+  cursor: var(--cursor) !important;
+}
+.status-bar .status-bar-item.cMenu-statusbar-button:hover,
+.status-bar .status-bar-item.mod-clickable:hover,
+.status-bar .status-bar-item.plugin-editor-status:hover,
+.status-bar .status-bar-item.plugin-sync:hover {
+  text-align: center;
+  background-color: var(--background-modifier-hover) !important;
+}
+
+
+/*-----------------------------------------------------------------------------
+  TOOLTIPS
+-----------------------------------------------------------------------------*/
+.tooltip {
+  transition: none;
+  animation: none;
+}
+.tooltip.mod-left,
+.tooltip.mod-right {
+  transform: none;
+  animation: none;
+}
+.tooltip.mod-error {
+  color: var(--text-error);
+}
+
+
+/*-----------------------------------------------------------------------------
+  MOBILE
+-----------------------------------------------------------------------------*/
+.is-mobile .CodeMirror-foldgutter-open:after,
+.is-mobile span[title="Fold line"]:after {
+  transform: translateX(-2px) !important;
+}
+body.is-mobile .CodeMirror-foldgutter-folded:after,
+body.is-mobile span[title="Unfold line"]:after {
+  content: "›";
+  font-family: sans-serif;
+  transform: translateY(-2px);
+  transform: rotate(-90deg) translateY(2px) translateX(-0.45em);
+}
+body.is-mobile .CodeMirror-foldgutter-open:after,
+body.is-mobile span[title="Fold line"]:after {
+  content: "›";
+  font-family: sans-serif;
+  transform: rotate(360deg);
+}
+.is-mobile .markdown-source-view.mod-cm6 .cm-indent::before {
+  transform: translateX(calc(2px + var(--ig-adjust-edit)));
+}
+.is-mobile .markdown-preview-view input[type="checkbox"].task-list-item-checkbox {
+  top: 0.2em;
+}
+.is-mobile ul > li:not(.task-list-item)::marker {
+  font-size: 0.8em;
+}
+.is-mobile .markdown-rendered ol,
+.is-mobile .markdown-rendered ul {
+  padding-inline-start: var(--list-indent);
+}
+.is-mobile .markdown-rendered div > ol,
+.is-mobile .markdown-rendered div > ul {
+  padding-inline-start: 2em;
+}
+.is-mobile .el-ol > ol,
+.is-mobile .el-ul > ul {
+  margin-inline-start: 0;
+}
+.is-mobile .workspace-leaf-content:not([data-type="search"]) .workspace-leaf-content[data-type="markdown"] .nav-buttons-container {
+  border-bottom: none;
+  padding-top: 5px;
+}
+.is-mobile .mod-root .workspace-leaf-content[data-type="markdown"] .search-input-container {
+  width: calc(100% - 160px);
+}
+.is-mobile .markdown-source-view.mod-cm6 .cm-gutters {
+  margin-left: 0;
+}
+.is-mobile .workspace-drawer.mod-left.is-pinned {
+  max-width: var(--mobile-left-sidebar-width);
+  min-width: 150pt;
+}
+.is-mobile .workspace-drawer.mod-right.is-pinned {
+  max-width: var(--mobile-right-sidebar-width);
+  min-width: 150pt;
+}
+.is-mobile .nav-folder.mod-root > .nav-folder-title .nav-folder-title-content {
+  display: none;
+}
+.is-phone .view-header-title-container {
+  opacity: 1;
+}
+
+/* make unlinked mentions reachable on mobile (is cut off by nav bar
+otherwise) */
+.is-mobile .embedded-backlinks .backlink-pane {
+  padding-bottom: var(--size-4-18);
+}
+
+
+/*-----------------------------------------------------------------------------
+  PLUGINS
+-----------------------------------------------------------------------------*/
+/*--- CALENDAR ---*/
+.workspace-leaf-content[data-type="calendar"] .view-content {
+  padding: 5px 0 0 0;
+}
+.mod-root #calendar-container {
+  width: var(--line-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+#calendar-container {
+  padding: 0 var(--size-4-4) var(--size-4-1);
+  --color-background-day-empty: var(--background-secondary-alt);
+  --color-background-day-active: var(--background-modifier-hover);
+  --color-background-day-hover: var(--background-modifier-hover);
+  --color-dot: var(--text-faint);
+  --calendar-text-active: inherit;
+  --color-text-title: var(--text-normal);
+  --color-text-heading: var(--text-muted);
+  --color-text-day: var(--text-normal);
+  --color-text-today: var(--text-normal);
+  --color-arrow: var(--text-faint);
+  --color-background-day-empty: transparent;
+}
+#calendar-container .table {
+  border-collapse: separate;
+  table-layout: fixed;
+}
+#calendar-container h2 {
+  font-weight: 400;
+  font-size: var(--h2);
+}
+#calendar-container .arrow {
+  cursor: var(--cursor);
+  width: 22px;
+  border-radius: 4px;
+  padding: 3px 7px;
+}
+#calendar-container .arrow svg {
+  width: 12px;
+  height: 12px;
+  color: var(--text-faint);
+  opacity: 0.7;
+}
+#calendar-container .arrow:hover {
+  fill: var(--text-muted);
+  color: var(--text-muted);
+  background-color: var(--background-modifier-hover);
+}
+#calendar-container .arrow:hover svg {
+  color: var(--text-muted);
+  opacity: 1;
+}
+#calendar-container tr th {
+  padding: 2px 0 4px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+}
+#calendar-container tr th:first-child {
+  padding-left: 0 !important;
+}
+#calendar-container tr td {
+  padding: 2px 0 0 0;
+  border-radius: var(--radius-m);
+  cursor: var(--cursor);
+  border: 1px solid transparent;
+  transition: none;
+}
+#calendar-container tr td:first-child {
+  padding-left: 0 !important;
+}
+#calendar-container .nav {
+  padding: 0;
+  margin: var(--size-4-2) var(--size-4-1);
+}
+#calendar-container .dot {
+  margin: 0;
+}
+#calendar-container .month,
+#calendar-container .title,
+#calendar-container .year {
+  font-size: calc(var(--font-adaptive-small) + 2px);
+  font-weight: 400;
+  color: var(--text-normal);
+}
+#calendar-container .today,
+#calendar-container .today.active {
+  color: var(--text-accent);
+  font-weight: 700;
+}
+#calendar-container .today .dot,
+#calendar-container .today.active .dot {
+  fill: var(--calendar-dot-today);
+}
+#calendar-container .active .task {
+  stroke: var(--calendar-dot-today);
+}
+#calendar-container .active {
+  color: var(--text-normal);
+}
+#calendar-container .reset-button {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--font-adaptive-smaller);
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: 4px;
+  margin: 0;
+  padding: 2px 8px;
+}
+#calendar-container .reset-button:hover {
+  color: var(--text-normal);
+  background-color: var(--background-modifier-hover);
+}
+#calendar-container .day,
+#calendar-container .reset-button,
+#calendar-container .week-num {
+  cursor: var(--cursor);
+}
+#calendar-container .day.adjacent-month {
+  color: var(--text-faint);
+  opacity: 0.6;
+}
+#calendar-container .day {
+  padding: 2px 4px 4px;
+}
+#calendar-container .day,
+#calendar-container .week-num {
+  font-size: var(--nav-item-size);
+}
+#calendar-container .active,
+#calendar-container .active.today,
+#calendar-container .day:hover,
+#calendar-container .week-num:hover {
+  background-color: var(--color-background-day-active);
+  color: var(--calendar-text-active);
+}
+#calendar-container .active .dot {
+  fill: var(--calendar-dot-active);
+}
+.year.svelte-1vwr9dd.svelte-1vwr9dd,
+.month.svelte-1vwr9dd.svelte-1vwr9dd,
+.title.svelte-1vwr9dd.svelte-1vwr9dd {
+  color: var(--color-text-title) !important;
+  font-weight: 500 !important;
+  font-size: var(--font-adaptive-normal) !important;
+}
+.reset-button.svelte-1vwr9dd.svelte-1vwr9dd {
+  font-size: var(--font-adaptive-small) !important;
+  font-weight: normal !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/*--- TASKS ---*/
+/* keyboard shortcut hints in modal are distracting */
+.tasks-modal .with-accesskeys .accesskey-first::first-letter,
+.tasks-modal .with-accesskeys .accesskey {
+  text-decoration: none !important;
+}
+/* same with a big status alert message, and dividers */
+.tasks-modal hr,
+.tasks-modal-warning {
+  display: none !important;
+}
+/* make inputs in modal a bit more readable */
+.tasks-modal-dates > code {
+  font-size: var(--font-adaptive-small);
+  font-family: var(--font-interface) !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 12px;
+  margin-left: 2px;
+}
+.tasks-modal-dates > code i,
+.tasks-modal-status code i {
+  color: var(--text-muted) !important;
+  font-style: normal;
+}
+.tasks-modal-status code {
+  font-family: var(--font-interface) !important;
+}
+.tasks-modal-priorities input:checked + label > span {
+  font-weight: 600;
+}
+.tasks-modal-priorities input:focus + label {
+  box-shadow: none;
+}
+.tasks-modal-priorities {
+  grid-template-columns: 4em 12em;;
+}
+.tasks-modal-priorities > label {
+  display: inline-block !important;
+}
+/* hide fields/priority in modal i never use! recurs, scheduled, start, only future dates */
+.tasks-modal label[for="recurrence"],
+.tasks-modal #recurrence,
+.tasks-modal #recurrence + code,
+.tasks-modal label[for="scheduled"],
+.tasks-modal #scheduled,
+.tasks-modal #scheduled + code,
+.tasks-modal label[for="start"],
+.tasks-modal #start,
+.tasks-modal #start + code,
+.tasks-modal label[for="forwardOnly"],
+.tasks-modal #forwardOnly,
+.tasks-modal label[for="created"],
+.tasks-modal #created,
+.tasks-modal #created + code,
+.tasks-modal label[for="done"],
+.tasks-modal #done,
+.tasks-modal #done + code,
+.tasks-modal #cancelled,
+.tasks-modal #cancelled + code,
+.tasks-modal #priority-lowest,
+.tasks-modal label[for="priority-lowest"],
+.tasks-modal #priority-low,
+.tasks-modal label[for="priority-low"],
+.tasks-modal #priority-medium,
+.tasks-modal label[for="priority-medium"],
+.tasks-modal #priority-high,
+.tasks-modal label[for="priority-high"],
+.tasks-modal section > label[for="priority-highest"]:after,
+.tasks-modal label[for="cancelled"],
+.tasks-modal #blockedBy,
+.tasks-modal label[for="blockedBy"],
+.tasks-modal #blocking,
+.tasks-modal label[for="blocking"],
+.tasks-modal-dependencies-section,
+.tasks-modal-dates-section,
+.task-modal-priority-option-container:nth-child(2),
+.task-modal-priority-option-container:nth-child(3),
+.task-modal-priority-option-container:nth-child(5),
+.task-modal-priority-option-container:nth-child(6)
+{
+  display: none;
+}
+
+/* Distinguishing various checkboxes */
+input[type=checkbox].task-list-item-checkbox {
+  border-radius: 0px !important;
+}
+.task-list-item[data-task-status-type="TODO"] input {
+  --checkbox-color: transparent;
+  --checkbox-marker-color: transparent;
+  border-color: var(--checkbox-border-color) !important;
+}
+
+.task-list-item[data-task-status-type="TODO"] input:hover {
+  --checkbox-color: transparent;
+  --checkbox-marker-color: transparent;
+  border-color: var(--checkbox-border-color-hover) !important;
+  border-style: solid;
+  background-color: transparent !important;
+}
+/* hide task tag on original line item */
+.cm-tag-task {
+  /* display: none; */
+}
+/* fix alignment */
+.tasks-modal-dates {
+  row-gap: 5px;
+  column-gap: 0;
+}
+#status-type {
+  margin-left: 34px;
+}
+.markdown-preview-section > .contains-task-list {
+  padding-bottom: 0.5em;
+}
+.mod-cm6 .HyperMD-task-line[data-task] .cm-formatting-list-ol ~ .task-list-label .task-list-item-checkbox {
+  margin: 1px;
+}
+.markdown-preview-view .task-list-item-checkbox {
+  position: relative;
+  top: var(--checkbox-top);
+  left: var(--checkbox-left);
+  line-height: 0;
+}
+
+
+/*--- DATAVIEW ---*/
+body .dataview-error {
+  background-color: transparent;
+}
+.dataview.dataview-error,
+.markdown-source-view.mod-cm6 .cm-content .dataview.dataview-error {
+  color: var(--text-muted);
+}
+body div.dataview-error-box {
+  min-height: 0;
+  border: none;
+  background-color: transparent;
+  font-size: var(--table-text-size);
+  border-radius: var(--radius-m);
+  padding: 15px 0;
+  justify-content: flex-start;
+}
+body div.dataview-error-box p {
+  color: var(--text-muted);
+  text-align: left !important;
+  font-size: var(--font-adaptive-small);
+}
+.block-language-dataviewjs:has(.dataview-error-box) table.dataview {
+  display: none;
+}
+
+/*--- HOVER POPOVER ---
+   For page previews */
+.popover-content .cm-scroller {
+  padding: 16px 34px !important;
+}
+.popover.hover-editor {
+  min-width: 700px !important;
+}
+
+/*--- OUTLINER ---
+  Fix some cosmetics settings it handles for cursor location, list styling */
+.outliner-plugin-better-lists .cm-s-obsidian .HyperMD-list-line {
+    padding-top: 0;
+}
+.outliner-plugin-better-lists .cm-formatting-list-ul {
+  margin-right: 0;
+}
+.list-bullet {
+  margin-right: 4px;
+}
+
+/*--- AUTOMATIC TABLE OF CONTENTS */
+.block-language-table-of-contents {
+  font-size: var(--font-adaptive-small);
+}
+.block-language-table-of-contents::before {
+  content: "Table of contents";
+  color: var(--text-muted);
+}
+.block-language-table-of-contents ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: calc(var(--list-indent) / 1.8);
+}
+.block-language-table-of-contents li ul {
+  padding-inline-start: var(--list-indent);
+}

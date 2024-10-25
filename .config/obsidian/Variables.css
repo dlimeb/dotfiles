@@ -1,0 +1,386 @@
+/*==============================================================================
+
+VARIABLES
+
+Raw variable definitions used in both note content and Obsidian's UI. This
+contains styling for all attributes (colour, typography, spacing, etc).
+
+These all override Obsidian defaults.
+
+Variables beginning with --dl have been added by me.
+
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  GLOBAL
+-----------------------------------------------------------------------------*/
+body {
+  /*--- TYPE ---*/
+  --blockquote-border-color: var(--quote-opening-modifier);
+  --blockquote-border-thickness: 1px;
+  --blockquote-color: var(--text-muted);
+  --blockquote-style: normal;
+  --bold-weight: 600;
+  --border-width: 1px;
+  --canvas-dot-pattern: var(--background-modifier-border-hover);
+  --checkbox-left: 0px;
+  --checkbox-margin: 0px 6px 0px -2em;
+  --checkbox-radius: 50%;
+  --checkbox-top: 2px;
+  --code-background: var(--bg2); /* code blocks only, not inline */
+  --embed-block-shadow-hover: 0;
+  --embed-decoration-color: var(--background-modifier-border-hover);
+  --embed-decoration-style: solid;
+  --embed-max-height: none;
+  /* --file-line-width: 1600px; */
+  --file-line-width: 56rem;
+  --file-margins: var(--size-4-2) var(--size-4-12);
+  --font-adaptive-normal: var(--font-text-size, var(--editor-font-size));
+  --font-adaptive-small: calc(var(--font-ui-small) * 1.07);
+  --font-adaptive-smaller: var(--font-ui-small);
+  --font-adaptive-smallest: var(--font-ui-smaller);
+  --font-code: calc(var(--font-adaptive-normal) * 0.9);
+  --font-ui-smaller: 12px;
+  --h1-size: 1.5em;
+  --h1-style: normal;
+  --h1-variant: normal;
+  --h1-weight: 600;
+  --h2-size: 1.2em;
+  --h2-style: normal;
+  --h2-variant: normal;
+  --h2-weight: 600;
+  --h3-size: var(--font-text-size);
+  --h3-style: normal;
+  --h3-variant: normal;
+  --h3-weight: 600;
+  --h4-size: var(--font-text-size);
+  --h4-style: normal;
+  --h4-variant: normal;
+  --h4-weight: 600;
+  --h5-size: var(--font-text-size);
+  --h5-style: normal;
+  --h5-variant: none;
+  --h5-weight: 600;
+  --h6-size: var(--font-text-size);
+  --h6-style: normal;
+  --h6-variant: none;
+  --h6-weight: 400;
+  --heading-spacing: 2em;
+  --ig-adjust-edit: 2px;
+  --ig-adjust-reading: -0.95em;
+  --image-radius: 4px;
+  --line-height: 1.5;
+  --line-width: 40rem;
+  --link-weight: inherit;
+  --link-color: var(--tx1);
+  --link-external-color: var(--tx1);
+  --link-color-hover: var(--ax1);
+  --link-external-color-hover: var(--ax1);
+  --link-unresolved-color: var(--tx1);
+  --link-unresolved-decoration-color: var(--tx1);
+  --link-unresolved-opacity: 0.6;
+  --list-indent: 1.5rem !important;
+  --list-indent-editing: 0;
+  --metadata-input-font-size: var(--font-adaptive-small);
+  --metadata-label-font-size: var(--font-adaptive-small);
+  --metadata-label-background-active: var(--bg2);
+  --metadata-input-background-active: var(--bg2);
+  --normal-weight: 400;
+  --p-spacing: 1.75rem;
+  --pdf-dark-opacity: 1;
+  --progress-complete: var(--text-accent);
+  --ribbon-width: 1px; /* hide the leftmost ribbon; don't need those buttons */
+  --tab-divider-color: transparent;
+  --tag-border-width: 0;
+  --tag-padding-x: 0.5em;
+  --tag-padding-y: 0.1em;
+
+  /*--- COLOUR ---*/
+  --base-h: 0;
+  --base-s: 0%;
+  --base-l: 96%;
+  --accent-h: 201;
+  --accent-s: 17%;
+  --accent-l: 50%;
+  --icon-muted: 0.5;
+  --image-muted: 0.7;
+
+  /*--- LAYOUT ---*/
+  --adaptive-list-edit-offset: var(--list-edit-offset);
+  --folding-offset: 32px;
+  --header-height: 40px;
+  --inline-title-margin-bottom: 1rem;
+  --input-height: 32px;
+  --line-width-wide: calc(var(--line-width) + 12.5%);
+  --list-edit-offset: 0.5em;
+  --list-indent: 2em;
+  --list-spacing: 0.075em;
+  --max-col-width: 18em;
+  --max-width: 88%;
+  --mobile-left-sidebar-width: 280pt;
+  --mobile-right-sidebar-width: 240pt;
+  --nested-padding: 1.1em;
+  --top-left-padding-y: 0px;
+
+  /*--- UI ---*/
+  --frame-background: hsl(
+    var(--frame-background-h),
+    var(--frame-background-s),
+    var(--frame-background-l)
+  );
+  --frame-icon-color: var(--frame-muted-color);
+
+  /*--- TABLES ---*/
+  --table-header-border-width: 0;
+  --table-column-first-border-width: 0;
+  --table-column-last-border-width: 0;
+  --table-row-last-border-width: 0;
+  --table-edge-cell-padding-first: 0;
+  --table-edge-cell-padding-last: 10px;
+  --table-cell-padding: 4px 10px;
+  --table-header-size: var(--font-adaptive-small);
+  --table-border-width: var(--border-width);
+  --table-text-size: var(--font-adaptive-normal);
+
+  /*--- OTHER ELEMENTS ---*/
+  --callout-radius: var(--radius-m);
+
+  /*--- PLUGINS ---*/
+  --calendar-dot-active: var(--text-faint);
+  --calendar-dot-today: var(--text-accent);
+
+  --callout-padding: var(--size-4-4) var(--size-4-5);
+
+  --checklist-done-decoration: none;
+
+  --he-title-bar-height: 40px;
+}
+.mod-macos {
+  --top-left-padding-y: 24px;
+}
+.is-phone {
+  --metadata-label-font-size: var(--font-adaptive-smaller);
+  --metadata-input-font-size: var(--font-adaptive-smaller);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+  .is-phone {
+    --border-width: 0.75px;
+  }
+}
+
+/*-----------------------------------------------------------------------------
+  BOTH THEMES
+-----------------------------------------------------------------------------*/
+.theme-dark,
+.theme-light {
+
+  --background-modifier-accent: var(--ax3);
+  --background-modifier-border-focus: var(--ui3);
+  --background-modifier-border-hover: var(--ui3);
+  --background-modifier-border: var(--ui2);
+  --background-modifier-form-field-highlighted: var(--bg1);
+  --background-modifier-form-field: var(--bg1);
+  --background-modifier-success: var(--color-green);
+  --background-modifier-hover: var(--bg3);
+  --background-modifier-active-hover: var(--bg3);
+  --background-primary: var(--bg1);
+  --background-primary-alt: var(--bg2);
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: var(--bg1);
+  --background-table-rows: var(--bg2);
+  --checkbox-color: var(--ax3);
+  --code-normal: var(--tx1);
+  --code-size: var(--font-adaptive-normal);
+
+  --color-cyan: rgb(0, 163, 168);
+  --color-cyan-rgb: 0, 163, 168;
+  --color-teal: rgb(0, 163, 168);
+  --color-teal-rgb: 0, 163, 168;
+
+  --divider-color: var(--ui1);
+  --frame-divider-color: var(--ui1);
+  --icon-color-active: var(--tx1);
+  --icon-color-focused: var(--tx1);
+  --icon-color-hover: var(--tx2);
+  --icon-color: var(--tx2);
+  --icon-hex: var(--mono0);
+  --interactive-accent-hover: var(--ax1);
+  --interactive-accent: var(--ax3);
+  --interactive-hover: var(--ui1);
+  --list-marker-color: var(--tx3);
+  --modal-border-color: var(--ui2);
+  --nav-item-background-active: var(--bg3);
+  --nav-item-background-hover: var(--bg3);
+  --nav-item-color: var(--tx2);
+  --nav-item-color-active: var(--tx1);
+  --nav-item-color-hover: var(--tx1);
+  --nav-collapse-icon-color: var(--tx2);
+  --nav-collapse-icon-color-collapsed: var(--tx2);
+  --nav-indentation-guide-color: var(--ui1);
+  --prompt-border-color: var(--ui3);
+  --quote-opening-modifier: var(--ui2);
+  --ribbon-background: var(--bg2);
+  --scrollbar-active-thumb-bg: var(--ui3);
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: var(--ui1);
+  --search-result-background: var(--bg1);
+  --tab-text-color-focused-active: var(--tx1);
+  --tab-outline-color: var(--ui1);
+  --text-accent-hover: var(--ax2);
+  --text-accent: var(--ax1);
+  --text-blockquote: var(--tx2);
+  --text-bold: var(--tx1);
+  --text-code: var(--tx4);
+  --text-error: var(--color-red);
+  --text-faint: var(--tx3);
+  --text-highlight-bg: var(--hl2);
+  --text-italic: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-normal: var(--tx1);
+  --text-on-accent: var(--sp1);
+  --text-selection: var(--hl1);
+  --title-color-inactive: var(--tx2);
+  --title-color: var(--tx1);
+  --titlebar-background: var(--bg2);
+  --titlebar-background-focused: var(--bg2);
+  --titlebar-text-color-focused: var(--tx1);
+  --workspace-background-translucent: hsla(
+    var(--base-h),
+    var(--base-s),
+    var(--base-l),
+    0.7
+  );
+}
+
+
+/*-----------------------------------------------------------------------------
+  LIGHT THEME
+-----------------------------------------------------------------------------*/
+.theme-light {
+  /* original plum
+  --dl-accent-h: 243;
+  --dl-accent-s: 75%;
+  --dl-accent-l: 60%; */
+  /* borrowing from iA Writer */
+  --dl-accent-h: 197;
+  --dl-accent-s: 100%;
+  --dl-accent-l: 45%;
+  --ax1: hsl(var(--dl-accent-h), var(--dl-accent-s), var(--dl-accent-l));
+  --ax2: hsl(var(--dl-accent-h), var(--dl-accent-s), calc(var(--dl-accent-l) - 8%));
+  --ax3: hsl(var(--dl-accent-h), var(--dl-accent-s), calc(var(--dl-accent-l) + 6%));
+  --ax4: hsl(var(--dl-accent-h), var(--dl-accent-s), calc(var(--dl-accent-l) + 35%));
+  --background-modifier-border-focus: var(--tx3);
+  --background-modifier-cover: hsla(
+    var(--base-h),
+    calc(var(--base-s) - 70%),
+    calc(var(--base-l) - 20%),
+    0.5
+  );
+  --background-modifier-error: rgba(255, 0, 0, 0.14);
+  --background-modifier-error-hover: rgba(255, 0, 0, 0.08);
+  --bg1: white; /* main content panel, right sidebar */
+  --bg2: hsl(220, 18%, 97%); /* ribbon, left sidebar */
+  --bg3: hsl(220, 15%, 88%); /* selected/hovered sidebar elements */
+  --btn-shadow-color: rgba(0, 0, 0, 0.05);
+  /* --code-normal: var(--bg2);
+  --code-background: var(--tx1); */
+  --dl-header-color: hsl(220, 14%, 8%);
+  --dl-callout-opacity: 0.1;
+  --hl1: hsl(220, 100%, 94%); /* hover on search results & linked mentions */
+  --hl2: rgba(255, 225, 0, 0.5);
+  --interactive-accent-rgb: 220, 220, 220;
+  --interactive-normal: var(--bg1);
+  --list-marker-color: var(--ui2);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --sp1: white;
+  --tag-color: hsl(264, 36%, 42%);
+  --tag-background: hsl(264, 51%, 91%);
+  --tag-background-hover: hsl(264, 60%, 89%);
+  --text-highlight-bg: hsl(53, 100%, 90%);
+  --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
+  --titlebar-background-focused: var(--bg2);
+  --tx1: hsl(220, 6%, 16%); /* default content text */
+  --tx2: hsl(220, 3%, 57%); /* muted text (in sidebar/linked mentions text & icons, properties labels, inactive tabs) */
+  --tx3: hsl(220, 4%, 68%);
+  --ui1: hsl(220, 21%, 93%); /* borders over linked mentions, highlighted results, on search input */
+  --ui2: hsl(220, 7%, 86%); /* dividers between tabs */
+  --ui3: hsl(220, 4%, 77%); /* border on search focus, command popup */
+
+}
+
+/*-----------------------------------------------------------------------------
+  DARK THEME
+-----------------------------------------------------------------------------*/
+.theme-dark {
+  /* --dl-accent-h: 243;
+  --dl-accent-s: 75%;
+  --dl-accent-l: 68%; */
+  --dl-accent-h: 197;
+  --dl-accent-s: 100%;
+  --dl-accent-l: 50%;
+  --ax1: hsl(var(--dl-accent-h), var(--dl-accent-s), var(--dl-accent-l));
+  --ax2: hsl(var(--dl-accent-h), var(--dl-accent-s), calc(var(--dl-accent-l) - 8%));
+  --ax3: hsl(var(--dl-accent-h), var(--dl-accent-s), calc(var(--dl-accent-l) - 3%));
+  --ax4: hsl(var(--dl-accent-h), var(--dl-accent-s), calc(var(--dl-accent-l) - 30%));
+  --background-modifier-border: var(--ui3);
+  --background-modifier-border-focus: var(--tx3);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-cover: hsla(
+    var(--base-h),
+    var(--base-s),
+    calc(var(--base-l) - 12%),
+    0.5
+  );
+  --background-modifier-error: rgba(255, 20, 20, 0.12);
+  --background-modifier-error-hover: rgba(255, 20, 20, 0.18);
+  --base-l: 15%;
+  /* --bg1: hsl(215, 12%, 13%);
+  --bg2: hsl(215, 12%, 15%);
+  --bg3: hsla(215, 30%, 64%, 0.15); */
+  /* --bg1: hsl(240, 38%, 14%);
+  --bg2: hsl(242, 48%, 11%);
+  --bg3: hsl(240, 31%, 19%); */
+  --bg1: hsl(218, 14%, 11%); /* main content panel, right sidebar */
+  --bg2: hsl(218, 14%, 9%); /* ribbon, left sidebar */
+  --bg3: hsl(218, 14%, 13%); /* bg on selected sidebar icons */
+  --btn-shadow-color: rgba(0, 0, 0, 0.2);
+  --dl-header-color: var(--text-normal);
+  --dl-callout-opacity: 0.08;
+  --hl1: hsl(215, 12%, 30%); /* hover on search results & linked mentions */
+  --hl2: rgba(255, 177, 80, 0.3);
+  --interactive-normal: var(--bg3);
+  --interactive-accent-rgb: 66, 66, 66;
+  --list-marker-color: var(--ui2);
+  --modal-border-color: var(--ui3);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --sp1: white;
+  --tag-color: hsla(0, 0%, 100%, 0.7);
+  --tag-background: hsl(264, 36%, 28%);
+  --tag-background-hover: hsl(264, 36%, 36%);
+  --text-highlight-bg: hsl(42, 36%, 24%);
+  --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
+  --titlebar-background-focused: var(--bg2);
+  --tx1: hsl(218, 20%, 75%); /* default content text */
+  /* --tx2: hsl(215, 7%, 50%); */
+  --tx2: hsl(218, 17%, 47%); /* muted text (in sidebar/linked mentions text & icons, properties labels, inactive tabs) */
+  --tx3: hsl(218, 12%, 36%); /* search placeholder, inactive calendar days, embed icon */
+  --ui1: hsl(218, 12%, 24%); /* borders over linked mentions, highlighted results, on search input */
+  /* --ui2: hsl(219, 17%, 41%); */
+  --ui2: hsl(218, 20%, 25%); /* dividers between tabs */
+  --ui3: hsl(218, 12%, 19%); /* border on search focus, command popup */
+}
+
+/*-----------------------------------------------------------------------------
+  MOBILE
+-----------------------------------------------------------------------------*/
+body.is-mobile {
+  --font-bold: 600;
+  --font-ui-medium: var(--font-adaptive-small);
+  --interactive-normal: var(--background-secondary);
+  --background-modifier-form-field: var(--background-secondary);
+  --background-modifier-form-field-highlighted: var(--background-secondary);
+
+  /* --metadata-display-reading: none;
+  --metadata-display-editing: none; */
+}
