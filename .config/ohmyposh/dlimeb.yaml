@@ -17,69 +17,59 @@ console_title_template: "{{ .Shell }} in {{ .Folder }}"
 # than duplicating here, and ensures consistency between prompt and non-prompt
 # colour usage. Only define colours here if you need something custom.
 palette:
-  gray: '#6C7086'
+  gray: "#6C7086"
 
 # Define main prompt
 blocks:
-- type: prompt
-  alignment: left
-  segments:
-  - type: text
-    style: plain
-    foreground_templates:
-    - "{{if gt .Code 0}}red{{end}}"
-    - "{{if eq .Code 0}}magenta{{end}}"
-    background: transparent
-    template: "→"
-    # template: '{{ if eq .UserName "root" }}<red><b>#</b></>{{else}}→{{end}}'
-  - type: session
-    style: plain
-    background: transparent
-    foreground: p:white
-    template: '<cyan>{{ if .SSHSession }}[{{ .HostName }}]{{ end }}</> '
-  - type: path
-    style: plain
-    background: transparent
-    foreground: blue
-    template: "{{ .Path }}"
-    properties:
-      style: full
-  - type: git
-    style: plain
-    foreground: p:gray
-    background: transparent
-    template: ' [<red>{{ .HEAD }}</>]{{ if or (.Working.Changed) (.Staging.Changed) }}<yellow><b>︎ ✕</b></>{{ end }}<cyan>{{ if gt .Behind 0 }} ▼{{ end }}{{ if gt .Ahead 0 }} ▲{{ end }}</>'
-    properties:
-      branch_icon: ''
-      commit_icon: '@'
-      fetch_status: true
-# TODO: enable root segment
-  # - type: text
-  #   style: plain
-  #   foreground_templates:
-  #   - "{{if gt .Code 0}}red{{end}}"
-  #   - "{{if eq .Code 0}}magenta{{end}}"
-  #   background: transparent
-  #   # template: "→"
-  #   template: '{{ if eq .UserName "root" }}<red><b>#</b></>{{else}}→{{end}}'
+  - type: prompt
+    alignment: left
+    segments:
+      - type: text
+        style: plain
+        foreground_templates:
+          - "{{if gt .Code 0}}red{{end}}"
+          - "{{if eq .Code 0}}magenta{{end}}"
+        background: transparent
+        template: "→"
+        # template: '{{ if eq .UserName "root" }}<red><b>#</b></>{{else}}→{{end}}'
+      - type: session
+        style: plain
+        background: transparent
+        foreground: p:white
+        template: "<cyan>{{ if .SSHSession }}[{{ .HostName }}]{{ end }}</> "
+      - type: path
+        style: plain
+        background: transparent
+        foreground: blue
+        template: "{{ .Path }}"
+        properties:
+          style: full
+      - type: git
+        style: plain
+        foreground: p:gray
+        background: transparent
+        template: " [<red>{{ .HEAD }}</>]{{ if or (.Working.Changed) (.Staging.Changed) }}<yellow><b>︎ ✕</b></>{{ end }}<cyan>{{ if gt .Behind 0 }} ▼{{ end }}{{ if gt .Ahead 0 }} ▲{{ end }}</>"
+        properties:
+          branch_icon: ""
+          commit_icon: "@"
+          fetch_status: true
 
-- type: rprompt
-  overflow: hidden
-  segments:
-  - type: executiontime
-    style: plain
-    foreground: green
-    background: transparent
-    template: '{{ .FormattedMs }}'
-    properties:
-      threshold: 5000
-
+  - type: rprompt
+    overflow: hidden
+    segments:
+      - type: executiontime
+        style: plain
+        foreground: green
+        background: transparent
+        template: "{{ .FormattedMs }}"
+        properties:
+          threshold: 5000
 
 # Define additional prompts
 transient_prompt:
   foreground_templates:
-  - "{{if gt .Code 0}}red{{end}}"
-  - "{{if eq .Code 0}}magenta{{end}}"
+    - "{{if gt .Code 0}}red{{end}}"
+    - "{{if eq .Code 0}}magenta{{end}}"
   background: transparent
   template: "→ "
 
