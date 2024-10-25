@@ -1,14 +1,22 @@
+--
+-- A single file to load all colorschemes, rather than
+-- separate plugin files for each
+--
+
 return {
-	{
-	  "olimorris/onedarkpro.nvim",
-	  priority = 1000,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme catppuccin]])
-		end,
-	},
+  -- Catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {},
+  },
+
+  -- tell LazyVim which one to load
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-macchiato",
+    },
+  },
 }
