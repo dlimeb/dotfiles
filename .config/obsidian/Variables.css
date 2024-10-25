@@ -27,7 +27,7 @@ body {
   --checkbox-margin: 0px 6px 0px -2em;
   --checkbox-radius: 50%;
   --checkbox-top: 2px;
-  --code-background: var(--bg2); /* code blocks only, not inline */
+  /* --code-background: var(--bg2); */
   --embed-block-shadow-hover: 0;
   --embed-decoration-color: var(--background-modifier-border-hover);
   --embed-decoration-style: solid;
@@ -283,8 +283,7 @@ body {
   --bg2: hsl(220, 18%, 97%); /* ribbon, left sidebar */
   --bg3: hsl(220, 15%, 88%); /* selected/hovered sidebar elements */
   --btn-shadow-color: rgba(0, 0, 0, 0.05);
-  /* --code-normal: var(--bg2);
-  --code-background: var(--tx1); */
+  --code-background: hsl(220, 25%, 95%);
   --dl-header-color: hsl(220, 14%, 8%);
   --dl-callout-opacity: 0.1;
   --hl1: hsl(220, 100%, 94%); /* hover on search results & linked mentions */

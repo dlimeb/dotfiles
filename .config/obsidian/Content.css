@@ -201,7 +201,7 @@ a.tag:hover,
 .cm-s-obsidian span.cm-inline-code {
   padding: 0 0.25em !important;
   display: inline-block;
-  background-color: var(--ui1);
+  background-color: var(--code-background);
   color: var(--text-color);
 }
 /* backticks are separate elements */
