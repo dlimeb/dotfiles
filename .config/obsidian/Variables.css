@@ -294,6 +294,7 @@ body {
   --shadow-color: rgba(0, 0, 0, 0.1);
   --sp1: white;
   --tag-color: hsl(264, 36%, 42%);
+  --tag-color-hover: hsl(264, 36%, 33%);
   --tag-background: hsl(264, 51%, 91%);
   --tag-background-hover: hsl(264, 60%, 89%);
   --text-highlight-bg: hsl(53, 100%, 90%);

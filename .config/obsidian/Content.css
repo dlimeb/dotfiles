@@ -186,11 +186,6 @@ ol {
   height: 20px;
   margin-top: 2px;
 }
-/* make tags hover like pills */
-a.tag:hover,
-.cm-hashtag:hover {
-  background-color: var(--tag-background-hover);
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -515,7 +510,7 @@ li.task-list-item .task-extras {
 li.task-list-item:hover .task-extras {
   opacity: 1;
 }
-/* replace the edit pencil icon (nice, now all emoji) */
+/* replace the edit pencil icon */
 .tasks-edit {
   font-size: var(--font-adaptive-small);
   background-color: transparent;
