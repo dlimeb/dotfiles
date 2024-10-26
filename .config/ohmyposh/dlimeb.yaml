@@ -48,7 +48,7 @@ blocks:
         style: plain
         foreground: p:gray
         background: transparent
-        template: " [<red>{{ .HEAD }}</>]{{ if or (.Working.Changed) (.Staging.Changed) }}<yellow><b>︎ ✕</b></>{{ end }}<green>{{ if gt .Behind 0 }} ▼ {{ end }}{{ if gt .Ahead 0 }} ▲ {{ end }}</>"
+        template: " [<red>{{ .HEAD }}</>]{{ if or (.Working.Changed) (.Staging.Changed) }} <yellow><b>︎✕</b></>{{ end }}<green>{{ if gt .Behind 0 }} ▼ {{ end }}{{ if gt .Ahead 0 }} ▲ {{ end }}</>"
         properties:
           branch_icon: ""
           commit_icon: "@"
