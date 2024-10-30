@@ -9,3 +9,4 @@ sitestatic
 bower_components
 .config/tmux/plugins/*
 AppSupport
+*.local
