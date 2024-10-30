@@ -87,11 +87,12 @@ setopt pushdminus
 
 
 # ---- ALIASES ----
-# vim, python
+# Vim, Python
 alias vim='nvim'
+alias vimdiff='nvim -d'
 alias python='python3'
 
-# directory traversal
+# Directory traversal
 alias -g ..='cd ..'
 alias -g ...='cd ../..'
 alias -g ....='cd ../../..'
@@ -152,8 +153,13 @@ alias unexport='unset'
 # alias cp='cp -i'
 # alias mv='mv -i'
 
-# shortcuts
+# Shortcuts
 alias sz='source ~/.zshrc;echo ".zshrc sourced."'
 alias ez='vim ~/.zshrc'
 alias serve="python3 -m http.server"
-alias vault="cd /Users/dlimeb/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/dlimeb/"
+VAULT="/Users/dlimeb/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/dlimeb/"
+alias vault="cd ${VAULT}"
+
+# Source local zshrc file
+ZSHRC_LOCAL=".zshrc.local"
+source "${ZSHRC_LOCAL}"

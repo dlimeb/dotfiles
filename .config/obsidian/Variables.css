@@ -89,7 +89,6 @@ body {
   --p-spacing: 1.75rem;
   --pdf-dark-opacity: 1;
   --progress-complete: var(--text-accent);
-  --ribbon-width: 1px; /* hide the leftmost ribbon; don't need those buttons */
   --tab-divider-color: transparent;
   --tag-border-width: 0;
   --tag-padding-x: 0.5em;
