@@ -8,3 +8,4 @@ local_settings.py
 sitestatic
 bower_components
 .config/tmux/plugins/*
+AppSupport
