@@ -43,6 +43,10 @@ vim.o.showmatch = true
 vim.o.list = false
 vim.o.listchars = "tab:»=,trail:~,nbsp:␣,eol:$,extends:>,precedes:<,space:•"
 
+-- Set how text with "conceal" syntax is displayed. This is used most in
+-- markdown files to show fancy lists, checkboxes, etc which I don't want)
+vim.o.conceallevel = 0
+
 --
 -- UI
 --
