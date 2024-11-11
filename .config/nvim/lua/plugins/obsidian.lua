@@ -26,6 +26,10 @@ return {
       --   path = "~/vaults/work",
       -- },
     },
+
+    -- Whether obsidian.nvim should manage frontmatter automatically
+    disable_frontmatter = true,
+
     ui = {
       -- Disable fancy syntax highlighting since it requires `conceallevel` set
       -- to 1 or 2 -- I have it at 0 since I want straight markdown in vim, at

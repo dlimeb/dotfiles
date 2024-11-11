@@ -52,3 +52,6 @@ vim.o.conceallevel = 0
 --
 -- Yup, a nerd font is installed
 vim.g.have_nerd_font = true
+
+-- Don't sync clipboard with system
+vim.o.clipboard = ""
