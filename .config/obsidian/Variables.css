@@ -81,7 +81,7 @@ body {
   --link-unresolved-opacity: 0.6;
   --list-indent: 1.5rem !important;
   --list-indent-editing: 0;
-  --list-bullet-end-padding: 1.7rem;
+  --list-bullet-end-padding: 0.7rem;
   --metadata-input-font-size: var(--font-adaptive-small);
   --metadata-label-font-size: var(--font-adaptive-small);
   --metadata-label-background-active: var(--bg2);
@@ -294,9 +294,9 @@ body {
   --shadow-color: rgba(0, 0, 0, 0.1);
   --sp1: white;
   --tag-color: hsl(264, 36%, 42%);
-  --tag-color-hover: hsl(264, 36%, 33%);
+  --tag-color-hover: var(--text-normal);
   --tag-background: hsl(264, 51%, 91%);
-  --tag-background-hover: hsl(264, 60%, 89%);
+  --tag-background-hover: hsl(264, 60%, 87%);
   --text-highlight-bg: hsl(53, 100%, 90%);
   --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
   --titlebar-background-focused: var(--bg2);
@@ -342,7 +342,7 @@ body {
   --bg2: hsl(242, 48%, 11%);
   --bg3: hsl(240, 31%, 19%); */
   --bg1: hsl(218, 14%, 11%); /* main content panel, right sidebar */
-  --bg2: hsl(218, 14%, 9%); /* ribbon, left sidebar */
+  --bg2: hsl(218, 14%, 8%); /* ribbon, left sidebar */
   --bg3: hsl(218, 14%, 13%); /* bg on selected sidebar icons */
   --btn-shadow-color: rgba(0, 0, 0, 0.2);
   --dl-header-color: var(--text-normal);
@@ -356,8 +356,9 @@ body {
   --shadow-color: rgba(0, 0, 0, 0.3);
   --sp1: white;
   --tag-color: hsla(0, 0%, 100%, 0.7);
+  --tag-color-hover: var(--text-normal);
   --tag-background: hsl(264, 36%, 28%);
-  --tag-background-hover: hsl(264, 36%, 36%);
+  --tag-background-hover: hsl(264, 36%, 34%);
   --text-highlight-bg: hsl(42, 36%, 24%);
   --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
   --titlebar-background-focused: var(--bg2);

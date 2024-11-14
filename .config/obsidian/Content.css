@@ -453,7 +453,6 @@ body .dataview.inline-field-value {
   line-height: var(--line-height);
 }
 ul.contains-task-list {
-  /* padding-left: 1.5em; */
   margin-top: 0;
   margin-bottom: 0.25em;
 }
@@ -522,9 +521,9 @@ li.task-list-item:hover .task-extras {
 }
 .tasks-edit:before {
   /* content: "️✏️✎"; */
+  /* transform: scaleX(-1); */
   content: "Edit";
   display: inline-block;
-  /* transform: scaleX(-1); */
 }
 #postpone-button::after,
 .tasks-edit:after {

@@ -114,23 +114,37 @@ non-content panes.
   display: inline-block;
   height: 0.6em;
   position: absolute;
-  /* top: 1.6em; */
+  top: 0.55rem;
   line-height: 0px;
   padding: 0 4px;
-  font-size: 1.4em;
-}
-.markdown-source-view.mod-cm6 .cm-foldPlaceholder:hover {
-  background-color: var(--bg3);
-  cursor: default;
-}
-/* when in heading folding up a section */
-.markdown-source-view.mod-cm6 .HyperMD-header .cm-foldPlaceholder {
-  top: 0.95em;
+  font-size: 1em;
   font-weight: 400;
 }
-/* when on regular line as collapsed list */
-.markdown-source-view.mod-cm6 .HyperMD-list-line .cm-foldPlaceholder {
-  top: 0.45em;
+.HyperMD-header-1 .cm-foldPlaceholder {
+  top: 2.25rem !important;
+}
+.HyperMD-header-2 .cm-foldPlaceholder {
+  top: 1.75rem !important;
+}
+.HyperMD-header-3 .cm-foldPlaceholder {
+  top: 1.4rem !important;
+}
+.markdown-source-view.mod-cm6 .cm-foldPlaceholder:hover {
+  color: var(--text-normal);
+  background-color: var(--bg3);
+}
+
+/* left chevron collapse indicators */
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line:not(.cm-active):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator {
+  inset-inline-end: 0 !important;
+}
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line .cm-fold-indicator .collapse-indicator,
+.markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
+  padding-inline-end: var(--list-bullet-end-padding);
+  cursor: pointer;
+}
+.HyperMD-header-1 .markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
+  top: 0.2rem !important;
 }
 
 /* from Minimal */
@@ -360,6 +374,8 @@ input.prompt-input:focus {
 }
 .metadata-properties-heading:hover {
   background: var(--bg3);
+  color: var(--text-normal);
+  cursor: pointer;
 }
 .metadata-properties-heading .collapse-indicator,
 .metadata-properties-heading:hover .collapse-indicator {
@@ -622,6 +638,9 @@ body.is-mobile span[title="Fold line"]:after {
 .is-mobile .markdown-rendered div > ol,
 .is-mobile .markdown-rendered div > ul {
   padding-inline-start: 2em;
+}
+.is-mobile .markdown-rendered ul.contains-task-list {
+  padding-inline-start: 0;
 }
 .is-mobile .el-ol > ol,
 .is-mobile .el-ul > ul {
