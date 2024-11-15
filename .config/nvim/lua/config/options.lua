@@ -55,3 +55,9 @@ vim.g.have_nerd_font = true
 
 -- Don't sync clipboard with system
 vim.o.clipboard = ""
+
+--
+-- PLUGINS
+--
+-- Disable diagnostics by default. <leader>ud to turn on
+vim.diagnostic.enable(false)
