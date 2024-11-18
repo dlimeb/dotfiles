@@ -161,5 +161,5 @@ VAULT="/Users/dlimeb/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/dl
 alias vault="cd ${VAULT}"
 
 # Source local zshrc file
-ZSHRC_LOCAL=".zshrc.local"
+ZSHRC_LOCAL="${HOME}/.zshrc.local"
 source "${ZSHRC_LOCAL}"

@@ -13,5 +13,5 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
 fi
 
 # Source local .zprofile file
-ZPROFILE_LOCAL=".zprofile.local"
+ZPROFILE_LOCAL="${HOME}/.zprofile.local"
 source "${ZPROFILE_LOCAL}"
