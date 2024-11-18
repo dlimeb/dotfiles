@@ -8,5 +8,8 @@ local_settings.py
 sitestatic
 bower_components
 .config/tmux/plugins/*
+.config/tmux/local/plugins/*
+.config/tmux/server/plugins/*
 AppSupport
-*.local
+.zshrc.local
+.zprofile.local
