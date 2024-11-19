@@ -15,7 +15,6 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Macchiato"
 
 -- Set the font to use
--- config.font = wezterm.font("JetBrains Mono")
 config.font = wezterm.font_with_fallback({
 	"IBM Plex Mono",
 })
