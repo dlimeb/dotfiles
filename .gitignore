@@ -1,0 +1,6 @@
+# This is *not* the global gitignore file -- that's shared/.gitignore which
+# should be symlinked via `stow` like other dotfiles. 
+#
+# This is the .gitignore for the dotfiles repo itself.
+
+local/.config/tmux/plugins/

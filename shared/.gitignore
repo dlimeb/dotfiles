@@ -7,9 +7,5 @@ local_settings.py
 .vagrant
 sitestatic
 bower_components
-.config/tmux/plugins/*
-.config/tmux/local/plugins/*
-.config/tmux/server/plugins/*
-iterm2/
 .zshrc.local
 .zprofile.local
