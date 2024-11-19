@@ -10,6 +10,6 @@ bower_components
 .config/tmux/plugins/*
 .config/tmux/local/plugins/*
 .config/tmux/server/plugins/*
-AppSupport
+iterm2/
 .zshrc.local
 .zprofile.local
