@@ -14,4 +14,6 @@ fi
 
 # Source local .zprofile file
 ZPROFILE_LOCAL="${HOME}/.zprofile.local"
-source "${ZPROFILE_LOCAL}"
+if [ -f ${ZPROFILE_LOCAL} ]; then
+  source "${ZPROFILE_LOCAL}"
+fi
