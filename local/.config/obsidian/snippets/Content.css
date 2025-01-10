@@ -15,11 +15,10 @@ body {
   font-size: var(--font-adaptive-normal);
   font-weight: var(--normal-weight);
   line-height: var(--line-height);
-  letter-spacing: -0.01em;
 
   /* make Inter nicer */
-  /* font-feature-settings: "ss01","ss04";
-  letter-spacing: -1.8%; */
+  font-feature-settings: "ss01","ss04", "frac";
+  letter-spacing: -0.01em;
 }
 
 .markdown-rendered div:has( > :is(p,pre,table,ul,ol)) + div > :is(h1,h2,h3,h4,h5,h6) {
@@ -134,9 +133,9 @@ ol {
   background-image: none !important;
   display: inline-block;
   text-decoration-line: none !important;
-  width: 0.5em;
+  padding-inline-end: 0;
 }
-.external-link:before {
+.external-link:after {
   content: "↗︎";
   color: var(--tx1) !important;
   margin-left: 0.3em;
@@ -199,6 +198,12 @@ ol {
   background-color: var(--code-background);
   color: var(--text-color);
 }
+/* some mono fonts also respect the font-feature-settings set on body, which I
+ * don't want */
+.cm-hmd-codeblock,
+.cm-inline-code {
+  font-feature-settings: normal;
+}
 /* backticks are separate elements */
 .cm-s-obsidian span.cm-formatting-code.cm-inline-code {
   padding: 0 !important;
@@ -238,9 +243,10 @@ ol {
 /*-----------------------------------------------------------------------------
   DIVIDERS
 -----------------------------------------------------------------------------*/
+.markdown-rendered hr,
 .markdown-source-view.mod-cm6 hr {
-  border-color: var(--ui2) !important;
-  border-width: 1px;
+  border-color: var(--divider-color) !important;
+  border-width: 1.5px;
 }
 
 
@@ -268,18 +274,18 @@ ol {
   width: 20px;
 }
 .callout-content {
-  padding-top: 1em;
+  /* padding-top: 0.5em; */
 }
 .callout-content p {
   margin-block-end: 1em;
 }
 .callout-content ul,
 .callout-content ol {
-  padding-inline-start: 1em;
+  /* padding-inline-start: 1em; */
   margin-top: 0;
 }
 .callout-content :is(p, ul, ol):first-child {
-  margin-top: 0 !important;
+  margin-top: 1em !important;
 }
 .callout-content :is(p, ul, ol):last-child {
   margin-bottom: 0 !important;
@@ -296,13 +302,8 @@ ol {
 /* CUSTOM CALLOUTS */
 .callout[data-callout="plain"] {
   --callout-color: none;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-left: 0 !important;
 }
-/* give colour to plain callouts nested in normal ones */
-/* .callout[data-callout="blue"] .callout-content .callout[data-callout="plain"] .callout-title-inner {
-  --callout-color: var(--color-blue-rgb);
-} */
 .markdown-preview-view .callout[data-callout="plain"] {
   padding-top: 0;
 }
@@ -331,6 +332,9 @@ ol {
 .callout[data-callout="red"] {
   --callout-color: var(--color-red-rgb);
 }
+.callout[data-callout="yellow"] {
+  --callout-color: var(--color-yellow-rgb);
+}
 /* hide icon for callouts of type `[colour]`, which are intended to be plain */
 .callout[data-callout="plain"] .callout-icon,
 .callout[data-callout="green"] .callout-icon,
@@ -340,6 +344,7 @@ ol {
 .callout[data-callout="grey"] .callout-icon,
 .callout[data-callout="gray"] .callout-icon,
 .callout[data-callout="orange"] .callout-icon,
+.callout[data-callout="yellow"] .callout-icon,
 .callout[data-callout="red"] .callout-icon {
   display: none;
 }
@@ -370,11 +375,18 @@ ol {
 .table-view-table > tbody > tr > td:first-child {
   padding-left: var(--table-edge-cell-padding-first) !important;
 }
+.dataview.table-view-table {
+  margin-block-start: 1em;
+  margin-block-end: 0.5em;
+}
 table.dataview ul.dataview-ul {
   list-style: none;
   margin-block-start: 0em !important;
   margin-block-end: 0em !important;
   padding: 0;
+}
+table.dataview ul.dataview-ul > li {
+  margin-inline-start: 0 !important;
 }
 .markdown-preview-view .table-view-table > tbody > tr > td,
 .markdown-source-view.mod-cm6 .table-view-table > tbody > tr > td {
@@ -453,7 +465,7 @@ body .dataview.inline-field-value {
   line-height: var(--line-height);
 }
 ul.contains-task-list {
-  margin-top: 0;
+  margin-top: 1em;
   margin-bottom: 0.25em;
 }
 .markdown-source-view.mod-cm6 .task-list-item-checkbox {
@@ -480,33 +492,26 @@ ul.contains-task-list {
   font-size: var(--font-adaptive-small);
   white-space: nowrap;
 }
+.internal-link.internal-link-short-mode {
+  display: none;
+}
 .internal-link.internal-link-short-mode:hover {
   text-decoration: none !important;
 }
+
 /* turn off tooltips on item hover in short mode */
 .tasks-list-text .tooltip {
-  display: none;
-}
-/* replace the highest priority red triangle icon. no way to replace this
- * on the original task line, so this is in queries only */
-label[for="priority-highest"] span:last-child,
-.task-priority[data-task-priority="highest"] span {
-  display: none;
-}
-label[for="priority-highest"]:after,
-.task-priority[data-task-priority="highest"]:before {
-  content: "🔥";
-}
-.tasks-modal-priorities > label[for="priority-highest"]:after {
   display: none;
 }
 
 /* only show extras icons on hover */
 li.task-list-item .task-extras {
-  opacity: 0;
   margin-left: 0.4rem;
 }
-li.task-list-item:hover .task-extras {
+li.task-list-item .tasks-edit {
+  opacity: 0;
+}
+li.task-list-item:hover .tasks-edit {
   opacity: 1;
 }
 /* replace the edit pencil icon */
@@ -520,8 +525,6 @@ li.task-list-item:hover .task-extras {
   margin-right: 0.4em;
 }
 .tasks-edit:before {
-  /* content: "️✏️✎"; */
-  /* transform: scaleX(-1); */
   content: "Edit";
   display: inline-block;
 }
@@ -535,6 +538,7 @@ li.task-list-item:hover .task-extras {
 /* count at bottom of query */
 .task-count {
   color: var(--text-muted);
+  font-size: var(--font-adaptive-small);
 }
 
 

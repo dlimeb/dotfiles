@@ -4,8 +4,6 @@ These CSS files are my custom Obsidian theme.
 
 They represent an attempt to make Obsidian feel more at home on MacOS and iOS. There are many good Obsidian community themes, but I always found a few things a bit unsatisfying. I originally started modifying/overriding [obsidian-minimal](https://github.com/kepano/obsidian-minimal) but eventually found it easier to just home roll it from scratch. I also wanted a bit more control over some plugins.
 
-I change things periodically to keep it fresh. The latest iteration (as of Oct 2024) borrows heavily from the styling of [iA Writer](https://ia.net/writer).
-
 ## Notes
 
 In practice these files have been written via accumulating random fiddling over a long period of time. There is some organization but this is not the most elegant CSS I've ever written and I'm sure many things could be improved, but I'm not interested in chasing that any further.

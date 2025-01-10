@@ -225,6 +225,8 @@ body {
   --scrollbar-bg: transparent;
   --scrollbar-thumb-bg: var(--ui1);
   --search-result-background: var(--bg1);
+  --tab-container-background: var(--bg1);
+  --tab-text-color: var(--tx3);
   --tab-text-color-focused-active: var(--tx1);
   --tab-outline-color: var(--ui1);
   --text-accent-hover: var(--ax2);
@@ -242,8 +244,8 @@ body {
   --text-selection: var(--hl1);
   --title-color-inactive: var(--tx2);
   --title-color: var(--tx1);
-  --titlebar-background: var(--bg2);
-  --titlebar-background-focused: var(--bg2);
+  --titlebar-background: var(--bg1);
+  --titlebar-background-focused: var(--bg1);
   --titlebar-text-color-focused: var(--tx1);
   --workspace-background-translucent: hsla(
     var(--base-h),
@@ -299,10 +301,9 @@ body {
   --tag-background-hover: hsl(264, 60%, 87%);
   --text-highlight-bg: hsl(53, 100%, 90%);
   --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
-  --titlebar-background-focused: var(--bg2);
   --tx1: hsl(220, 6%, 16%); /* default content text */
   --tx2: hsl(220, 3%, 57%); /* muted text (in sidebar/linked mentions text & icons, properties labels, inactive tabs) */
-  --tx3: hsl(220, 4%, 68%);
+  --tx3: hsl(220, 4%, 75%);
   --ui1: hsl(220, 21%, 93%); /* borders over linked mentions, highlighted results, on search input */
   --ui2: hsl(220, 7%, 86%); /* dividers between tabs */
   --ui3: hsl(220, 4%, 77%); /* border on search focus, command popup */
@@ -361,7 +362,6 @@ body {
   --tag-background-hover: hsl(264, 36%, 34%);
   --text-highlight-bg: hsl(42, 36%, 24%);
   --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
-  --titlebar-background-focused: var(--bg2);
   --tx1: hsl(218, 20%, 75%); /* default content text */
   /* --tx2: hsl(215, 7%, 50%); */
   --tx2: hsl(218, 17%, 47%); /* muted text (in sidebar/linked mentions text & icons, properties labels, inactive tabs) */
