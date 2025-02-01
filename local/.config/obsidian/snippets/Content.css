@@ -15,10 +15,12 @@ body {
   font-size: var(--font-adaptive-normal);
   font-weight: var(--normal-weight);
   line-height: var(--line-height);
+}
 
-  /* make Inter nicer */
-  font-feature-settings: "ss01","ss04", "frac";
-  letter-spacing: -0.01em;
+/* type settings that only apply to note content, not the entire UI */ 
+.markdown-preview-section,
+.cm-contentContainer {
+  /* letter-spacing: -0.02em; */
 }
 
 .markdown-rendered div:has( > :is(p,pre,table,ul,ol)) + div > :is(h1,h2,h3,h4,h5,h6) {
@@ -30,6 +32,7 @@ body {
   HEADINGS
 -----------------------------------------------------------------------------*/
 /* tweak header colour and spacing */
+/* i use h1 and h2 regularly, and occasionally h3 */
 .cm-header-1,
 .markdown-rendered h1,
 .cm-header-2,
@@ -37,44 +40,42 @@ body {
 .cm-header-3,
 .markdown-rendered h3 {
   color: var(--dl-header-color) !important;
+  font-weight: var(--bold-weight);
 }
+
+/* i use h4 for "prompts" in templates, where i'm leaving a blank section to fill
+ * in and need a helper string to tell me what to enter. i want this to be
+ * visually different than regular content. i used to use markdown comments `%%`
+ * for this, but they are ugly to read in both obsidian and code. so now i use
+ * h4 -- i'll never need that level of heading depth for content, and pshaw that
+ * this will not be used semantically in the right hierarchical way */
 .cm-header-4,
 .markdown-rendered h4,
-.cm-header-5,
-.markdown-rendered h5,
-.cm-header-6,
-.markdown-rendered h6 {
+.mod-cm6 .cm-editor .HyperMD-header-4 {
   color: var(--text-muted);
+  font-size: var(--font-adaptive-small);
 }
+
+/* I don't use h5 or h6, but their classes are same as above */
+
 .cm-s-obsidian .cm-line.HyperMD-header {
-  padding-top: 1em !important;
+  padding-top: 0em !important;
+  /*
   padding-bottom: 0.5em !important;
-  margin-bottom: 0.25em !important;
+  margin-bottom: 0.25em !important; */
 }
 .mod-cm6 .cm-editor .HyperMD-header-2,
 .mod-cm6 .cm-editor .HyperMD-header-3,
 .mod-cm6 .cm-editor .HyperMD-header-4,
 .mod-cm6 .cm-editor .HyperMD-header-5,
 .mod-cm6 .cm-editor .HyperMD-header-6 {
+  padding-top: 1.5rem !important;
   padding-bottom: 0em !important;
   margin-bottom: 0em !important;
 }
-.HyperMD-header .cm-header-1,
-.HyperMD-header .cm-header-2,
-.HyperMD-header .cm-header-3,
-.HyperMD-header .cm-header-4,
-.HyperMD-header .cm-header-5,
-.HyperMD-header .cm-header-6 {
-  /* iA Writer style, all headings the same size.
-     Could also try h1 as slightly bigger, but all other levels can be the same -- bc really I should only be using h2; if I have h3+, prob need to refactor into several notes */
-  font-size: var(--font-adaptive-normal) !important;
-}
 
-/* deemphasize ## when editing headers */
+/* octothorpes when editing headers */
 .cm-formatting-header {
-
-  /* would be nice to outhang like iA Writer, but too complicated and interferes w collapse arrow */
-  /* margin-left: -20px; */
 }
 
 /*-----------------------------------------------------------------------------
@@ -138,8 +139,8 @@ ol {
 .external-link:after {
   content: "↗︎";
   color: var(--tx1) !important;
-  margin-left: 0.3em;
-  font-size: 0.9em;
+  margin-left: 0.25em;
+  font-size: 0.8em;
 }
 
 
@@ -224,6 +225,7 @@ ol {
 
 /*-----------------------------------------------------------------------------
   COMMENTS
+  Note: I use h4 for prompt-style content; see above in headers
 -----------------------------------------------------------------------------*/
 /* these affect both inline markdown comments (`%%`) and comments in
  * code blocks */
@@ -255,7 +257,18 @@ ol {
 -----------------------------------------------------------------------------*/
 /* colour, alignment tweaks */
 .callout {
-  background-color: rgba(var(--callout-color), var(--dl-callout-opacity));
+  /* Notion-style */
+  /* background-color: rgba(var(--callout-color), var(--dl-callout-opacity)); */
+  /* border-radius: var(--callout-radius); */
+  /* border-left: 0; */
+
+  /* GitHub-style */
+  background-color: transparent;
+  border-radius: 0 !important;
+  border-left: 4px solid rgb(var(--callout-color));
+}
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover {
+  border-radius: var(--callout-radius) !important;
 }
 .callout-title {
   gap: var(--size-4-3);
@@ -274,6 +287,8 @@ ol {
   width: 20px;
 }
 .callout-content {
+  font-size: var(--callout-content-size);
+  color: var(--text-muted);
   /* padding-top: 0.5em; */
 }
 .callout-content p {
@@ -285,7 +300,7 @@ ol {
   margin-top: 0;
 }
 .callout-content :is(p, ul, ol):first-child {
-  margin-top: 1em !important;
+  margin-top: 0.5em !important;
 }
 .callout-content :is(p, ul, ol):last-child {
   margin-bottom: 0 !important;
@@ -461,6 +476,7 @@ body .dataview.inline-field-value {
    styling. For example, .task-due has `data-task-due` of "today" or "past-2d".
 */
 /* tweaks for spacing and legibility */
+
 .markdown-preview-view ul > li.task-list-item {
   line-height: var(--line-height);
 }
@@ -542,19 +558,14 @@ li.task-list-item:hover .tasks-edit {
 }
 
 
-/*--- BUTTONS ---*/
-/* Use the Button Maker command to create new buttons. The default one works fine,
-but you can also add a custom css classname to be added. If you do that, be sure
-to also add the `button-default` classname, so it can inherit styling. You can
-add a custom button-id manually or the command window can insert it.
-```button
-name My Cool Button
-type command
-action Save current file
-class button-default dl-button-my-cool-button
-```
-^button-my-cool-button
-*/
-.dl-button-add-new {
-  width: 100%;
+/*-----------------------------------------------------------------------------
+  CSSCLASSES
+  Obsidian has a built-in `cssclasses` property to allow styling of individual
+  notes via setting a classname in the frontmatter. It gets added to the
+  container that holds the page content (typically .markdown-source-view) which
+  is fairly nested in the overall app DOM tree.
+-----------------------------------------------------------------------------*/
+.efforts-list {
+  font-size: calc(0.85 * var(--font-adaptive-normal)) !important;
+  --table-text-size: calc(0.85 * var(--font-adaptive-normal)) !important;
 }

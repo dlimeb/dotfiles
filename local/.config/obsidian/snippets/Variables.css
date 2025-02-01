@@ -20,7 +20,8 @@ body {
   --blockquote-border-thickness: 1px;
   --blockquote-color: var(--text-muted);
   --blockquote-style: normal;
-  --bold-weight: 600;
+  --bold-weight: 800;
+  --bold-modifier: 400; /* added to --normal-weight for eg <strong> */
   --border-width: 1px;
   --canvas-dot-pattern: var(--background-modifier-border-hover);
   --checkbox-left: 0px;
@@ -41,30 +42,24 @@ body {
   --font-adaptive-smallest: var(--font-ui-smaller);
   --font-code: calc(var(--font-adaptive-normal) * 0.9);
   --font-ui-smaller: 12px;
-  --h1-size: 1.5em;
+  /* --h1-size: calc(1.4 * var(--font-text-size)); */
+  --h1-size: var(--font-text-size);
   --h1-style: normal;
   --h1-variant: normal;
-  --h1-weight: 600;
-  --h2-size: 1.2em;
+  --h1-weight: var(--bold-weight) !important;
+  /* --h2-size: calc(1.125 * var(--font-text-size)); */
+  --h2-size: var(--font-text-size);
   --h2-style: normal;
   --h2-variant: normal;
-  --h2-weight: 600;
+  --h1-weight: var(--bold-weight) !important;
   --h3-size: var(--font-text-size);
   --h3-style: normal;
   --h3-variant: normal;
-  --h3-weight: 600;
+  --h1-weight: var(--bold-weight) !important;
   --h4-size: var(--font-text-size);
   --h4-style: normal;
   --h4-variant: normal;
-  --h4-weight: 600;
-  --h5-size: var(--font-text-size);
-  --h5-style: normal;
-  --h5-variant: none;
-  --h5-weight: 600;
-  --h6-size: var(--font-text-size);
-  --h6-style: normal;
-  --h6-variant: none;
-  --h6-weight: 400;
+  --h4-weight: var(--normal-weight);
   --heading-spacing: 2em;
   --ig-adjust-edit: 2px;
   --ig-adjust-reading: -0.95em;
@@ -143,16 +138,16 @@ body {
   --table-text-size: var(--font-adaptive-normal);
 
   /*--- OTHER ELEMENTS ---*/
-  --callout-radius: var(--radius-m);
+  --callout-padding: var(--size-4-1) var(--size-4-5);
+  --callout-radius: 0px !important;
+  --callout-title-size: calc(0.9 * var(--font-adaptive-normal));
+  --callout-title-weight: 700;
+  --callout-content-size: calc(0.9 * var(--font-adaptive-normal));
 
   /*--- PLUGINS ---*/
   --calendar-dot-active: var(--text-faint);
   --calendar-dot-today: var(--text-accent);
-
-  --callout-padding: var(--size-4-4) var(--size-4-5);
-
   --checklist-done-decoration: none;
-
   --he-title-bar-height: 40px;
 }
 .mod-macos {

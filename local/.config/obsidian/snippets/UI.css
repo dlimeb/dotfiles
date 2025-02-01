@@ -235,21 +235,26 @@ body:not(.is-mobile) .nav-folder.mod-root > .nav-folder-title .nav-folder-title-
 .graph-view.color-line {
     color: var(--ui1);
 }
-/* head of arrow (if displayed) not the whole line
+
+/* head of arrow, if displayed
 .graph-view.color-arrow {
   color: pink;
 } */
-/* tags (if displayed) */
+
+/* tags, if displayed */
 .graph-view.color-fill-tag {
   color: var(--color-cyan);
 }
-/* attachments (if displayed) */
+
+/* attachments, if displayed */
 .graph-view.color-fill-attachment {
   color: var(--text-faint);
 }
-/* orphans/non-existing files (if displayed) */
+
+/* orphans, if displayed */
 .graph-view.color-fill-unresolved {
-  color: rgb(252, 90, 90);
+  color: var(--color-red);
+  opacity: 1 !important;
 }
 
 
@@ -943,9 +948,8 @@ input[type=checkbox].task-list-item-checkbox {
   border-style: solid;
   background-color: transparent !important;
 }
-/* hide task tag on original line item */
 .cm-tag-task {
-  /* display: none; */
+  /* display: none; */ /* hide task tag on original line item */
 }
 /* fix alignment */
 .tasks-modal-dates {
