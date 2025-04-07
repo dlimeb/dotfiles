@@ -1,47 +1,34 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-palette:
-  gray: "#6C7086"
-secondary_prompt:
-  template: "- "
-  foreground: magenta
-  background: transparent
-transient_prompt:
-  template: "→ "
-  background: transparent
-  foreground_templates:
-  - "{{if gt .Code 0}}red{{end}}"
-  - "{{if eq .Code 0}}magenta{{end}}"
 console_title_template: "{{ .Shell }} in {{ .Folder }}"
 blocks:
 - type: prompt
   alignment: left
   segments:
-  - properties:
-      cache_duration: none
-    template: →
-    background: transparent
-    type: text
+  - type: text
     style: plain
+    template: →
     foreground_templates:
     - "{{if gt .Code 0}}red{{end}}"
     - "{{if eq .Code 0}}magenta{{end}}"
-  - properties:
-      cache_duration: none
-    template: "<cyan>{{ if .SSHSession }}[{{ .HostName }}]{{ end }}</> "
-    foreground: p:white
     background: transparent
-    type: session
+  - type: python
     style: plain
-  - properties:
-      cache_duration: none
+    properties:
+      display_mode: environment
+    template: " ({{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ .Full}}{{ end }}{{ end }})"
+    foreground: darkGray
+    background: transparent
+  - type: path
+    style: plain
+    properties:
       style: full
-    template: "{{ .Path }}"
+    template: " {{ .Path }}"
     foreground: blue
     background: transparent
-    type: path
+  - type: git
     style: plain
-  - properties:
+    properties:
       branch_icon: ""
       cache_duration: none
       commit_icon: "@"
@@ -49,8 +36,6 @@ blocks:
     template: " [<red>{{ .HEAD }}</>]{{ if or (.Working.Changed) (.Staging.Changed) }} <yellow><b>︎✕</b></>{{ end }}<green>{{ if gt .Behind 0 }} ▼ {{ end }}{{ if gt .Ahead 0 }} ▲ {{ end }}</>"
     foreground: p:gray
     background: transparent
-    type: git
-    style: plain
 - type: rprompt
   overflow: hidden
   segments:
@@ -62,5 +47,15 @@ blocks:
     background: transparent
     type: executiontime
     style: plain
+secondary_prompt:
+  template: "- "
+  foreground: magenta
+  background: transparent
+transient_prompt:
+  template: "→ "
+  background: transparent
+  foreground_templates:
+  - "{{if gt .Code 0}}red{{end}}"
+  - "{{if eq .Code 0}}magenta{{end}}"
 version: 3
 final_space: true
