@@ -8,4 +8,7 @@ return {
 
   -- render-markdown, which shows fancier highlights in text
   { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
+
+  -- mini.comment, trying Comment.nvim instead
+  { "echasnovski/mini.comment", enabled = false },
 }

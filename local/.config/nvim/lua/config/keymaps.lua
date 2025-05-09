@@ -15,4 +15,12 @@
 -- rather than maintaining a cheatsheet.
 --
 
+--- Toggle showing invisible characters
+--- See vim.o.listchars in options.lua for characters to use
 vim.keymap.set("n", "<leader>uW", ":set list!<CR>", { desc = "Toggle whitespace" })
+
+-- Color preview viewing, picking, and converting between formats
+-- Note cursor needs to be on the color itself, not just the line
+vim.keymap.set("n", "<leader>cCt", ":CccHighlighterToggle<CR>", { desc = "Toggle color previews" })
+vim.keymap.set("n", "<leader>cCp", ":CccPick<CR>", { desc = "Open color picker" })
+vim.keymap.set("n", "<leader>cCc", ":CccConvert<CR>", { desc = "Convert color format" })
