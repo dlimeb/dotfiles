@@ -41,11 +41,24 @@ vim.o.showmatch = true
 
 -- Set how whitespace characters are displayed
 vim.o.list = false
-vim.o.listchars = "tab:»=,trail:~,nbsp:␣,eol:$,extends:>,precedes:<,space:•"
+vim.o.listchars = "tab:» ,trail:~,nbsp:␣,eol:$,extends:>,precedes:<,space:•"
 
 -- Set how text with "conceal" syntax is displayed. This is used most in
 -- markdown files to show fancy lists, checkboxes, etc which I don't want)
 vim.o.conceallevel = 0
+
+-- Set or override some filetype associations
+vim.filetype.add({
+  extension = {
+
+    -- There is no good LSP for Nunjucks so a filetype of `nunjucks` does
+    -- nothing. Workarounds:
+    -- - Set ft to `html` to highlight HTML syntax (njk parts show plain)
+    -- - Set ft to `jinja` (close enough) to see njk parts (HTML as plain)
+    -- (Setting ft to html.jinja doesn't work either)
+    njk = "html", -- nunjucks
+  },
+})
 
 --
 -- UI
@@ -55,9 +68,3 @@ vim.g.have_nerd_font = true
 
 -- Don't sync clipboard with system
 vim.o.clipboard = ""
-
---
--- PLUGINS
---
--- Disable diagnostics by default. <leader>ud to turn on
-vim.diagnostic.enable(false)

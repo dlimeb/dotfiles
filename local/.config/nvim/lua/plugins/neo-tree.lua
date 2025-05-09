@@ -9,6 +9,7 @@ return {
     "s1n7ax/nvim-window-picker",
   },
   opts = {
+    sources = { "filesystem" },
     filesystem = {
       bind_to_cwd = true,
       close_if_last_window = true,

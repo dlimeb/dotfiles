@@ -10,7 +10,9 @@
 -- defaults are cleverly organized into categories with a memorable first
 -- character.
 --
---For now I'm going to (a) not add any key bindings and use just LazyVim
---defaults until I have a need to customize; and (b) let which-key do its thing
---rather than maintaining a cheatsheet.
+-- For now I'm going to (a) not add any key bindings and use just LazyVim
+-- defaults until I have a need to customize; and (b) let which-key do its thing
+-- rather than maintaining a cheatsheet.
 --
+
+vim.keymap.set("n", "<leader>uW", ":set list!<CR>", { desc = "Toggle whitespace" })

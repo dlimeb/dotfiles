@@ -110,3 +110,21 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+#
+# RUBY
+# Don't use system Ruby installed at /usr/bin/ruby; install via Homebrew.
+# See https://mac.install.guide/ruby/12
+#
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.3
+
+
+#
+# RUST
+# I don't use Rust, but `cargo` is needed to install various neovim plugins.
+#
+export PATH="$(brew --prefix rustup)/bin:$PATH"
+
