@@ -105,15 +105,6 @@ fi
 
 
 #
-# LOCAL ZSHRC
-#
-ZSHRC_LOCAL="${HOME}/.zshrc.local"
-if [ -f ${ZSHRC_LOCAL} ]; then
-  source "${ZSHRC_LOCAL}"
-fi
-
-
-#
 # NODE / NVM
 #
 export NVM_DIR="$HOME/.nvm"
