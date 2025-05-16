@@ -72,7 +72,7 @@ alias unexport='unset'
 # Shortcuts
 alias sz='source ~/.zshrc;echo ".zshrc sourced."'
 alias ez='vim ~/.zshrc'
-alias serve="python3 -m http.server 9000"
+alias serve="python3 -m http.server 9000 --bind 127.0.0.1"
 VAULT="/Users/dlimeb/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/dlimeb/"
 alias vault="cd ${VAULT}"
 alias pm="python manage.py"
