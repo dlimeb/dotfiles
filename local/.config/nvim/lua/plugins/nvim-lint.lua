@@ -16,6 +16,14 @@ return {
       markdown = { "markdownlint" },
     }
 
+    -- Set some markdownlint defaults, as opening a random markdown file
+    -- doesn't seem to respect ~/.markdownlintrc.json
+    local markdownlint = require("lint").linters.markdownlint
+    markdownlint.args = {
+      "--disable",
+      "MD013",
+      "--", -- Required
+    }
     -- Add an autocommand to execute linting on certain events
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
