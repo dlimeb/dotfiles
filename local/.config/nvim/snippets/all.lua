@@ -1,8 +1,51 @@
-return {
-  -- A snippet that expands the trigger "hi" into the string "Hello, world!".
-  -- require("luasnip").snippet({ trig = "hi" }, { t("Hello, world!") }),
+-- https://github.com/L3MON4D3/LuaSnip/blob/master/doc/luasnip.txt
+--
+-- local ls = require("luasnip")
+-- local s = ls.snippet
+-- local sn = ls.snippet_node
+-- local t = ls.text_node
+-- local i = ls.insert_node
+-- local f = ls.function_node
+-- local c = ls.choice_node
+-- local d = ls.dynamic_node
+-- local l = require("luasnip.extras").lambda
+-- local r = require("luasnip.extras").rep
+-- local p = require("luasnip.extras").partial
+-- local m = require("luasnip.extras").match
+-- local n = require("luasnip.extras").nonempty
+-- local dl = require("luasnip.extras").dynamic_lambda
+-- local fmt = require("luasnip.extras.fmt").fmt
+-- local fmta = require("luasnip.extras.fmt").fmta
+-- local types = require("luasnip.util.types")
+-- local conds = require("luasnip.extras.expand_conditions")
+-- local events = require("luasnip.util.events")
 
-  -- To return multiple snippets, use one `return` statement per snippet file
-  -- and return a table of Lua snippets.
-  -- require("luasnip").snippet({ trig = "foo" }, { t("Another snippet.") }),
-}
+-- local utils = require("luasnip_snippets.utils")
+
+-- return {
+--   s(
+--    { trig = "asdf" },
+--    { t('hello world') }
+--   ),
+--   s(
+--     "eg",
+--     fmt("just an {iNode1}", {
+--       iNode1 = i(1, "example"),
+--     })
+--   ),
+--   s(
+--     "eg2",
+--     fmt(
+--       [[
+--       if {} then
+--         {}
+--       end
+--       ]],
+--       {
+--         -- i(1) is at nodes[1], i(2) at nodes[2].
+--         i(1, "not now"),
+--         i(2, "when"),
+--       }
+--     )
+--   ),
+-- }
