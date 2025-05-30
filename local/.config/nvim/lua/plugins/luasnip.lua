@@ -24,6 +24,7 @@ return {
     delete_check_events = "TextChanged",
   },
   config = function()
-    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+    -- require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+    require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
   end,
 }
